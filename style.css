@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Simplifica;
+    src: url(fonts/simplifica-typeface.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto/roboto-thin.ttf);
+}
+
+.hide {
+    display: none;
+}
+
+button {cursor: pointer;}
+
+button:hover {text-decoration: underline;}
+
+/*we are using the mobile-first approach, which means that from here on the code is for the mobile, and the specifications for desktop are gonna be contained in the media query*/
+
+.desktop {
+    display: none;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: Roboto;
+}
+
+h1,
+h2,
+h3,
+a {
+    font-family: Simplifica;
+}
+
+h2 {font-weight:100;
+font-size:28px;}
+
+.background {
+    background: url(images/mobile-bgr.png) fixed bottom no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100vh;
+
+}
+.background h1 {position:absolute;
+    font-size:65px;
+    font-weight:200;
+bottom:25vh;
+    left:8vh;}
+
+.background h2 {position:absolute;
+
+bottom:20vh;
+    right:10vw;
+
+}
+
+/*header*/
+.logo {width:30px;
+float:right;
+padding:1em;}
+
+
+/*navigation*/
+
+.burger {width:25px;
+padding:1em;}
+
+nav {
+    width: 100%;
+    height:0vh;;
+    overflow: hidden;
+    background-color: white;
+
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    display:block;
+    padding-left:2em;
+    padding-top:1em;
+    font-size:30px;
+
+}
+
+.lan {float:right;
+padding-right:3em;
+
+}
+
+.lan button {font-size:15px;
+font-weight: 100;
+}
+.closeNav {animation: closeNav .3s forwards ease;}
+
+.openNav {animation: openNav .3s forwards ease;}
+
+@keyframes closeNav {
+    to {height:0vh;
+    margin-top: -30%;}
+}
+
+@keyframes openNav {
+    to {height:45vh;
+    margin-top:10%;}
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 600px) {
+    .desktop {
+        display: block;
+    }
+
+
+
+
+
+
+
+}
