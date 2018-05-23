@@ -19,7 +19,8 @@
     display: none;
 }
 
-.active {    text-decoration: underline;
+.active {
+    text-decoration: underline;
 }
 
 button {
@@ -28,7 +29,8 @@ button {
     font-family: Simplifica;
 }
 
-button:hover, a:hover {
+button:hover,
+a:hover {
     text-decoration: underline;
 }
 
@@ -42,6 +44,11 @@ body {
 
 /*we are using the mobile-first approach, which means that from here on the code is for the mobile, and the specifications for desktop are gonna be contained in the media query*/
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -53,6 +60,7 @@ h2 {
     font-weight: 100;
     font-size: 28px;
 }
+
 
 .background {
     background: url(images/mobile-bgr.png) fixed bottom no-repeat;
@@ -143,6 +151,7 @@ nav div.submenu a {
 .lan button {
     font-size: 18px;
     font-weight: 100;
+    color: #959494;
 }
 
 .closeNav {
@@ -169,8 +178,122 @@ nav div.submenu a {
     }
 }
 
+/*the art*/
 
-@media screen and (min-width: 600px) {
+main {
+    margin-top: 60px;
+}
+
+section {
+    width: 90vw;
+    padding: 5vw;
+}
+
+section h1{padding-bottom: .25em;
+font-size:30px;}
+
+section h3{padding-bottom: .25em;}
+
+section span {font-size: 18px}
+img.sculpture {
+    max-width: 90vw;
+}
+
+div.centerMe {
+    width: 90vw;
+    text-align: center;
+}
+
+.centerMe img {
+    max-width: 35vw;
+}
+
+
+@media screen and (min-width:509px) {
+
+    /*header*/
+    .burger {
+        display: none;
+    }
+    .logo {
+        width: 40px;
+        position: absolute;
+        padding: .1em;
+        right: 3.9vw;
+        z-index: 15;
+        top: 17px
+    }
+
+    .lan button {
+        font-size: 20px;
+    }
+
+    .lan {
+        font-size: 20px;
+        padding-top: .35em;
+        padding-right: 1em;
+    }
+
+    nav a {
+        display: inline;
+        font-size: 20px;
+    }
+
+    nav {
+        right: 120px;
+        top: 25px
+    }
+
+    div.navMenu {
+        height: 40px;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        width: 91vw;
+        text-align: left;
+    }
+
+
+
+    @keyframes closeNav {
+
+        to {
+            height: 40px;
+        }
+    }
+
+
+
+
+
+
+    .background {
+        background-image: url(images/desktop-bgr.png);
+        width: 95vw;
+        height: 80vh;
+        top: 10vh;
+    }
+
+    .background h1 {
+        font-size: 50px;
+        width: auto;
+        text-align: left;
+        top: 29vh;
+        left: 5vw;
+
+    }
+
+    .background h2 {
+        font-size: 25px;
+        top: 44.5vh;
+        left: 5vw;
+    }
+
+
+
+
+}
+
+@media screen and (min-width: 800px) {
     /*header*/
     .burger {
         display: none;
@@ -178,16 +301,20 @@ nav div.submenu a {
     .logo {
         width: 50px;
         position: absolute;
-        right: 3.27vw;
-        z-index:15;
-        top:1px
+        right: 4.519vw;
+        z-index: 15;
+        top: 18px
     }
 
-    .lan button {font-size:21px;}
+    .lan button {
+        font-size: 21px;
+    }
 
-    .lan {font-size:23px;
-    padding-top:.35em;
-    padding-right:0em;}
+    .lan {
+        font-size: 23px;
+        padding-top: .35em;
+        padding-right: .1em;
+    }
 
     nav a {
         display: inline;
@@ -228,6 +355,7 @@ nav div.submenu a {
     }
 
     .background h1 {
+        font-size: 65px;
         width: auto;
         text-align: left;
         top: 29vh;
@@ -236,6 +364,8 @@ nav div.submenu a {
     }
 
     .background h2 {
+        font-size: 28px;
+
         top: 44.5vh;
         left: 27.5vw;
     }
