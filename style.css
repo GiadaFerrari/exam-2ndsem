@@ -23,6 +23,10 @@
     text-decoration: underline;
 }
 
+.desktopOnly {
+    display: none;
+}
+
 button {
     cursor: pointer;
     border: none;
@@ -52,6 +56,7 @@ a {
 h1,
 h2,
 h3,
+h4
 a {
     font-family: Simplifica;
 }
@@ -189,12 +194,19 @@ section {
     padding: 5vw;
 }
 
-section h1{padding-bottom: .25em;
-font-size:30px;}
+section h1 {
+    padding-bottom: .25em;
+    font-size: 30px;
+}
 
-section h3{padding-bottom: .25em;}
+section h4 {
+    padding-bottom: .25em;
+}
 
-section span {font-size: 18px}
+section span {
+    font-size: 18px
+}
+
 img.sculpture {
     max-width: 90vw;
 }
@@ -370,6 +382,55 @@ div.centerMe {
         left: 27.5vw;
     }
 
+
+
+    /*the art*/
+    .desktopOnly {
+        display: inline-block;
+        max-width:45vw;
+        padding-left:1em;
+        float:right;
+        position:absolute;
+    }
+
+    main {
+        margin-top: 0px;
+    }
+
+    section {
+        width: 90vw;
+        padding: 5vw;
+    }
+
+    section h1 {
+        padding-bottom: .25em;
+        font-size: 30px;
+    }
+
+    section h3 {font-size:23px;
+
+    }
+    section h4 {
+        padding-bottom: .25em;
+    }
+
+    section p {padding-bottom:1em;}
+
+    section span {
+        font-size: 18px
+    }
+    img.sculpture {
+        max-width: 40vw;
+    }
+
+    div.centerMe {
+        width: 90vw;
+        text-align: center;
+    }
+
+    .centerMe img {
+        max-width: 10vw;
+    }
 
 
 
