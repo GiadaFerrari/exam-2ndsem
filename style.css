@@ -19,15 +19,20 @@
     display: none;
 }
 
+.active {    text-decoration: underline;
+}
+
 button {
     cursor: pointer;
     border: none;
     font-family: Simplifica;
 }
 
-button:hover {
+button:hover, a:hover {
     text-decoration: underline;
 }
+
+
 
 body {
     max-width: 100%;
@@ -36,8 +41,6 @@ body {
 }
 
 /*we are using the mobile-first approach, which means that from here on the code is for the mobile, and the specifications for desktop are gonna be contained in the media query*/
-
-
 
 h1,
 h2,
@@ -53,26 +56,27 @@ h2 {
 
 .background {
     background: url(images/mobile-bgr.png) fixed bottom no-repeat;
-    background-size: contain;
-    width: 100%;
+    background-size: cover;
+    width: 100vw;
     height: 90vh;
-    position:absolute;
+    position: absolute;
     bottom: 0;
 
 
 }
 
 .background h1 {
-    position: absolute;
     font-size: 65px;
     font-weight: 200;
-    bottom: 25vh;
-    left: 8vh;
+    width: 100vw;
+    text-align: center;
+    position: absolute;
+    bottom: 200px
 }
 
 .background h2 {
     position: absolute;
-    bottom: 20vh;
+    bottom: 160px;
     right: 5vw;
 
 }
@@ -99,10 +103,12 @@ h2 {
     position: relative;
     overflow: hidden;
     background-color: white;
-    z-index:10;
+    z-index: 10;
 
 }
-nav {position:absolute;
+
+nav {
+    position: absolute;
 
 }
 
@@ -120,7 +126,7 @@ nav div.submenu {
     position: absolute;
     left: 42.4px;
     bottom: -70px;
-    width:100vw;
+    width: 100vw;
 
 }
 
@@ -148,6 +154,9 @@ nav div.submenu a {
 }
 
 @keyframes closeNav {
+    from {
+        height: 43vh;
+    }
     to {
         height: 0vh;
         margin-top: -30%;
@@ -162,8 +171,74 @@ nav div.submenu a {
 
 
 @media screen and (min-width: 600px) {
- /*header*/
+    /*header*/
+    .burger {
+        display: none;
+    }
+    .logo {
+        width: 50px;
+        position: absolute;
+        right: 3.27vw;
+        z-index:15;
+        top:1px
+    }
 
+    .lan button {font-size:21px;}
+
+    .lan {font-size:23px;
+    padding-top:.35em;
+    padding-right:0em;}
+
+    nav a {
+        display: inline;
+        font-size: 25px;
+    }
+
+    nav {
+        right: 120px;
+        top: 25px
+    }
+
+    div.navMenu {
+        height: 40px;
+        padding: 1em;
+        width: 88vw;
+        text-align: right;
+    }
+
+
+
+    @keyframes closeNav {
+
+        to {
+            height: 40px;
+        }
+    }
+
+
+
+
+
+
+    .background {
+        background-image: url(images/desktop-bgr.png);
+        width: 95vw;
+        height: 80vh;
+        top: 10vh;
+    }
+
+    .background h1 {
+        width: auto;
+        text-align: left;
+        top: 29vh;
+        left: 23vw;
+
+    }
+
+    .background h2 {
+        top: 44.5vh;
+        left: 27.5vw;
+    }
 
 
 
