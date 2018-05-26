@@ -579,10 +579,6 @@ article h3 {
         float: right;
     }
 
-    .desktopOnly {
-        position: relative;
-        height: 33.1vw;
-    }
 
     section {
         display: block;
@@ -652,10 +648,7 @@ article h3 {
         max-width: 10vw;
     }
 
-    button.inquire {
-        position:absolute;
-        bottom: 0px;
-    }
+
     /*the artist*/
     .mobileArtist {
         display: none;
@@ -770,9 +763,15 @@ article h3 {
     }
 
     /*the art*/
+
+      .desktopOnly {
+        position: relative;
+        height: 33.1vw;
+    }
+
     section {
         overflow: auto;
-        min-height: 80vh;
+        min-height: 88vh;
         position: relative;
     }
 
@@ -816,6 +815,10 @@ article h3 {
         max-width: 10vw;
     }
 
+      button.inquire {
+        position:absolute;
+        bottom: 0px;
+    }
     /*timeline*/
     div.line {
         left: 40vw;
