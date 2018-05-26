@@ -37,3 +37,14 @@ $('.burger').on('click', () => {
     $('.navMenu').toggleClass('openNav')
     $('.navMenu').toggleClass('closeNav')
 })
+
+$('.timelineNav').on('click', toggleSubMenu)
+$('.timelineNav').on('mouseover', toggleSubMenu)
+
+
+
+function toggleSubMenu() {
+    $('.subMenu').toggleClass('openMe')
+ $('.subMenu').toggleClass('closeMe')
+}
+
