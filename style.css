@@ -62,17 +62,19 @@ p {
 
 footer {
     width: 100%;
-    font-size:13px;
+    font-size: 13px;
     position: absolute;
     text-align: center;
 }
 
-footer img {width:30px;
-padding:.5em;}
+footer img {
+    width: 30px;
+    padding: .5em;
+}
 
-footer img:nth-child(3){
-    width:34px;
-    opacity:.4;
+footer img:nth-child(3) {
+    width: 34px;
+    opacity: .4;
 
 }
 
@@ -517,7 +519,7 @@ article h3 {
         z-index: 30;
         left: 3vw;
         top: 36px;
-        overflow:hidden;
+        overflow: hidden;
 
     }
 
@@ -531,19 +533,20 @@ article h3 {
         animation: openMe .5s forwards ease;
     }
 
-    .closeMe {        animation: closeMe .5s forwards ease;
-}
+    .closeMe {
+        animation: closeMe .5s forwards ease;
+    }
 
     @keyframes openMe {
         to {
-                    height: 200px;
+            height: 200px;
 
         }
     }
 
     @keyframes closeMe {
         to {
-                    height: 0px;
+            height: 0px;
 
         }
     }
@@ -686,6 +689,19 @@ article h3 {
     .caption {
         position: absolute;
         left: 1vh;
+        width:45vw;;
+    }
+
+    img.play {
+        width: 50px;
+        position: absolute;
+        top: -29vw;
+        left: 16vw;
+    }
+
+    .artistImgDesktop {
+        position: relative;
+        display: inline;
     }
 
     /*timeline*/
@@ -763,8 +779,7 @@ article h3 {
     }
 
     /*the art*/
-
-      .desktopOnly {
+    .desktopOnly {
         position: relative;
         height: 33.1vw;
     }
@@ -815,8 +830,8 @@ article h3 {
         max-width: 10vw;
     }
 
-      button.inquire {
-        position:absolute;
+    button.inquire {
+        position: absolute;
         bottom: 0px;
     }
     /*timeline*/
@@ -844,12 +859,12 @@ article h3 {
         padding-right: 6vw;
     }
     article.left .dot {
-    left: 38.17vw;
-}
+        left: 38.17vw;
+    }
 
- article.right .dot {
-    left: 1.6vw;
-}
+    article.right .dot {
+        left: 1.6vw;
+    }
 
     @keyframes slideLeft {
         to {
