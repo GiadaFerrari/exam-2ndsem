@@ -1,26 +1,28 @@
 let template = document.querySelector('template').content;
 let main = document.querySelector('main');
-let artPathEn = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_en?_embed';
-let artPathIt = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_it?_embed';
-let lookingForData = false;
+let artPathEn = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_en/';
+let artPathIt = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_it/';
+
+ let urlParams = new URLSearchParams(window.location.search);
+  let id= urlParams.get("id");
 
 
-/*REST API*/
+
+
 
 function fetchArt(lan) {
     lookingForData = true;
     console.log('i am fetching from' + lan)
 
-    fetch(lan).then(e => e.json()).then(showArt)
+    fetch(lan+id).then(e => e.json()).then(showArt)
 
 }
 
 
-function showArt(art) {
+function showArt(a) {
 
     main.innerHTML = ' ';
 
-    art.forEach((a) => {
         /*I define my local variables, in which we have the paths to the different images. by having them in variables it s easier to avoid typos*/
         let clone = template.cloneNode(true);
         let mainPicPath = a.acf.image1.sizes.medium;
@@ -30,8 +32,7 @@ function showArt(art) {
         let thumNail4 = a.acf.image5
         let thumNail5 = a.acf.image6
 
-        if(screen.width>509){
-        clone.querySelector('section a').href="Subpage.html?id="+a.id;}
+
 
         clone.querySelector('.title').textContent = a.acf.title_of_artwork;
         clone.querySelector('.year').textContent = "(" + a.acf.year_of_work + ")"
@@ -42,7 +43,7 @@ function showArt(art) {
         clone.querySelector('.sculpture').src = mainPicPath;
         /*ask yan about loop
         for (i=1; 'thumNail'+i == true; i++){
-        clone.createElement('img').src = thumNail+i.sizes.thumbnail
+        clone.createElement('img').src = thumNail+i.sizes.medium
         }
        */
 
@@ -52,9 +53,9 @@ function showArt(art) {
 
         main.appendChild(clone)
 
-    })
+    }
 
-}
+
 
 fetchArt(artPathEn);
 

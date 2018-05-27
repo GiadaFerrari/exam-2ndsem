@@ -710,6 +710,10 @@ article h3 {
         top: 35vh;
     }
 
+    .menu div:hover {
+        text-decoration-line: underline;
+    }
+
     main.timeline {
         display: block;
         margin-top: 35vh;

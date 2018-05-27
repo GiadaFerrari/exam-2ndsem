@@ -13,6 +13,11 @@ $('.itSet').on('click', setLanguage)
 $('.enSet').on('click', setLanguage)
 
 function setLanguage(e) {
+
+
+
+
+
    /*with this if statement I check if what I clicked was the italian button and the italian version is NOT already displayed, or if the english button was pressed and the english version is NOT already displayed, then execute my code, which toggles the class hide*/
 
     if (itaSample.classList.contains('hide')&&e.target.classList.contains('itSet') || engSample.classList.contains('hide')&&e.target.classList.contains('enSet')) {
