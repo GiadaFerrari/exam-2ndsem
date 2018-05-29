@@ -844,8 +844,7 @@ div.menu.fixMe {
     .aboutContent,
     .desktopOnly {
         display: inline-block;
-        max-width: 35vw;
-        padding-left: 1em;
+        max-width: 30vw;
         float: right;
     }
 
@@ -861,9 +860,10 @@ div.menu.fixMe {
         display: block;
         overflow: auto;
         position: relative;
-        width: 90vw;
+        width: 85vw;
         height: 76vh;
-        padding: 5vw;
+        padding: 7vw;
+        padding-bottom:3vw;
         padding-top: 1vw;
     }
 
@@ -910,7 +910,7 @@ div.menu.fixMe {
         left: 0;
         bottom: 0;
         margin: auto;
-        max-width: 50vw;
+        max-width: 45vw;
         /*max-height: 53vh;*/
     }
 
@@ -934,7 +934,7 @@ div.menu.fixMe {
         position: relative;
     }
     div.thumbNails {
-        width: 50vw;
+        width: 45vw;
         margin-top: 20px;
     }
     div.thumbImg {
@@ -975,7 +975,7 @@ div.menu.fixMe {
     div.centerMe {
         position: absolute;
         bottom: 0px;
-        width: 47vw;
+        width: 40vw;
         text-align: center;
     }
 
