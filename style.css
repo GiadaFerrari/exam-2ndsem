@@ -584,7 +584,6 @@ h2.contactMeDesktop span {
 /*timeline*/
 
 div.line {
-    height: 500vw;
     background: black;
     width: 1.5px;
     position: absolute;

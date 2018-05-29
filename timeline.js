@@ -191,7 +191,7 @@ let line = document.querySelector('.line')
 
 setTimeout(() => {
     line.style.cssText = "height:" + $("main").height() + "px";
-}, 2000)
+}, 500)
 
 
 /*scroll*/
