@@ -116,7 +116,7 @@ fetchArt(artPathEn);
 
 
 $('.enSet').on('click', () => {
-        main.innerHTML = ""
+        main.innerHTML = " "
 
     fetchArt(artPathEn)
 })
@@ -157,6 +157,32 @@ function closeModal(){
     $('aside').toggleClass('showModal')
 
 }
+
+/*slideshow*/
+setTimeout(fillSlide, 2000)
+
+function fillSlide(){
+
+let sections = document.querySelectorAll('section')
+
+sections.forEach((s)=>{
+
+    s.querySelector('.mainImg').addEventListener('click', openSlide)
+    s.querySelectorAll('.thumbNails img').forEach((t)=>{t.addEventListener('click', openSlide)})
+
+
+
+
+})
+}
+
+function openSlide(){$('.slideshow').addClass('openSlideshow');
+    $('.slideshow').removeClass('closeSlideshow')}
+
+$('.closeMeSlide').on('click', ()=>{
+   $('.slideshow').removeClass('openSlideshow');
+    $('.slideshow').addClass('closeSlideshow');
+})
 
 
 /*infinite scroll

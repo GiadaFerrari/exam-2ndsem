@@ -46,6 +46,7 @@ button.lanactive:hover {
     display: none;
 }
 
+.tabletOnly {display: none;}
 button {
     cursor: pointer;
     border: none;
@@ -90,11 +91,14 @@ div.footer {
     justify-content: center;
 }
 
-.copy {padding-right:2vw;}
+.copy {
+    padding-right: 2vw;
+}
 
 footer img {
     width: 30px;
     padding: .5em;
+    cursor: pointer;
 }
 
 footer img:nth-child(3) {
@@ -103,7 +107,10 @@ footer img:nth-child(3) {
 
 }
 
-.linkedin {opacity: .4;}
+.linkedin {
+    opacity: .4;
+}
+
 .desktop {
     display: none;
 
@@ -265,7 +272,6 @@ nav a {
 
 .subMenu {
     position: absolute;
-    top: 7vh;
     left: 10vw;
     width: 50vw;
 }
@@ -340,12 +346,13 @@ div.more {
     margin: 10px;
     align-items: center;
     display: flex;
-    font-size:20px;
+    font-size: 20px;
 }
 
 .more img {
-    margin-left:1vw;
+    margin-left: 1vw;
 }
+
 .more:hover {
     text-decoration: underline;
 }
@@ -377,7 +384,7 @@ img.sculpture {
 }
 
 div.centerMe {
-    padding-top:5vh;
+    padding-top: 5vh;
     padding-left: 28vw;
     display: block;
 }
@@ -385,13 +392,14 @@ div.centerMe {
 .centerMe img {
     max-width: 35vw;
 }
+
 /*subpage*/
 
 button.inquire {
     border: 1px black solid;
     padding: 1vh;
     font-size: 20px;
-    width:20vw;
+    width: 20vw;
     color: #959494;
     font-family: Simplifica, sans-serif;
     margin-bottom: 2.5vh;
@@ -411,85 +419,92 @@ section.subPageS {
 /*modal*/
 
 aside {
-        background-color: white;
-        position: fixed;
-        left: 9vw;
-        width: 70vw;
-        height: 70vh;
-        padding: 5vw;
-        border: solid #bbbbbb 1px;
-        z-index: 30;
-    box-shadow: 10px 10px 10px rgba(255,255,255,.1);
+    background-color: white;
+    position: fixed;
+    left: 9vw;
+    width: 70vw;
+    height: 70vh;
+    padding: 5vw;
+    opacity:0;
+    border: solid #bbbbbb 1px;
+    z-index: 30;
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, .1);
 
-    }
-
-    .hideModal {
-        animation: hideModal .5s forwards ease;
-    }
-
-    .showModal {
-        animation: showModal .5s forwards ease;
-    }
-
-    @keyframes hideModal {
-        from {top:12vh;}
-        to {
-            top: -200vh;
-        }
-    }
-    @keyframes showModal {
-        from {
-                        top: -200vh;
-
-        }
-        to {
-            top: 12vh;
-        }
-    }
-
-    .quote {
-        margin-top:25px;
-        font-family: Simplifica, sans-serif;
-        font-size: 24px;
-        font-weight: 100;
-        padding-bottom: 2vh;
-    }
-
-    .personalMex {
-        font-family: Sukhumvit-Bold;
-        font-weight: 100;
-        font-size:15px;
-        color: #959494;
-
-    }
-
-    .closeMe {position: absolute;
-    top:10px;
-    left:20px;
-    cursor: pointer;}
-form {
-    margin-left:3vw;
 }
-    input {
-        width:60vw;
-        height: 2.3em;
-        margin-bottom: 1em;
-    }
 
-    input.message {
-        height: 27vw;
-    }
+.hideModal {
+    animation: hideModal .5s forwards ease;
+}
 
-    button.submit {
-        border: 1px black solid;
-        padding: 1vh;
-        font-size: 20px;
-        color: #959494;
-        font-family: Simplifica, sans-serif;
-        margin-bottom: 2vh;
-        float:right;
+.showModal {
+    animation: showModal .5s forwards ease;
+}
+
+@keyframes hideModal {
+
+    to {
+        top: -200vh;
+    }
+}
+
+@keyframes showModal {
+    from {
+        top: -200vh;
+        opacity:1;
 
     }
+    to {
+        top: 12vh;
+    }
+}
+
+.quote {
+    margin-top: 25px;
+    font-family: Simplifica, sans-serif;
+    font-size: 24px;
+    font-weight: 100;
+    padding-bottom: 2vh;
+}
+
+.personalMex {
+    font-family: Sukhumvit-Bold;
+    font-weight: 100;
+    font-size: 15px;
+    color: #959494;
+
+}
+
+.closeMe , .closeMeSlide{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    cursor: pointer;
+}
+
+form {
+    margin-left: 3vw;
+}
+
+input {
+    width: 60vw;
+    height: 2.3em;
+    margin-bottom: 1em;
+}
+
+input.message {
+    height: 27vw;
+}
+
+button.submit {
+    border: 1px black solid;
+    padding: 1vh;
+    font-size: 20px;
+    color: #959494;
+    font-family: Simplifica, sans-serif;
+    margin-bottom: 2vh;
+    float: right;
+
+}
 
 /*artist*/
 
@@ -688,6 +703,10 @@ div.menu.fixMe {
         display: block;
     }
 
+    .tabletOnly {
+        display:block;
+    }
+
     /*header*/
     .burger {
         display: none;
@@ -712,7 +731,7 @@ div.menu.fixMe {
 
     }
     /*footer*/
-    .desktopFooter {
+    footer div.desktopFooter {
         display: flex;
         padding-left: 2em;
     }
@@ -766,7 +785,7 @@ div.menu.fixMe {
         width: 200px;
         z-index: 30;
         left: 3vw;
-        top: 36px;
+        top: 33px;
         overflow: hidden;
 
     }
@@ -892,10 +911,13 @@ div.menu.fixMe {
         bottom: 0;
         margin: auto;
         max-width: 50vw;
-        max-height: 53vh;
+        /*max-height: 53vh;*/
     }
 
+    img.sculpture{
+                    padding-bottom:0px;
 
+    }
 
     .gallery div.mainImg {
         display: inline-block;
@@ -903,6 +925,7 @@ div.menu.fixMe {
         margin: auto;
         width: 50vw;
         height: 53vh;
+        cursor:pointer;
     }
 
 
@@ -931,7 +954,7 @@ div.menu.fixMe {
     }
 
     .thumbImg img {
-
+        cursor:pointer;
         max-width: 11vw;
         position: absolute;
         top: 0;
@@ -982,6 +1005,7 @@ div.menu.fixMe {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 4em;
         z-index: 30;
+        opacity:0;
     }
 
     .hideModal {
@@ -993,18 +1017,21 @@ div.menu.fixMe {
     }
 
     @keyframes hideModal {
-        from {top:20vh;}
+        from {
+            top: 20vh;
+        }
         to {
             top: -200vh;
         }
     }
     @keyframes showModal {
         from {
-                        top: -200vh;
+            top: -200vh;
 
         }
         to {
             top: 20vh;
+            opacity: 1;
         }
     }
 
@@ -1022,10 +1049,12 @@ div.menu.fixMe {
 
     }
 
-    .closeMe {position: absolute;
-    top:10px;
-    left:20px;
-    cursor: pointer;}
+    .closeMe {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        cursor: pointer;
+    }
     input {
         width: 30vw;
         height: 2em;
@@ -1043,6 +1072,59 @@ div.menu.fixMe {
         color: #959494;
         font-family: Sukhumvit, sans-serif;
         margin-bottom: 2.5vh;
+
+    }
+    /*slideshow*/
+    div.slideshow {
+        position: relative;
+        z-index: 40;
+        display: block;
+        width: 90vw;
+        background: white;
+        height: 60vh;
+        position: fixed;
+        left: 5vw;
+        border:solid black 1px;
+
+    }
+
+    div.slideshow img.arrowSlide {
+        max-width: 20px;
+        position: absolute;
+        top:160px;
+        padding:5vw;
+    }
+
+    div.slideshow img.slideshowPic {
+        max-width: 60vw;
+
+    }
+
+    div.slideshow img.frwBtn {
+        transform: rotateY(180deg)
+    }
+
+    img.backBtn {
+        right:0;
+    }
+
+    .openSlideshow {
+        animation:openSlideshow .5s forwards ease;
+    }
+
+    .closeSlideshow {
+        animation: closeSlideshow .5s forwards ease;
+    }
+
+    @keyframes openSlideshow{
+        from {
+            top:-200vh;
+        }
+        to {top:15vh;}
+    }
+    @keyframes closeSlideshow{
+
+        to {top:-200vh;}
 
     }
 
@@ -1213,11 +1295,12 @@ div.menu.fixMe {
     }
 
     section span {
-        font-size: 18px
+        font-size: 18px;
     }
 
     img.sculpture {
-        max-width: 45vw
+        max-width: 45vw;
+            padding-bottom:0px;
     }
 
     .thumbNails img {

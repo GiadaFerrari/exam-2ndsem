@@ -119,7 +119,7 @@ function showExhi(exhi) {
 
 
         clone.querySelector('.title').innerHTML = e.acf.gallery_name;
-        clone.querySelector('.address').innerHTML= e.acf.address_of_exhibition
+        clone.querySelector('.address').innerHTML = e.acf.address_of_exhibition
 
         console.log(e.acf.address_of_exhibition)
 
@@ -184,9 +184,6 @@ function showPress(press) {
 
 
 fetchTimeline(expPathEn, showExp)
-
-
-
 fetchTimeline(exhiPathEn, showExhi)
 fetchTimeline(pressPathEn, showPress)
 
@@ -251,15 +248,43 @@ function arrangeOrder() {
 $('.expFilter').on('click', () => {
     main.innerHTML = "<div class='line'></div> "
     fetchTimeline(expPathEn, showExp)
+    $('.expFilter').addClass('active');
+    $('.exhiFilter').removeClass('active');
+    $('.pressFilter').removeClass('active');
+    $('.allFilter').removeClass('active');
+
+
 })
 $('.exhiFilter').on('click', () => {
     main.innerHTML = "<div class='line'></div> "
-    fetchTimeline(exhiPathEn, showExhi)
+    fetchTimeline(exhiPathEn, showExhi);
+    $('.expFilter').removeClass('active');
+    $('.exhiFilter').addClass('active');
+    $('.pressFilter').removeClass('active');
+    $('.allFilter').removeClass('active');
+
 })
 $('.pressFilter').on('click', () => {
     main.innerHTML = "<div class='line'></div> "
     fetchTimeline(pressPathEn, showPress)
+    $('.expFilter').removeClass('active');
+    $('.exhiFilter').removeClass('active');
+    $('.pressFilter').addClass('active');
+    $('.allFilter').removeClass('active');
+
 })
+$('.allFilter').on('click', () => {
+    main.innerHTML = "<div class='line'></div> "
+    fetchTimeline(expPathEn, showExp)
+    fetchTimeline(exhiPathEn, showExhi)
+    fetchTimeline(pressPathEn, showPress)
+    $('.expFilter').removeClass('active');
+    $('.exhiFilter').removeClass('active');
+    $('.pressFilter').removeClass('active');
+    $('.allFilter').addClass('active');
+
+})
+
 
 
 
@@ -270,7 +295,7 @@ $('.enSet').on('click', () => {
     main.innerHTML = "     <div class='line'></div>"
     fetchTimeline(expPathEn, showExp)
     fetchTimeline(exhiPathEn, showExhi)
-fetchTimeline(pressPathEn, showPress)
+    fetchTimeline(pressPathEn, showPress)
 })
 
 $('.itSet').on('click', () => {
