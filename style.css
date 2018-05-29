@@ -477,7 +477,7 @@ aside {
 
 .closeMe , .closeMeSlide{
     position: absolute;
-    top: 10px;
+    top: 40px;
     left: 20px;
     cursor: pointer;
 }
