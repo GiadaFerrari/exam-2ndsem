@@ -1,5 +1,5 @@
-let template = document.querySelector('template').content;
 let main = document.querySelector('main');
+let section = document.querySelector('section');
 let artPathEn = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_en/';
 let artPathIt = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_it/';
 
@@ -21,37 +21,96 @@ function fetchArt(lan) {
 
 function showArt(a) {
 
-    main.innerHTML = ' ';
 
         /*I define my local variables, in which we have the paths to the different images. by having them in variables it s easier to avoid typos*/
-        let clone = template.cloneNode(true);
         let mainPicPath = a.acf.image1.sizes.medium;
-        let thumNail1 = a.acf.image2
-        let thumNail2 = a.acf.image3
-        let thumNail3 = a.acf.image4
-        let thumNail4 = a.acf.image5
-        let thumNail5 = a.acf.image6
 
 
 
-        clone.querySelector('.title').textContent = a.acf.title_of_artwork;
-        clone.querySelector('.year').textContent = "(" + a.acf.year_of_work + ")"
-        clone.querySelector('.height').textContent = a.acf.dimension_height;
-        clone.querySelector('.length').textContent =
+
+        section.querySelector('.title').textContent = a.acf.title_of_artwork;
+        section.querySelector('.year').textContent = "(" + a.acf.year_of_work + ")"
+        section.querySelector('.height').textContent = a.acf.dimension_height;
+        section.querySelector('.length').textContent =
             a.acf.dimension_length;
-        clone.querySelector('.width').textContent = a.acf.dimension_width;
-        clone.querySelector('.sculpture').src = mainPicPath;
+        section.querySelector('.width').textContent = a.acf.dimension_width;
+        section.querySelector('.sculpture').src = mainPicPath;
         /*ask yan about loop
-        for (i=1; 'thumNail'+i == true; i++){
-        clone.createElement('img').src = thumNail+i.sizes.medium
-        }
-       */
+        for (i=1; a.acf.image+i !== Nan; i++){
+            console.log(i)
+         console.log(a.acf.image+i)
+        let image = a.acf.image+i
+        let imageSize = ".sizes.medium"
+        let imgThumb = document.createElement('img')
+        let divThumb = document.createElement('div')
+        let gallery = section.querySelector('.gallery')
 
-        clone.querySelector('.des').nextElementSibling.textContent = a.acf.technical_description;
-        clone.querySelector('.con').nextElementSibling.innerHTML = a.acf.concept;
+        imgThumb.src = image+imageSize
+        divThumb.classList.add('mainImg')
 
+            divThumb.appendChild(imgThumb);
+            gallery.appendChild(divThumb);
 
-        main.appendChild(clone)
+        }*/
+
+       if(a.acf.image2 !== false){
+        let imgThumb = document.createElement('img')
+        let divThumb = document.createElement('div')
+        let gallery = section.querySelector('.gallery')
+
+        imgThumb.src = a.acf.image2.sizes.medium
+        divThumb.classList.add('mainImg')
+
+            divThumb.appendChild(imgThumb);
+            gallery.appendChild(divThumb);
+       }
+      if(a.acf.image3 !== false){
+        let imgThumb = document.createElement('img')
+        let divThumb = document.createElement('div')
+        let gallery = section.querySelector('.gallery')
+
+        imgThumb.src = a.acf.image3.sizes.medium
+        divThumb.classList.add('mainImg')
+
+            divThumb.appendChild(imgThumb);
+            gallery.appendChild(divThumb);
+       }
+         if(a.acf.image4 !== false){
+        let imgThumb = document.createElement('img')
+        let divThumb = document.createElement('div')
+        let gallery = section.querySelector('.gallery')
+
+        imgThumb.src = a.acf.image4.sizes.medium
+        divThumb.classList.add('mainImg')
+
+            divThumb.appendChild(imgThumb);
+            gallery.appendChild(divThumb);
+       }
+      if(a.acf.image5 !== false){
+        let imgThumb = document.createElement('img')
+        let divThumb = document.createElement('div')
+        let gallery = section.querySelector('.gallery')
+
+        imgThumb.src = a.acf.image5.sizes.medium
+        divThumb.classList.add('mainImg')
+
+            divThumb.appendChild(imgThumb);
+            gallery.appendChild(divThumb);
+       }
+      if(a.acf.image6 !== false){
+        let imgThumb = document.createElement('img')
+        let divThumb = document.createElement('div')
+        let gallery = section.querySelector('.gallery')
+
+        imgThumb.src = a.acf.image6.sizes.medium
+        divThumb.classList.add('mainImg')
+
+            divThumb.appendChild(imgThumb);
+            gallery.appendChild(divThumb);
+       }
+
+        section.querySelector('.des').nextElementSibling.textContent = a.acf.technical_description;
+        section.querySelector('.con').nextElementSibling.innerHTML = a.acf.concept;
 
     }
 
@@ -59,7 +118,33 @@ function showArt(a) {
 
 fetchArt(artPathEn);
 
+/*modal*/
 
+    let inquireBtns = document.querySelectorAll('button.inquire')
+
+    inquireBtns.forEach((btn) => {
+
+        btn.addEventListener('click', () => {
+            console.log('i m showing modal')
+            $('aside').toggleClass('hideModal')
+            $('aside').toggleClass('showModal')
+
+        })
+
+
+    })
+
+
+
+$('.closeMe').on('click', closeModal)
+
+function closeModal(){
+
+
+    $('aside').toggleClass('hideModal')
+    $('aside').toggleClass('showModal')
+
+}
 
 
 /*language setting*/

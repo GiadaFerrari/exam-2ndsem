@@ -11,24 +11,25 @@
 </head>
 
 <body>
-   <header>  <span class="lan"><button class="enSet active">EN</button>/ <button class="itSet">IT</button></span><a href="index.html"><img src="images/logo.svg" alt="logo" class="logo"></a>
+    <header> <span class="lan"><button class="enSet lanactive">EN</button>/ <button class="itSet">IT</button></span><a href="index.html"><img src="images/logo.svg" alt="logo" class="logo"></a>
 
         <!-- cannot use this svg we need to make one-->
         <img class="burger" src="images/menu.svg" alt="burger">
         <div class="navMenu closeNav">
 
-            <nav>
+             <nav>
                 <a href="index.html" class="hide active">home</a>
-                <a href="artist.html"><span class="eng">who am I</span><span class="ita hide">chi sono</span></a>
                 <a href="art.html"><span class="eng">my art</span><span class="ita hide">la mia arte</span></a>
+                <a href="artist.html"><span class="eng">who am I</span><span class="ita hide">chi sono</span></a>
                 <div class="timeline">
-                <a class="timelineNav" href="timeline.html"><span class="eng">my timeline</span><span class="ita hide">la mia cronologia</span></a>
-                <div class="subMenu closeMe">
-                    <a href="timeline.html"><span class="eng">experiences</span><span class="ita hide">esperienze</span></a>
-                    <a href="timeline.html"><span class="eng">exhibitions</span><span class="ita hide">mostre</span></a>
-                    <a href="timeline.html"><span class="eng">press coverage</span><span class="ita hide">stampa</span></a>
-                    <a href="timeline.html"><span class="eng">all</span><span class="ita hide">tutti</span></a>
-                </div></div>
+                    <a class="timelineNav" href="timeline.html"><span class="eng">my timeline</span><span class="ita hide">la mia cronologia</span></a>
+                    <div class="subMenu closeMe">
+                        <a href="timeline.html"><span class="eng">experiences</span><span class="ita hide">esperienze</span></a>
+                        <a href="timeline.html"><span class="eng">exhibitions</span><span class="ita hide">mostre</span></a>
+                        <a href="timeline.html"><span class="eng">press coverage</span><span class="ita hide">stampa</span></a>
+                        <a href="timeline.html"><span class="eng">all</span><span class="ita hide">tutti</span></a>
+                    </div>
+                </div>
 
 
 
@@ -41,34 +42,48 @@
     <main>
 
     </main>
+    <aside class="modal hideModal">
+       <div class="closeMe">X</div>
+        <div>
+            <p class="quote"><span class="eng">“My art is like a baby. My creations are shapes that tell stories through metaphores and figures of speech."</span><span class="ita hide">"La mia arte é come un bambino. Le mie creazioni sono forme che raccontano torie attraverso metafore e figure retoriche"</span></p>
+            <p class="personalMex"> <span class="eng">Thank you for showing your interesest in my art. I will be more than happy to answer all of your questions and per your request provide you with more detailed images and videos about my art. If you would like to view the art piece or organize an art exhibition let me know the date and time and we will arrange a meeting.</span><span class="ita hide">Grazie per esserti interessato alla mia arte. Sarò piu che felice di rispondere qualsiasi domanda e se richieste posso fornire piu immagini e video della mia arte. Se vorrete organizzare una mostra lasciatemi data e orario e organizzeremo un incontro.</span></p>
+            <img src="images/" alt="signature" class="signature">
+        </div>
+        <div>
+            <form>
+                <span class="eng">Name</span><span class="ita hide">Nome</span>:<br><input type="text" name="fname"><br> E-mail: <br><input type="text" name="lname"><br><span class="eng">Message</span> <span class="ita hide">Messaggio</span>:<br><input class="message" type="text" name="lname"><br>
+<button class="submit"><span class="en">SUBMIT</span><span class="ita hide">INVIA</span></button>            </form>
+        </div>
+    </aside>
 
-
-<template>
+    <template>
       <section>
-            <a href="">
+
                 <h1><span class="title"></span><span class="year"></span></h1>
                 <h4 class="dimension"><span class="height"></span>cmx
                 <span class="length"></span>cmx
-                <span class="width"></span>cm</h4>
-                <div class="gallery">
-                <img class="sculpture" src="" alt="sculpture">
+                    <span class="width"></span>cm</h4>
+                <div class="gallery"><div class="mainImg">
+                <img class="sculpture" src="" alt="sculpture"></div>
+
                 <div class="thumbNails">
 
-                       <!--create images elements with js wehn image exists -->
+                       <!--create images elements with js when image exists -->
 
                     </div></div>
                 <div class="desktopOnly">
-                    <h3 class="des">description:</h3>
+                    <h3 class="des">Description:</h3>
                     <p></p>
-                    <h3 class="con">concept:</h3>
-                    <p>
+                    <h3 class="con">Concept:</h3>
+                    <p class="concept">
                     </p>
-                <button class="inquire"><span class="en">INQUIRE</span><span class="it hide">INFORMATI</span></button>
+                <button class="inquire"><span class="en">Inquire</span><span class="ita hide">Informati</span></button>
 
-                </div>
+                </div><a href="">
+          <div class="more">more<img src="images/more-arrow.svg" alt="more" class="arrow"> </div></a>
 
             <div class="centerMe">
-                <img src="images/separate.svg" alt="separator"></div>            </a>
+                <img src="images/separate.svg" alt="separator"></div>
 
         </section>
 </template>
@@ -79,12 +94,18 @@
 
 
 
-<footer>Copyright &#9400; 2018 Gabriele Nicola
-<div class="footerIcons"><img src="images/email-footer.svg" alt="e-mail">
-<img src="images/insta-footer.svg" alt="instagram">
-<img src="images/linkedin-footer.png" alt="linkedin">
-</div>
-</footer>
+
+    <footer><div class="footer copy">Copyright &#9400; 2018 Gabriele Nicola</div>
+        <div class="footerIcons">
+          <div class="footer desktopFooter">Mail:</div>
+           <img src="images/email-footer.svg" alt="e-mail">
+                     <div class="footer desktopFooter">Follow me:</div>
+
+            <img src="images/insta-footer.svg" alt="instagram">
+            <img src="images/linkedin-footer.png" alt="linkedin" class="linkedin">
+        </div>
+    </footer>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="script.js"></script>
     <script src="art.js"></script>

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header>  <span class="lan"><button class="enSet active">EN</button>/ <button class="itSet">IT</button></span><a href="index.html"><img src="images/logo.svg" alt="logo" class="logo"></a>
+    <header>  <span class="lan"><button class="enSet lanactive">EN</button>/ <button class="itSet">IT</button></span><a href="index.html"><img src="images/logo.svg" alt="logo" class="logo"></a>
 
         <!-- cannot use this svg we need to make one-->
         <img class="burger" src="images/menu.svg" alt="burger">
@@ -19,16 +19,17 @@
 
             <nav>
                 <a href="index.html" class="hide active">home</a>
-                <a href="artist.html"><span class="eng">who am I</span><span class="ita hide">chi sono</span></a>
                 <a href="art.html"><span class="eng">my art</span><span class="ita hide">la mia arte</span></a>
+                <a href="artist.html"><span class="eng">who am I</span><span class="ita hide">chi sono</span></a>
                 <div class="timeline">
-                <a class="timelineNav" href="timeline.html"><span class="eng">my timeline</span><span class="ita hide">la mia cronologia</span></a>
-                <div class="subMenu closeMe">
-                    <a href="timeline.html"><span class="eng">experiences</span><span class="ita hide">esperienze</span></a>
-                    <a href="timeline.html"><span class="eng">exhibitions</span><span class="ita hide">mostre</span></a>
-                    <a href="timeline.html"><span class="eng">press coverage</span><span class="ita hide">stampa</span></a>
-                    <a href="timeline.html"><span class="eng">all</span><span class="ita hide">tutti</span></a>
-                </div></div>
+                    <a class="timelineNav" href="timeline.html"><span class="eng">my timeline</span><span class="ita hide">la mia cronologia</span></a>
+                    <div class="subMenu closeMe">
+                        <a href="timeline.html"><span class="eng">experiences</span><span class="ita hide">esperienze</span></a>
+                        <a href="timeline.html"><span class="eng">exhibitions</span><span class="ita hide">mostre</span></a>
+                        <a href="timeline.html"><span class="eng">press coverage</span><span class="ita hide">stampa</span></a>
+                        <a href="timeline.html"><span class="eng">all</span><span class="ita hide">tutti</span></a>
+                    </div>
+                </div>
 
 
 
@@ -43,20 +44,7 @@
 
     <main>
 
-
-    </main>
-
-
-
-
-    <footer>Copyright &#9400; 2018 Gabriele Nicola
-        <div class="footerIcons"><img src="" alt="e-mail">
-            <img src="" alt="facebook">
-            <img src="" alt="instagram"></div>
-    </footer>
-
-    <template>
-     <section>
+     <section class="subPageS">
 
                 <h1><span class="title"></span> <span class="year"></span></h1>
 <h4 class="dimension"><span class="height"></span>cmx
@@ -69,18 +57,48 @@
                     <p>
                     </p>
 
-                      <button class="inquire">INQUIRE</button>
-                       <div class="gallery">
-                <img class="sculpture" src="" alt="sculpture">
+                      <button class="inquire">Inquire</button>
+                       <div class="gallery"><div class="mainImg">
+                <img class="sculpture" src="" alt="sculpture"></div>
 
 
                     </div>
 
             <div class="centerMe">
                 <img src="images/separate.svg" alt="separator"></div>
+
         </section>
 
-</template>
+
+
+
+    </main>
+<aside class="modal hideModal">
+       <div class="closeMe">X</div>
+        <div>
+            <p class="quote"><span class="eng">“Thank you for showing interest in my art"</span><span class="ita hide">"Grazie per il tuo interesse"</span></p>
+            <p class="personalMex"> <span class="eng">I will be more than happy to answer all of your quetions a per your request, to provide you with more images and videos about my art.</span><span class="ita hide">Sarà un mio piacere rispondere a qualsiasi domanda, o mandarVi una rassegna di ulteriori foto dei miei lavori.</span></p>
+            <img src="images/" alt="signature" class="signature">
+        </div>
+        <div>
+            <form>
+                <span class="eng">Name</span><span class="ita hide">Nome</span>:<br><input type="text" name="fname"><br> E-mail: <br><input type="text" name="lname"><br><span class="eng">Message</span> <span class="ita hide">Messaggio</span>:<br><input class="message" type="text" name="lname"><br>
+<button class="submit"><span class="en">Submit</span><span class="ita hide">INVIA</span></button>            </form>
+        </div>
+    </aside>
+
+
+
+    <footer><div class="footer copy">Copyright &#9400; 2018 Gabriele Nicola</div>
+        <div class="footerIcons">
+          <div class="footer ">Mail:</div>
+           <img src="images/email-footer.svg" alt="e-mail">
+                     <div class="footer">Follow me:</div>
+
+            <img src="images/insta-footer.svg" alt="instagram">
+            <img src="images/linkedin-footer.png" alt="linkedin" class="linkedin">
+        </div>
+    </footer>
 
 
 
