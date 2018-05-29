@@ -987,6 +987,7 @@ div.menu.fixMe {
         padding: .1vh;
 
     }
+    h3.con {padding-top: 2vh;}
 
     .concept {
         max-height: 35vh;
@@ -1155,6 +1156,7 @@ div.menu.fixMe {
         position: static;
         font-size: 38px;
         padding: 0;
+        padding-left: 1vw;
 
     }
     .aboutContent p,
