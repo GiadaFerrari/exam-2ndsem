@@ -9,9 +9,7 @@ let engText = document.querySelectorAll('.eng')
 let itaSample = document.querySelector('.ita')
 let engSample = document.querySelector('.eng')
 
-// get the language setting in the URL
-let originalUrl = new URLSearchParams(window.location.search);
-let languageSet = originalUrl.get("lang");
+
 
 // get the navigation buttons, need them later to get get original href, so that the language setting can to passed to these
 let naviHome = document.querySelector('#navHome');
@@ -87,10 +85,40 @@ function languageChosen(l){
     }
 }
 
-if(languageSet == "it" || languageChosen == "it"){
+// get the language setting in the URL
+let originalUrl = new URLSearchParams(window.location.search);
+let languageSet = originalUrl.get("lang");
+if(!languageSet || languageSet == "en" || languageChosen == "en"){
+    naviHome.setAttribute('href', 'index.html?lang=en');
+    naviArtist.setAttribute('href', 'artist.html?lang=en');
+    naviPortforlio.setAttribute('href', 'art.html?lang=en');
+    naviTimeline.setAttribute('href', 'timeline.html?lang=en');
+    naviExhibition.setAttribute('href', 'timeline.html?lang=en');
+    naviExperience.setAttribute('href', 'timeline.html?lang=en');
+    naviPress.setAttribute('href', 'timeline.html?lang=en');
+    naviAll.setAttribute('href', 'timeline.html?lang=en');
+} else if(languageSet == "it" || languageChosen == "it"){
+    itaText.forEach((ita) => {
+        ita.classList.toggle('hide')
+    })
+    engText.forEach((eng) => {
+        eng.classList.toggle('hide')
+    });
+
+    $('.itSet').toggleClass('lanactive');
+    $('.enSet').toggleClass('lanactive');
+
+    naviHome.setAttribute('href', 'index.html?lang=it');
+    naviArtist.setAttribute('href', 'artist.html?lang=it');
+    naviPortforlio.setAttribute('href', 'art.html?lang=it');
+    naviTimeline.setAttribute('href', 'timeline.html?lang=it');
+    naviExhibition.setAttribute('href', 'timeline.html?lang=it');
+    naviExperience.setAttribute('href', 'timeline.html?lang=it');
+    naviPress.setAttribute('href', 'timeline.html?lang=it');
+    naviAll.setAttribute('href', 'timeline.html?lang=it');
+} else {
+
 }
-
-
 
 function setLanguage(e) {
 
