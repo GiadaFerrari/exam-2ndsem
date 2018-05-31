@@ -20,7 +20,9 @@
     src: url(fonts/SukhumvitSet-Bold.ttf);
 }
 
-
+body {
+    position: relative;
+}
 
 .hide {
     display: none;
@@ -184,14 +186,15 @@ header {
     background: white;
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: 100%;
+    height: 70px;
     z-index: 20;
 }
 
 .logo {
-    width: 30px;
+    width: 50px;
     float: right;
-    padding: 1em;
+    padding: 1em 5%;
 }
 
 
@@ -199,7 +202,7 @@ header {
 
 .burger {
     width: 25px;
-    padding: 1em;
+    padding: 25px 1em 0 5%;
 }
 
 .navMenu {
@@ -221,7 +224,7 @@ nav a {
     color: black;
     text-decoration: none;
     display: block;
-    padding-left: 2em;
+    padding-left: 5vw;
     padding-bottom: .6em;
     font-size: 30px;
 
@@ -231,8 +234,8 @@ nav a {
 .lan {
     float: right;
     position: fixed;
-    top: 15px;
-    right: 80px;
+    top: 26px;
+    right: 100px;
     z-index: 20;
 }
 
@@ -272,8 +275,8 @@ nav a {
 
 .subMenu {
     position: absolute;
-    left: 10vw;
-    width: 50vw;
+    left: 5%;
+    width: 100%;
 }
 
 .subMenu:hover {
@@ -309,14 +312,13 @@ div.captionHome h4 {
 /*the art*/
 
 main {
-    margin-top: 8vh;
+    margin-top: 70px;
     padding-bottom: 5vw;
 }
 
 section {
-    max-width: 91vw;
-    height: 65vh;
-    padding: 3vw;
+    height: 70vh;
+    padding: 0 5%;
     margin: 0;
 }
 
@@ -342,7 +344,6 @@ section span {
 
 div.more {
     float: right;
-    padding-right: 5vw;
     margin: 10px;
     align-items: center;
     display: flex;
@@ -363,7 +364,7 @@ div.more {
 
 .gallery div.mainImg {
     position: relative;
-    width: 90vw;
+    width: 100%;
     height: 40vh;
     overflow: hidden;
 }
@@ -375,7 +376,6 @@ div.mainImg img {
     right: 0;
     bottom: 0;
     margin: auto;
-    margin-top: 2vh;
 }
 
 img.sculpture {
@@ -477,7 +477,7 @@ aside {
 
 .closeMe , .closeMeSlide{
     position: absolute;
-    top: 30px;
+    top: 40px;
     left: 30px;
     cursor: pointer;
 }
@@ -513,23 +513,27 @@ button.submit {
     background-image: url(images/gabriele-nicola-artists_boulevard-world-genius.jpg);
     background-size: contain;
     background-repeat: no-repeat;
-    height: 43vh;
+    height: 100vw;
+    max-height: 768px;
     width: 100%;
     position: relative;
-    margin-bottom: 10vh;
-
 }
 
 .mobileArtist img {
     width: 15px;
-    padding: .2em;
+    padding-left: 5%;
+}
+.mail img {
+    width: 13px;
+}
+.loc img {
+    opacity: .8;
 }
 
 .mobileArtist img.play {
     width: 50px;
     position: absolute;
-    bottom: 70px;
-    left: 15vw;
+    top: 230px;
 }
 
 .loc p,
@@ -539,20 +543,19 @@ button.submit {
 }
 
 .mobileArtist div {
-    padding-left: 10px;
     padding-bottom: .5em;
 }
 
 .mobileArtist div:nth-child(1) {
-    padding-top: 4em;
+    padding-top: 120px;
 }
 
 div.caption {
     padding-bottom: 2em;
-    padding-left: 5vw;
+    padding-left: 5%;
     padding-top: .5em;
     position: absolute;
-    bottom: -90px;
+    top: 79vw;
 }
 
 .caption p {
@@ -565,14 +568,14 @@ div.caption {
 
 .aboutContent p,
 .aboutContent span {
-    padding: 5vw;
+    padding: 5%;
     padding-top: 1vw;
 }
 
 h1.gn {
     position: absolute;
     top: 79px;
-    padding-left: 15px;
+    padding-left: 5%;
     font-weight: 100;
     font-size: 28px;
 }
@@ -601,34 +604,35 @@ div.line {
 }
 
 div.menu {
-    width: 100vw;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 4vw;
-    position: absolute;
-    top: 19vw;
-    padding-left: 3vh
+    grid-gap: 4%;
+    position: fixed;
+    top: 70px;
+    padding: 30px 0 0 4%;
 }
 
 .menu div {
     position: relative;
+    margin-bottom: 20px;
 }
 
 div.menuDot {
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
     border-radius: 100%;
     position: absolute;
     top: 5px;
 }
 
 .menu div h2 {
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 main.timeline {
     padding-left: 5vw;
-    margin-top: 55vw
+    margin-top: 270px;
 }
 
 article {
@@ -639,9 +643,10 @@ article {
 
 .dot {
     position: absolute;
-    left: -1vw;
-    width: 10px;
-    height: 10px;
+    left: -7px;
+    top: -2px; /* to cover the top of the black line */
+    width: 14px;
+    height: 14px;
     border-radius: 100%;
     z-index: 10;
 }
@@ -687,17 +692,12 @@ article h3 {
 
 
 div.menu.fixMe {
-    position: fixed;
-    top: 8vh;
     background: white;
-    z-index: 40;
-    padding-top: 2vh;
-    padding-bottom: .5vh;
-
+    z-index: 19;  /* should be below the main manu, but on top of other things */
 }
 
 
-@media screen and (min-width:509px) {
+@media screen and (min-width:769px) {
 
     .desktop {
         display: block;
@@ -1422,4 +1422,11 @@ div.menu.fixMe {
     }
 
 
+}
+
+@media screen and (min-width: 1441px) {
+    body {
+        width: 1440px;
+        margin-left: calc(50vw - 720px);
+    }
 }
