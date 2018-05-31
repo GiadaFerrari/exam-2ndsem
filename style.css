@@ -477,8 +477,8 @@ aside {
 
 .closeMe , .closeMeSlide{
     position: absolute;
-    top: 40px;
-    left: 20px;
+    top: 30px;
+    left: 30px;
     cursor: pointer;
 }
 
@@ -911,7 +911,7 @@ div.menu.fixMe {
         bottom: 0;
         margin: auto;
         max-width: 45vw;
-        /*max-height: 53vh;*/
+        max-height: 53vh;
     }
 
     img.sculpture{
@@ -1101,12 +1101,15 @@ div.menu.fixMe {
 
     }
 
-    div.slideshow img.frwBtn {
-        transform: rotateY(180deg)
+    div.slideshow img.bckBtn {
+        transform: rotateY(180deg);
+            cursor:pointer;
     }
 
-    img.backBtn {
+    img.frwBtn {
         right:0;
+        cursor:pointer;
+
     }
 
     .openSlideshow {
@@ -1397,6 +1400,25 @@ div.menu.fixMe {
             margin-left: 1.5vw;
 
         }
+    }
+
+    /*slideshow*/
+        div.slideshow {
+
+        width: 70vw;
+        height: 80vh;
+        left: 15vw;
+
+    }
+
+    div.slideshow img.arrowSlide {
+        max-width: 25px;
+        top:200px;
+    }
+
+    div.slideshow img.slideshowPic {
+        max-width: 60vw;
+
     }
 
 

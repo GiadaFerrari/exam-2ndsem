@@ -12,7 +12,7 @@ function fetchArt(lan) {
     lookingForData = true;
     console.log('i am fetching from' + lan)
 
-    fetch(lan+page).then(e => e.json()).then(showArt)
+    fetch(lan + page).then(e => e.json()).then(showArt)
 
 }
 
@@ -50,7 +50,7 @@ function showArt(art) {
             let divThumb = document.createElement('div')
             let thumbGallery = clone.querySelector('.thumbNails')
 
-            imgThumb.src = a.acf.image2.sizes.medium
+            imgThumb.src = a.acf.image2.sizes.large
             divThumb.classList.add('thumbImg')
             divThumb.appendChild(imgThumb);
             thumbGallery.appendChild(divThumb);
@@ -60,7 +60,7 @@ function showArt(art) {
             let divThumb = document.createElement('div')
             let thumbGallery = clone.querySelector('.thumbNails')
 
-            imgThumb.src = a.acf.image3.sizes.thumbnail
+            imgThumb.src = a.acf.image3.sizes.large
             divThumb.classList.add('thumbImg')
 
             divThumb.appendChild(imgThumb);
@@ -71,7 +71,7 @@ function showArt(art) {
             let divThumb = document.createElement('div')
             let thumbGallery = clone.querySelector('.thumbNails')
 
-            imgThumb.src = a.acf.image4.sizes.thumbnail
+            imgThumb.src = a.acf.image4.sizes.large
             divThumb.classList.add('thumbImg')
             divThumb.appendChild(imgThumb);
             thumbGallery.appendChild(divThumb);
@@ -81,7 +81,7 @@ function showArt(art) {
             let divThumb = document.createElement('div')
             let thumbGallery = clone.querySelector('.thumbNails')
 
-            imgThumb.src = a.acf.image5.sizes.thumbnail
+            imgThumb.src = a.acf.image5.sizes.large
             divThumb.classList.add('thumbImg')
             divThumb.appendChild(imgThumb);
             thumbGallery.appendChild(divThumb);
@@ -91,7 +91,7 @@ function showArt(art) {
             let divThumb = document.createElement('div')
             let thumbGallery = clone.querySelector('.thumbNails')
 
-            imgThumb.src = a.acf.image6.sizes.thumbnail
+            imgThumb.src = a.acf.image6.sizes.large
             divThumb.classList.add('thumbImg')
             divThumb.appendChild(imgThumb);
             thumbGallery.appendChild(divThumb);
@@ -116,7 +116,7 @@ fetchArt(artPathEn);
 
 
 $('.enSet').on('click', () => {
-        main.innerHTML = " "
+    main.innerHTML = " "
 
     fetchArt(artPathEn)
 })
@@ -150,7 +150,7 @@ function setInquire() {
 $('.submit').on('click', closeModal)
 $('.closeMe').on('click', closeModal)
 
-function closeModal(){
+function closeModal() {
 
 
     $('aside').toggleClass('hideModal')
@@ -159,28 +159,83 @@ function closeModal(){
 }
 
 /*slideshow*/
-setTimeout(fillSlide, 2000)
+setTimeout(placeClick, 2000)
 
-function fillSlide(){
+function placeClick() {
 
-let sections = document.querySelectorAll('section')
+    let sections = document.querySelectorAll('section')
+    console.log(sections)
 
-sections.forEach((s)=>{
+    sections.forEach((s) => {
+        let imgsArray = [];
 
-    s.querySelector('.mainImg').addEventListener('click', openSlide)
-    s.querySelectorAll('.thumbNails img').forEach((t)=>{t.addEventListener('click', openSlide)})
+        s.querySelectorAll(".gallery img").forEach((img) => {
+            let imgSrc = img.src;
+            imgsArray.push(imgSrc);
+            img.addEventListener('click', function () {
+                openSlide(imgSrc)
+            })
+            /*how to find out the indedx ofeach pic*/
+
+        })
+
+        function openSlide(src) {
+            $('.slideshow').addClass('openSlideshow');
+            $('.slideshow').removeClass('closeSlideshow');
+            document.querySelector('.imgSlide').src = src;
+            $('.bckBtn').on('click', function () {
+                scrollSlideBack()
+            });
+              $('.frwBtn').on('click', function () {
+                scrollSlideFrw()
+            });
+        }
+
+        function scrollSlideFrw() {
+            console.log('FRW me')
+            let arrayLength = imgsArray.length
+            let index = imgsArray.indexOf(document.querySelector('.imgSlide').src);
+            console.log(index)
+            if (index === arrayLength-1) {
+
+                let newIndex = 0;
+                console.log(newIndex)
+                document.querySelector('.imgSlide').src = imgsArray[newIndex]
+
+            } else {
+
+
+             document.querySelector('.imgSlide').src = imgsArray[index+1];
+            }
 
 
 
+        }
+        function scrollSlideBack() {
+            let arrayLength = imgsArray.length
+            let index = imgsArray.indexOf(document.querySelector('.imgSlide').src);
+            if (index === 0) {
 
-})
+                let newIndex = index + arrayLength - 1;
+                console.log(newIndex)
+                document.querySelector('.imgSlide').src = imgsArray[newIndex]
+
+            } else {
+
+
+             document.querySelector('.imgSlide').src = imgsArray[index-1];
+            }
+
+
+
+        }
+
+    })
+
 }
 
-function openSlide(){$('.slideshow').addClass('openSlideshow');
-    $('.slideshow').removeClass('closeSlideshow')}
-
-$('.closeMeSlide').on('click', ()=>{
-   $('.slideshow').removeClass('openSlideshow');
+$('.closeMeSlide').on('click', () => {
+    $('.slideshow').removeClass('openSlideshow');
     $('.slideshow').addClass('closeSlideshow');
 })
 
@@ -189,19 +244,22 @@ $('.closeMeSlide').on('click', ()=>{
 
 this function was given to us by JOnas during the semester to calculate when we reached the bottom of the page*/
 
-function loadMore(){
+function loadMore() {
 
 
-    if(bottomVisible() && lookingForData===false){
+    if (bottomVisible() && lookingForData === false) {
         page++
-        fetchArt(artPathEn);}
+        fetchArt(artPathEn);
+    }
 }
 
-setInterval(loadMore,100)
+setInterval(loadMore, 100)
 
-if (bottomVisible()){clearInterval(loadMore, 100)};
+if (bottomVisible()) {
+    clearInterval(loadMore, 100)
+};
 
-function bottomVisible(){
+function bottomVisible() {
     const scrollY = window.scrollY;
     const visible = document.documentElement.clientHeight;
     const pageHeight = document.documentElement.scrollHeight;
