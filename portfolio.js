@@ -2,7 +2,7 @@ let template = document.querySelector('template').content;
 let page = 1;
 let wrapper = document.querySelector('body');
 let lookingForData = false;
-
+let defaultPath;
 // get the language setting in the URL. these 2 are already set in main.js, so remove from here
 //let Urlpassed = new URLSearchParams(window.location.search);
 //let languagePassed = Urlpassed.get("lang");
@@ -11,7 +11,7 @@ if(!languagePassed){
     languagePassed = "en";
 }
 // fetch data based on language
-let defaultPath = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_' + languagePassed + '?_embed&order=asc&per_page=3&page=';
+defaultPath = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_' + languagePassed + '?_embed&order=asc&per_page=3&page=';
 
 fetchArt(defaultPath);
 
@@ -99,6 +99,7 @@ function showArts(arts){
 function loadMore() {
     if (bottomVisible() && lookingForData === false) {
         page++;
+        defaultPath = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_' + languagePassed + '?_embed&order=asc&per_page=3&page=';
         fetchArt(defaultPath);
     }
 }
