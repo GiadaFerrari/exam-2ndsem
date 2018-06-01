@@ -187,6 +187,8 @@ fetchTimeline(expPathEn, showExp)
 fetchTimeline(exhiPathEn, showExhi)
 fetchTimeline(pressPathEn, showPress)
 
+/*
+
 let line = document.querySelector('.line')
 
 setTimeout(() => {
@@ -194,7 +196,7 @@ setTimeout(() => {
 }, 500)
 
 
-/*scroll*/
+
 
 window.addEventListener('scroll', checkScroll)
 
@@ -209,6 +211,7 @@ function checkScroll() {
 
 }
 
+*/
 
 /*I took this basic function from stackoverflow https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly. It's fucntionality is to reorder numbers in an descendent way, and I will implement it in my code in order to order articles by date.
 

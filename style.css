@@ -117,10 +117,9 @@ footer img:nth-child(3) {
 
 }
 
-main {
+body:not(#homepage) {
     background: linear-gradient(to bottom, #ffffff 0%, #f0f2f5 30%, #ffffff 100%);
-    max-width: 100vw;
-    height: 100vh;
+    max-width: 100%;
 }
 
 /*we are using the mobile-first approach, which means that from here on the code is for the mobile, and the specifications for desktop are gonna be contained in the media query*/
@@ -1502,23 +1501,28 @@ div.menu.fixMe {
     }
     /*timeline*/
     div.line {
+        position: fixed;
+        top: 150px;
         left: 40vw;
+        height: calc(100vh - 190px);
     }
     div.menu {
-
-        display: flex;
-        width: 100vw;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
         justify-content: space-around;
-        top: 130px;
         left: 0;
+
+        background: white;
+        z-index: 11;
     }
+
     article {
         width: 34vw;
 
     }
 
     main.timeline {
-        margin-top: 34.6vh;
+        margin-top: 200px;
         padding-left: 0;
     }
 
@@ -1550,7 +1554,7 @@ div.menu.fixMe {
     }
 
     /*slideshow*/
-        div.slideshow {
+    div.slideshow {
 
         width: 70vw;
         height: 80vh;
@@ -1565,7 +1569,6 @@ div.menu.fixMe {
 
     div.slideshow img.slideshowPic {
         max-width: 60vw;
-
     }
 
 
