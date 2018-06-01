@@ -1,18 +1,27 @@
 let template = document.querySelector('template').content;
 let page = 1;
 let main = document.querySelector('main');
+let lookingForData = false;
+
+// get the language setting in the URL
+let Urlpassed = new URLSearchParams(window.location.search);
+let languagePassed = Urlpassed.get("lang");
+// fetch data based on language setting in the url
+let defaultPath = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_' + languagePassed + '?_embed&order=asc&per_page=3&page=';
+fetchArt(defaultPath);
+
+
+
+
 let artPathEn = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_en?_embed&order=asc&per_page=3&page=';
 let artPathIt = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_it?_embed&order=asc&per_page=3&page=';
-let lookingForData = false;
 
 
 /*REST API*/
 
-function fetchArt(lan) {
+function fetchArt(path) {
     lookingForData = true;
-    console.log('i am fetching from' + lan)
-
-    fetch(lan + page).then(e => e.json()).then(showArt)
+    fetch(path + page).then(e => e.json()).then(showArt)
 
 }
 
@@ -108,13 +117,10 @@ function showArt(art) {
 
 }
 
-fetchArt(artPathEn);
 
 
 
 /*language setting*/
-
-
 $('.enSet').on('click', () => {
     main.innerHTML = " "
 
@@ -164,7 +170,6 @@ setTimeout(placeClick, 2000)
 function placeClick() {
 
     let sections = document.querySelectorAll('section')
-    console.log(sections)
 
     sections.forEach((s) => {
         let imgsArray = [];
@@ -249,7 +254,7 @@ function loadMore() {
 
     if (bottomVisible() && lookingForData === false) {
         page++
-        fetchArt(artPathEn);
+        fetchArt(defaultPath);
     }
 }
 
