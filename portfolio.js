@@ -9,7 +9,6 @@ let lookingForData = false;
 // if there is no language argument in the URL, set it to english version
 if(!languagePassed){
     languagePassed = "en";
-
 }
 // fetch data based on language
 let defaultPath = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_' + languagePassed + '?_embed&order=asc&per_page=3&page=';
@@ -38,6 +37,22 @@ function showArts(arts){
 
 //        clone.querySelector('section a').href = "Subpage.html?id=" + a.id;
 
+        // set which h3 and Inquire/share to use
+        if(languagePassed == "en"){
+            clone.querySelector('.description .eng').classList.remove('hide');
+            clone.querySelector('.description .ita').classList.add('hide');
+            clone.querySelector('.concept .eng').classList.remove('hide');
+            clone.querySelector('.concept .ita').classList.add('hide');
+            clone.querySelector('.inquire .eng').classList.remove('hide');
+            clone.querySelector('.inquire .ita').classList.add('hide');
+        } else if(languagePassed == "it"){
+            clone.querySelector('.description .ita').classList.remove('hide');
+            clone.querySelector('.description .eng').classList.add('hide');
+            clone.querySelector('.concept .ita').classList.remove('hide');
+            clone.querySelector('.concept .eng').classList.add('hide');
+            clone.querySelector('.inquire .ita').classList.remove('hide');
+            clone.querySelector('.inquire .eng').classList.add('hide');
+        }
         clone.querySelector('h1.title').innerHTML = eachArt.acf.title_of_artwork;
         clone.querySelector('.year-of-creation').textContent = "( " + eachArt.acf.year_of_work + " )"
         clone.querySelector('.height').textContent = eachArt.acf.dimension_height;
@@ -93,14 +108,16 @@ function bottomVisible() {
 document.querySelector('.enSet').addEventListener('click', changeToEn);
 document.querySelector('.itSet').addEventListener('click', changeToIt);
 function changeToEn(){
+    languagePassed = "en";
     // remove exsisting section from previous fetch
     document.querySelectorAll('section').forEach(function(a){a.remove()});
     let path = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_en?_embed&order=asc&per_page=3&page=';
-    fetchArt(path)
+    fetchArt(path);
 }
 function changeToIt(){
+    languagePassed = "it";
     // remove exsisting section from previous fetch
     document.querySelectorAll('section').forEach(function(a){a.remove()});
     let path = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_it?_embed&order=asc&per_page=3&page=';
-    fetchArt(path)
+    fetchArt(path);
 }
