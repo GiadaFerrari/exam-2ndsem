@@ -46,7 +46,9 @@ span.share {
     font-size: 23px;
     margin-right: 15px;
 }
-
+.big-image {
+    overflow: hidden;
+}
 @media screen and (min-width: 1200px){
     :root {
         --unit: 2vw;

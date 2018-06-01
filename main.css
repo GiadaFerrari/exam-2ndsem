@@ -131,7 +131,6 @@ a#navHome {
         height: 550px;
     }
 }
-
 nav>* {
     display: block;
     font-size: 26px;
@@ -157,6 +156,28 @@ nav>* {
 }
 .lanactive {
     color: var(--light-grey);
+}
+/* footer */
+footer {
+    height: 100px;
+    position: absolute;
+    bottom: -130px;
+    font-family: simplifica, sans-serif;
+    font-size: 23px;
+}
+footer img {
+    width: 40px;
+    margin: 0 3px;
+    position: relative;
+    bottom: -7px;
+}
+footer>div {
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
+}
+.linkedin {
+    opacity: .3;
 }
 
 
@@ -200,5 +221,17 @@ nav>* {
     }
     .lan {
         top: 23px;
+    }
+    /* footer */
+    footer {
+        height: 70px;
+        position: absolute;
+        bottom: -100px;
+    }
+    footer>div {
+        display: inline-block;
+        width: auto;
+        text-align: left;
+        margin: 0 6.5vw;
     }
 }
