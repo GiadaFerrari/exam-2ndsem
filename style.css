@@ -138,6 +138,10 @@ a {
     font-family: Simplifica;
 }
 
+a.no-styling {
+    font-family: Sukhumvit, sans-serif;
+}
+
 span {
     font-weight: inherit;
     font-size: inherit;
@@ -293,7 +297,6 @@ nav a {
     position: absolute;
     bottom: -60px;
     left: 2vw;
-    ;
     font-family: Sukhumvit, sans-serif;
 }
 
@@ -734,24 +737,7 @@ div.menu.fixMe {
         font-size: 20px;
 
     }
-    /*footer*/
-    footer div.desktopFooter {
-        display: flex;
-        padding-left: 2em;
-    }
 
-    footer {
-        display: flex;
-        align-content: center;
-        text-align: left;
-        max-height: 40px;
-        padding-left: 4vw
-    }
-
-    .footerIcons {
-        display: flex;
-        align-content: center;
-    }
 
     /*navigation*/
     nav a {
@@ -832,7 +818,7 @@ div.menu.fixMe {
     }
 
     .aboutContent {
-        max-width: 40vw;
+        max-width: 40%;
     }
 
     div.more {
@@ -1118,10 +1104,7 @@ div.menu.fixMe {
 
 
     img.sculpture.desktop {
-        padding-left: 5vw;
-        padding-top: 5vw;
-        margin-right: 0vw;
-        width:45vw;
+        width: 100%;
         display: inline;
     }
 
@@ -1138,17 +1121,14 @@ div.menu.fixMe {
         position: static;
         font-size: 38px;
         padding: 0;
-        padding-left: 1vw;
 
     }
     .aboutContent p,
     .aboutContent h2 {
-        padding: 1vh;
+        padding: 1em 0 0 0;
     }
 
-    .caption {
-        position: absolute;
-    }
+
 
     img.play {
         width: 8vw;
@@ -1158,8 +1138,10 @@ div.menu.fixMe {
     }
 
     .artistImgDesktop {
-        position: relative;
+        position: absolute;
+        left: 0;
         display: inline;
+        width: 60%;
     }
 
     div.desktop.icon img {
@@ -1225,6 +1207,7 @@ div.menu.fixMe {
     body {
         position: relative;
     }
+
     /* homepage */
     .background {
         background: #ffffff;
@@ -1319,7 +1302,7 @@ div.menu.fixMe {
     .logo {
         width: 50px;
         position: absolute;
-        left: 3%;
+        left: 2%;
         z-index: 15;
         top: 18px
     }
@@ -1346,6 +1329,28 @@ div.menu.fixMe {
     .lan {
         padding-left: .37em
     }
+
+    /*footer*/
+    footer div.desktopFooter {
+        display: flex;
+        padding-left: 2em;
+    }
+
+    footer {
+        display: flex;
+        align-content: center;
+        text-align: left;
+        max-height: 40px;
+        padding-left: 3%;
+        position: relative;
+        top: 70px;
+    }
+
+    .footerIcons {
+        display: flex;
+        align-content: center;
+    }
+
 
     /*the art*/
     .desktopOnly {
@@ -1391,8 +1396,8 @@ div.menu.fixMe {
     }
 
     img.sculpture {
-        max-width: 45vw;
-            padding-bottom:0px;
+        max-width: 95%;
+        padding: 10px 0 0 0px;
     }
 
     .thumbNails img {
@@ -1451,15 +1456,23 @@ div.menu.fixMe {
         font-family: Simplifica, sans-serif;
         color: #888;
     }
-    /*artist*/
+
+    /* artist */
+    div.caption {
+        top: 100%;
+        left: 1%;
+    }
     img.play {
-        width: 4vw;
+        width: 7%;
         position: absolute;
-        top: -200px;
-        left: 16vw;
+        top: 50%;
+        left: 16%;
     }
     .aboutContent {
-        padding-right: 3vw
+        padding-right: 0;
+    }
+    .aboutContent>* {
+        width: 90%;
     }
     /*timeline*/
     div.line {
