@@ -82,6 +82,17 @@ function showArts(arts){
 
         wrapper.appendChild(clone);
     })
+
+    // click on inquire button
+    document.querySelectorAll('button.inquire').forEach(function(c){c.addEventListener('click', showForm)})
+    function showForm(){
+        document.querySelector('.inquire-form').className = "inquire-form show";
+    }
+    // click on X to close box in modal
+    document.querySelector('.inquire-form .closeMe').addEventListener('click', closeForm);
+    function closeForm(){
+        document.querySelector('.inquire-form').className = "inquire-form hide";
+    }
 }
 
 
@@ -104,7 +115,7 @@ function bottomVisible() {
 }
 
 
-/* language setting */
+// language setting
 document.querySelector('.enSet').addEventListener('click', changeToEn);
 document.querySelector('.itSet').addEventListener('click', changeToIt);
 function changeToEn(){
@@ -121,3 +132,5 @@ function changeToIt(){
     let path = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_it?_embed&order=asc&per_page=3&page=';
     fetchArt(path);
 }
+
+
