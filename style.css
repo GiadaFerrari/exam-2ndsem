@@ -64,11 +64,10 @@ a:hover {
 
 
 body {
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden;
     font-family: Sukhumvit, sans-serif;
-
-
+    position: relative;
 }
 
 p {
@@ -158,31 +157,37 @@ h4 {
 }
 
 .background {
-    background: url(images/mobile-bgr.png) fixed bottom no-repeat;
-    background-size: cover;
-    width: 100vw;
-    height: 90vh;
+    background: url(images/homepage-mobile.jpg) fixed center no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: calc(180vw - 170px); /* based on screen ratio and height of navi + footer */
     position: absolute;
-    bottom: 0;
+    top: 70px;
 
 
 }
 
 .background h1 {
-    font-size: 65px;
+    font-size: 63px;
     font-weight: 200;
     width: 100vw;
-    text-align: center;
     position: absolute;
     bottom: 200px;
+    left: 5%;
 }
 
 .background h2 {
     position: absolute;
     bottom: 160px;
-    right: 5vw;
+    left: 5%;
 
 }
+
+img.homepage, img.heart1, img.heart2, img.el-dot {
+    display: none;
+}
+
+
 
 /*header*/
 
@@ -198,7 +203,7 @@ header {
 .logo {
     width: 50px;
     float: right;
-    padding: 1em 5%;
+    padding: 1em 4.5%;
 }
 
 
@@ -700,8 +705,11 @@ div.menu.fixMe {
     z-index: 19;  /* should be below the main manu, but on top of other things */
 }
 
-
-@media screen and (min-width:769px) {
+@media screen and (min-width:768px) {
+    .background {
+        background-size: cover;
+        height: calc(100vh - 100px);
+    }
     main {
         position: relative;
     }
@@ -1213,17 +1221,20 @@ div.menu.fixMe {
         background: #ffffff;
         width: 100%;
         height: 51vw;  /* temporary solution */
-        position: absolute;
+        position: relative;
         top: 70px;
 /*        width: 95vw;
         height: 80vh;
         top: 10vh; */
     }
+    img.homepage, img.heart1, img.heart2, img.el-dot {
+        display: inherit;
+    }
     img.homepage {
         width: 100%;
     }
     .background h1 {
-        font-size: 5vw;
+        font-size: 5vw; /* temporary solution */
         top: 18vw;
         left: 21vw;
         text-align: left;
@@ -1281,7 +1292,6 @@ div.menu.fixMe {
             transform: scale(1);
         }
     }
-
     .heart2 {
         position: absolute;
         right: 2.3vw;
