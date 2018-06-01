@@ -1,0 +1,65 @@
+body#portfolio {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+}
+body#portfolio section, body#portfolio header, body#portfolio footer {
+    width: 100%;
+}
+body#portfolio header, body#portfolio footer {
+    height: 5vw;
+    overflow: hidden;  /* deal with*/
+}
+body#portfolio section {
+    display: grid;
+}
+
+@media screen and (min-width: 1024px){
+    :root {
+        --unit: 2vw;
+    }
+    body#portfolio section {
+        height: calc(27 * var(--unit));
+        padding: 0 calc(3.5 * var(--unit));
+        grid-template-columns: calc(24* var(--unit)) calc(16 * var(--unit));
+        grid-template-rows: calc(18* var(--unit)) calc(4* var(--unit)) calc(3* var(--unit));
+        grid-column-gap: calc(2 * var(--unit));
+        grid-row-gap: calc(1 * var(--unit));
+    }
+    body#portfolio section>div:not(.curvey) {
+        grid-row: 1/3;
+        background: yellow;
+        display: grid;
+        grid-template-rows: calc(18 * var(--unit)) calc(4*var(--unit));
+        grid-row-gap: var(--unit);
+    }
+    .curvey {
+        grid-row: 3/-1;
+        grid-column: 1/-1;
+        background:black;
+    }
+    body#portfolio section>div>div {
+        background: blue;
+    }
+    .small-images {
+        display: grid;
+        grid-template-columns: repeat(5, calc(4 * var(--unit)));
+        grid-column-gap: var(--unit);
+    }
+    .fetched {
+        display: grid;
+        grid-template-rows: repeat(9, 1fr);
+    }
+    .title {
+        grid-row: 1/3;
+    }
+    .description {
+        grid-row: 3/5;
+        background: red;
+    }
+    .concept {
+        grid-row: 5/-1;
+        background: green;
+    }
+
+}
