@@ -6,33 +6,34 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="Gabriele Nicola's art and sculptures are the perfect representation of math and philosophy through art. His portfolio takes you from figurative to conceptual art. and sculpture">
+    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="portfolio.css">
-    <title>Portfolio | Gabriele Nicola | Conceptual Sculpture</title>
+    <title>Portfolio | Gabriele Nicola | Conceptual Sculptor</title>
 </head>
 
 <body id="portfolio">
 
-    <header> <span class="lan"><button class="enSet lanactive">EN</button>/ <button class="itSet">IT</button></span><a  id="navHome" href="index.html"><img src="images/logo.svg" alt="logo" class="logo"></a>
+    <header>
+        <a id="navHome" href="index.html"><img src="images/logo.svg" alt="logo" class="logo"></a>
 
         <!-- cannot use this svg we need to make one-->
-        <img class="burger" src="images/menu.svg" alt="burger">
-        <div class="navMenu closeNav">
-
-             <nav>
-                <a id="navArtist" href="artist.html"><span class="eng">who am I</span><span class="ita hide">chi sono</span></a>
-                <a  id="navArt" href="art.html"><span class="eng active">my art</span><span class="ita hide active">la mia arte</span></a>
-                <div class="timeline">
-                    <a id="navTimeline" class="timelineNav" href="timeline.html"><span class="eng">my timeline</span><span class="ita hide">la mia cronologia</span></a>
-                    <div class="subMenu closeMe">
-                        <a id="navExperience" href="timeline.html"><span class="eng">experiences</span><span class="ita hide">esperienze</span></a>
-                        <a id="navExhibition" href="timeline.html"><span class="eng">exhibitions</span><span class="ita hide">mostre</span></a>
-                        <a id="navPress" href="timeline.html"><span class="eng">press coverage</span><span class="ita hide">stampa</span></a>
-                        <a id="navAll" href="timeline.html"><span class="eng">all</span><span class="ita hide">tutti</span></a>
-                    </div>
+        <nav class="navMenu">
+            <img class="burger" src="images/menu.svg" alt="burger">
+            <a id="navArtist" href="artist.html"><span class="eng">who am I</span><span class="ita hide">chi sono</span></a>
+            <a  id="navArt" href="art.html"><span class="eng">my art</span><span class="ita hide">la mia arte</span></a>
+            <div class="timeline">
+                <a id="navTimeline" class="timelineNav" href="timeline.html"><span class="eng">my timeline</span><span class="ita hide">la mia cronologia</span></a>
+                <div class="subMenu">
+                    <a id="navExperience" href="timeline.html"><span class="eng">experiences</span><span class="ita hide">esperienze</span></a>
+                    <a id="navExhibition" href="timeline.html"><span class="eng">exhibitions</span><span class="ita hide">mostre</span></a>
+                    <a id="navPress" href="timeline.html"><span class="eng">press coverage</span><span class="ita hide">stampa</span></a>
+                    <a id="navAll" href="timeline.html"><span class="eng">all</span><span class="ita hide">tutti</span></a>
                 </div>
-            </nav>
-        </div>
+            </div>
+            <span class="lan"><button class="enSet lanactive">EN</button> / <button class="itSet">IT</button></span>
+        </nav>
     </header>
+    <!--
     <footer><div class="footer copy">Copyright &#9400; 2018 Gabriele Nicola</div>
         <div class="footerIcons">
           <div class="footer desktopFooter">Mail:</div>
@@ -43,6 +44,7 @@
             <img src="images/linkedin-footer.png" alt="linkedin" class="linkedin">
         </div>
     </footer>
+    -->
     <template>
         <section>
             <div class="img">
@@ -73,19 +75,19 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <button class="inquire"><span class="en">Inquire</span><span class="ita hide">Informati</span></button>
+                    <button class="inquire"><span class="eng">Inquire</span><span class="ita hide">Informati</span></button>
                     <span class="share en">Share</span>
                     <img class="SoMeIcon fb" src="images/facebook.png">
                     <img class="SoMeIcon pi" src="images/pinterest.png">
                     <a href=""><div class="more">more<img src="images/more-arrow.svg" alt="more" class="arrow"></div></a>
                 </div>
             </div>
-            <div class="curvey">
+            <div class="curve">
                 <img src="images/separate.svg" alt="separator">
             </div>
         </section>
     </template>
-
+    <script src="main.js"></script>
     <script src="portfolio.js"></script>
 </body>
 </html>

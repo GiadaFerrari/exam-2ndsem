@@ -1,19 +1,11 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 body#portfolio {
     position: relative;
     width: 100%;
+    padding-top: 90px;
     overflow-x: hidden;
 }
-body#portfolio section, body#portfolio header, body#portfolio footer {
+body#portfolio section {
     width: 100%;
-}
-body#portfolio header, body#portfolio footer {
-    height: 5vw;
-    overflow: hidden;  /* temporory solution */
 }
 body#portfolio section {
     display: grid;
@@ -22,11 +14,37 @@ section img{
     width: 100%;
 }
 section h1 {
+    font-size: 37px;
     display: inline-block;
     margin-right: 15px; /* the space between the artwork title and the year of creation */
 }
-.hide {
-    display: none;
+.title span {
+    font-family: simplifica, sans-serif;
+}
+.curve img {
+    width: 14%;
+    margin-left: 43%;
+}
+button.inquire {
+    height: 50px;
+    width: 130px;
+    margin-right: 50px;
+    border: 1px solid var(--medium-grey);
+    border-radius: 3px;
+    font-size: 23px;
+}
+.SoMeIcon {
+    width: 50px;
+    opacity: .1;
+    margin-right: 15px;
+    position: relative;
+    top: 21px;
+    cursor: pointer;
+}
+span.share {
+    font-family: simplifica, sans-serif;
+    font-size: 23px;
+    margin-right: 15px;
 }
 
 @media screen and (min-width: 1200px){
@@ -34,25 +52,22 @@ section h1 {
         --unit: 2vw;
     }
     body#portfolio section {
-        height: calc(27 * var(--unit));
+        height: calc(28 * var(--unit));
         padding: 0 calc(3.5 * var(--unit));
         grid-template-columns: calc(24* var(--unit)) calc(16 * var(--unit));
         grid-template-rows: calc(18* var(--unit)) calc(4* var(--unit)) calc(3* var(--unit));
         grid-column-gap: calc(2 * var(--unit));
         grid-row-gap: calc(1 * var(--unit));
     }
-    body#portfolio section>div:not(.curvey) {
+    body#portfolio section>div:not(.curve) {
         grid-row: 1/3;
         display: grid;
         grid-template-rows: calc(18 * var(--unit)) calc(4*var(--unit));
         grid-row-gap: var(--unit);
     }
-    .curvey {
+    .curve {
         grid-row: 3/-1;
         grid-column: 1/-1;
-        background:black;
-    }
-    body#portfolio section>div>div {
     }
     .small-images {
         display: grid;
@@ -61,18 +76,22 @@ section h1 {
     }
     .fetched {
         display: grid;
-        grid-template-rows: repeat(9, 1fr);
+        grid-template-rows: repeat(11, 1fr);
     }
     .title {
         grid-row: 1/3;
     }
     .description {
         grid-row: 3/5;
+        overflow-y: scroll;
+        overflow-y: scroll;
     }
     .concept {
         grid-row: 5/-1;
         overflow-y: scroll;
         cursor: s-resize;
     }
-
+    .more {
+        display: none;
+    }
 }

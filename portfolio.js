@@ -3,12 +3,13 @@ let page = 1;
 let wrapper = document.querySelector('body');
 let lookingForData = false;
 
-// get the language setting in the URL
-let Urlpassed = new URLSearchParams(window.location.search);
-let languagePassed = Urlpassed.get("lang");
+// get the language setting in the URL. these 2 are already set in main.js, so remove from here
+//let Urlpassed = new URLSearchParams(window.location.search);
+//let languagePassed = Urlpassed.get("lang");
 // if there is no language argument in the URL, set it to english version
 if(!languagePassed){
     languagePassed = "en";
+
 }
 // fetch data based on language
 let defaultPath = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_' + languagePassed + '?_embed&order=asc&per_page=3&page=';
@@ -86,9 +87,6 @@ function bottomVisible() {
     const bottomOfPage = visible + scrollY >= pageHeight
     return bottomOfPage || pageHeight < visible;
 }
-
-
-
 
 
 /* language setting */
