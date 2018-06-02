@@ -94,7 +94,7 @@ let languageSet = originalUrl.get("lang");
 if(!languageSet || languageSet == "en" || languageChosen == "en"){
     // set en span as active
     document.querySelector('.enSet').className = "enSet lanactive";
-    setLanguage();
+//    setLanguage();
 
     naviHome.setAttribute('href', 'index.html?lang=en');
     naviArtist.setAttribute('href', 'about.html?lang=en');
@@ -107,7 +107,7 @@ if(!languageSet || languageSet == "en" || languageChosen == "en"){
 } else if(languageSet == "it" || languageChosen == "it"){
     // set it span as active
     document.querySelector('button.itSet').classList.add('lanactive');
-    setLanguage();
+//    setLanguage();
 
     itaText.forEach((ita) => {
         ita.classList.toggle('hide')

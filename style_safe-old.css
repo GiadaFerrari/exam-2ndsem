@@ -1,0 +1,1576 @@
+/*general settings*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Simplifica;
+    src: url(fonts/simplifica-typeface.ttf);
+}
+
+@font-face {
+    font-family: Sukhumvit;
+    src: url(fonts/SukhumvitSet-Thin.ttf);
+}
+
+@font-face {
+    font-family: Sukhumvit-Bold;
+    src: url(fonts/SukhumvitSet-Bold.ttf);
+}
+
+body {
+    position: relative;
+}
+
+.hide {
+    display: none;
+}
+
+.lanactive {
+    color: #BFBFBF;
+}
+
+button.lanactive:hover {
+    text-decoration: none;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.thumbNails {
+    display: none;
+}
+
+.desktopOnly {
+    display: none;
+}
+
+.tabletOnly {display: none;}
+button {
+    cursor: pointer;
+    border: none;
+    background: white;
+    font-family: Simplifica, sans-serif;
+}
+
+button:hover,
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: Sukhumvit, sans-serif;
+    position: relative;
+}
+
+p {
+    font-family: Sukhumvit, sans-serif;
+    color: #959494;
+}
+
+footer div.desktopFooter {
+    display: none;
+}
+
+footer {
+    width: 100%;
+    font-size: 13px;
+    text-align: center;
+    bottom: -200px;
+}
+
+div.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy {
+    padding-right: 2vw;
+}
+
+footer img {
+    width: 30px;
+    padding: .5em;
+    cursor: pointer;
+}
+
+footer img:nth-child(3) {
+    width: 34px;
+    opacity: .4;
+
+}
+
+.linkedin {
+    opacity: .4;
+}
+
+.desktop {
+    display: none;
+
+}
+
+body:not(#homepage) {
+    background: linear-gradient(to bottom, #ffffff 0%, #f0f2f5 30%, #ffffff 100%);
+    max-width: 100%;
+}
+
+/*we are using the mobile-first approach, which means that from here on the code is for the mobile, and the specifications for desktop are gonna be contained in the media query*/
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+a {
+    font-family: Simplifica;
+}
+
+a.no-styling {
+    font-family: Sukhumvit, sans-serif;
+}
+
+span {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+h2 {
+    font-weight: 100;
+    font-size: 28px;
+
+}
+
+h4 {
+    font-size: 19px;
+}
+
+.background {
+    background: url(images/homepage-mobile.jpg) fixed center no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: calc(180vw - 170px); /* based on screen ratio and height of navi + footer */
+    position: absolute;
+    top: 70px;
+
+
+}
+
+.background h1 {
+    font-size: 63px;
+    font-weight: 200;
+    width: 100vw;
+    position: absolute;
+    bottom: 200px;
+    left: 5%;
+}
+
+.background h2 {
+    position: absolute;
+    bottom: 160px;
+    left: 5%;
+
+}
+
+img.homepage, img.heart1, img.heart2, img.el-dot {
+    display: none;
+}
+
+
+
+/*header*/
+
+header {
+    background: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 20;
+}
+
+.logo {
+    width: 50px;
+    float: right;
+    padding: 1em 4.5%;
+}
+
+
+/*navigation*/
+
+.burger {
+    width: 25px;
+    padding: 25px 1em 0 5%;
+}
+
+.navMenu {
+    width: 100%;
+    height: 0vh;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    z-index: 10;
+
+}
+
+nav {
+    position: absolute;
+
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding-left: 5vw;
+    padding-bottom: .6em;
+    font-size: 30px;
+
+
+}
+
+.lan {
+    float: right;
+    position: fixed;
+    top: 26px;
+    right: 100px;
+    z-index: 20;
+}
+
+.lan button {
+    font-size: 18px;
+    font-weight: 100;
+
+}
+
+.closeNav {
+    animation: closeNav .3s forwards ease;
+}
+
+.openNav {
+    animation: openNav .3s forwards ease;
+}
+
+@keyframes closeNav {
+    from {
+        height: 43vh;
+    }
+    to {
+        height: 0vh;
+        margin-top: -30%;
+    }
+}
+
+@keyframes openNav {
+    to {
+        height: 50vh;
+    }
+}
+
+.timeline {
+    position: relative;
+}
+
+.subMenu {
+    position: absolute;
+    left: 5%;
+    width: 100%;
+}
+
+.subMenu:hover {
+    height: 50vh;
+}
+
+.subMenu a {
+    font-size: 26px;
+}
+
+/*home*/
+
+.captionHome {
+    position: absolute;
+    bottom: -60px;
+    left: 2vw;
+    font-family: Sukhumvit, sans-serif;
+}
+
+div.captionHome h4 {
+    font-family: Sukhumvit, sans-serif;
+    font-size: 14px;
+
+}
+
+.captionHome p {
+    color: #959595;
+    font-size: 10px;
+
+}
+
+/*the art*/
+
+main {
+    margin-top: 90px;
+    padding-bottom: 5vw;
+}
+
+section {
+    height: 70vh;
+    padding: 0 5%;
+    margin: 0;
+}
+
+section h1 span {
+    padding-bottom: .25em;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+section h4 {
+    padding-bottom: 1em;
+
+}
+
+section p {
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+section span {
+    font-size: 18px
+}
+
+div.more {
+    float: right;
+    margin: 10px;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+}
+
+.more img {
+    margin-left: 1vw;
+}
+
+.more:hover {
+    text-decoration: underline;
+}
+
+.arrow {
+    width: 10px
+}
+
+.gallery div.mainImg {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+}
+
+div.mainImg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+img.sculpture {
+    max-width: 90vw;
+    padding-bottom: .7em
+}
+
+div.centerMe {
+    padding-top: 5vh;
+    padding-left: 28vw;
+    display: block;
+}
+
+h4.dimension {color:#959494;}
+.centerMe img {
+    max-width: 35vw;
+}
+
+/*subpage*/
+
+button.inquire {
+    border: 1px #959494 solid;
+    border-radius: 2px;
+    padding: 1vh;
+    font-size: 20px;
+    width: 20vw;
+    color: #959494;
+    font-family: Simplifica, sans-serif;
+    margin-bottom: 2.5vh;
+    background: transparent;
+
+}
+
+.gallery {
+    position: relative;
+    min-height: 40vh;
+}
+
+section.subPageS {
+    height: auto;
+}
+
+/*modal*/
+
+aside {
+    background-color: white;
+    position: fixed;
+    left: 9vw;
+    width: 70vw;
+    height: 70vh;
+    padding: 5vw;
+    opacity:0;
+    border: solid #bbbbbb 1px;
+    z-index: 30;
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, .1);
+
+}
+
+.hideModal {
+    animation: hideModal .5s forwards ease;
+}
+
+.showModal {
+    animation: showModal .5s forwards ease;
+}
+
+@keyframes hideModal {
+
+    to {
+        top: -200vh;
+    }
+}
+
+@keyframes showModal {
+    from {
+        top: -200vh;
+        opacity:1;
+
+    }
+    to {
+        top: 12vh;
+    }
+}
+
+.quote {
+    margin-top: 25px;
+    font-family: Simplifica, sans-serif;
+    font-size: 24px;
+    font-weight: 100;
+    padding-bottom: 2vh;
+}
+
+.personalMex {
+    font-family: Sukhumvit-Bold;
+    font-weight: 100;
+    font-size: 15px;
+    color: #959494;
+
+}
+
+.closeMe , .closeMeSlide{
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    cursor: pointer;
+}
+
+form {
+    margin-left: 3vw;
+}
+
+input {
+    width: 60vw;
+    height: 2.3em;
+    margin-bottom: 1em;
+}
+
+input.message {
+    height: 27vw;
+}
+
+button.submit {
+    border: 1px black solid;
+    padding: 1vh;
+    font-size: 20px;
+    color: #959494;
+    font-family: Simplifica, sans-serif;
+    margin-bottom: 2vh;
+    float: right;
+
+}
+
+/*artist*/
+
+.mobileArtist {
+    background-image: url(images/gabriele-nicola-artists_boulevard-world-genius.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100vw;
+    max-height: 768px;
+    width: 100%;
+    position: relative;
+}
+
+.mobileArtist img {
+    width: 15px;
+    padding-left: 5%;
+}
+.mail img {
+    width: 13px;
+}
+.loc img {
+    opacity: .8;
+}
+
+.mobileArtist img.play {
+    width: 50px;
+    position: absolute;
+    top: 230px;
+}
+
+.loc p,
+.mail p {
+    display: inline;
+    font-size: 14px;
+}
+
+.mobileArtist div {
+    padding-bottom: .5em;
+}
+
+.mobileArtist div:nth-child(1) {
+    padding-top: 120px;
+}
+
+div.caption {
+    padding-bottom: 2em;
+    padding-left: 5%;
+    padding-top: .5em;
+    position: absolute;
+    top: 79vw;
+}
+
+.caption p {
+    font-size: 13px;
+}
+
+.aboutContent {
+    padding-top: 2vh;
+}
+
+.aboutContent p,
+.aboutContent span {
+    padding: 5%;
+    padding-top: 1vw;
+}
+
+h1.gn {
+    position: absolute;
+    top: 79px;
+    padding-left: 5%;
+    font-weight: 100;
+    font-size: 28px;
+}
+
+h2.contactMeDesktop span {
+    display: none;
+}
+
+/*timeline*/
+
+div.line {
+    background: black;
+    width: 1.5px;
+    position: absolute;
+    left: 5vw;
+}
+
+.menu div,
+.menu div div,
+.menu h2 {
+    display: inline;
+}
+
+.link img {
+    max-width: 14px;
+}
+
+div.menu {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4%;
+    position: fixed;
+    top: 70px;
+    padding: 30px 0 0 4%;
+}
+
+.menu div {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+div.menuDot {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    position: absolute;
+    top: 5px;
+}
+
+.menu div h2 {
+    margin-left: 40px;
+}
+
+main.timeline {
+    padding-left: 5vw;
+    margin-top: 270px;
+}
+
+article {
+    padding-left: 6vw;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.dot {
+    position: absolute;
+    left: -7px;
+    top: -2px; /* to cover the top of the black line */
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    z-index: 10;
+}
+
+.linkIcon {
+    max-width: 20px;
+}
+
+.greyDot {
+    background: #E3E3E3;
+}
+
+.yellowDot {
+
+    background: #EEDCC0;
+
+
+}
+
+.brownDot {
+
+    background: #A8977C;
+
+}
+
+.blackDot {
+
+    background: black;
+
+}
+
+article h4,
+.year {
+    font-size: 16px;
+    font-family: Sukhumvit, sans-serif;
+}
+
+article h3 {
+    font-family: Sukhumvit-Bold;
+    font-weight: 100;
+    color: #959494;
+}
+
+
+div.menu.fixMe {
+    background: white;
+    z-index: 19;  /* should be below the main manu, but on top of other things */
+}
+
+@media screen and (min-width:768px) {
+    .background {
+        background-size: cover;
+        height: calc(100vh - 100px);
+    }
+    main {
+        position: relative;
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    .tabletOnly {
+        display:block;
+    }
+
+    /*header*/
+    .burger {
+        display: none;
+    }
+    .logo {
+        width: 40px;
+        position: absolute;
+        padding: .1em;
+        right: 4vw;
+        z-index: 15;
+        top: 17px
+    }
+
+    .lan button {
+        font-size: 20px;
+    }
+
+    .lan {
+        top: 3.2vh;
+        right: 11vw;
+        font-size: 20px;
+
+    }
+
+
+    /*navigation*/
+    nav a {
+        display: inline;
+        font-size: 29px;
+    }
+
+    nav {
+        right: 75px;
+        top: 25px;
+        overflow: visible;
+    }
+
+    div.navMenu {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        width: 86vw;
+        text-align: left;
+        overflow: visible;
+    }
+
+    @keyframes closeNav {
+
+        to {
+            height: 30px;
+        }
+    }
+    .timeline {
+        display: inline;
+    }
+
+    .subMenu {
+        background-color: white;
+        height: 0px;
+        width: 200px;
+        z-index: 30;
+        left: 3vw;
+        top: 33px;
+        overflow: hidden;
+
+    }
+
+    .subMenu a {
+        padding-left: 20px;
+        padding-top: .3em;
+        display: block;
+    }
+
+    .openMe {
+        animation: openMe .5s forwards ease;
+    }
+
+    .closeMe {
+        animation: closeMe .5s forwards ease;
+    }
+
+    @keyframes openMe {
+        to {
+            height: 200px;
+
+        }
+    }
+
+    @keyframes closeMe {
+        to {
+            height: 0px;
+
+        }
+    }
+
+
+    /*the art*/
+    .aboutContent,
+    .desktopOnly {
+        display: inline-block;
+        max-width: 40%;
+        float: right;
+    }
+
+    .aboutContent {
+        max-width: 40%;
+    }
+
+    div.more {
+        display: none;
+    }
+
+    section {
+        display: block;
+        overflow: auto;
+        position: relative;
+        width: 100%;
+        height: 76vh;
+        padding-top: 1vw;
+        padding: 0;
+    }
+
+    section h1 {
+        padding-bottom: .25em;
+        font-size: 30px;
+    }
+    section h3 {
+        font-size: 23px;
+        font-weight: 100;
+
+    }
+    section h4 {
+        padding-bottom: .25em;
+    }
+
+    section p {
+        padding-bottom: 1em;
+    }
+
+    section span {
+        font-size: 18px;
+    }
+
+    .desktopOnly {
+        height: 66vh;
+        position: relative;
+    }
+
+    button.inquire {
+        position: absolute;
+        bottom: 0;
+        font-family: Simplifica;
+        font-size: 25px;
+        width: 8vw;
+        margin-bottom: 0;
+
+    }
+
+    div.mainImg img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: 0;
+        max-width: 95%;
+    }
+
+    img.sculpture{
+                    padding-bottom:0px;
+
+    }
+
+    .gallery div.mainImg {
+        display: inline-block;
+        position: relative;
+        margin: auto;
+        width: 59%;
+        cursor:pointer;
+    }
+
+
+    .gallery {
+        display: inline;
+        position: relative;
+    }
+    div.thumbNails {
+        width: 95%;
+        margin-top: 20px;
+        position: relative;
+    }
+    div.thumbImg {
+        padding-right: 1%;
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        height: 10vh;
+        width: 19%;
+
+    }
+
+    div.thumbImg:nth-child(1) {
+        margin-left: 0;
+    }
+
+    .thumbImg img {
+        cursor:pointer;
+        max-width: 11vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        display: inline;
+    }
+
+    div.thumbNails {
+        position: absolute;
+        display: block;
+        top: 20px;
+
+    }
+
+    div.centerMe {
+        position: absolute;
+        bottom: 20px;
+        width: 35vw;
+        text-align: center;
+    }
+
+    .centerMe img {
+        max-width: 10vw;
+    }
+
+    .desktopOnly p {
+        padding: .1vh;
+
+    }
+    h3.con {padding-top: 2vh;}
+
+    .concept {
+        max-height: 30vh;
+        overflow: scroll;
+        cursor: s-resize;
+    }
+    /*modal*/
+    aside {
+        background-color: white;
+        position: fixed;
+        left: 15vw;
+        width: 60vw;
+        height: 50vh;
+        display: grid;
+        padding: 5vw;
+        border: solid black 1px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 4em;
+        z-index: 30;
+        opacity:0;
+    }
+
+    .hideModal {
+        animation: hideModal .5s forwards ease;
+    }
+
+    .showModal {
+        animation: showModal .5s forwards ease;
+    }
+
+    @keyframes hideModal {
+        from {
+            top: 20vh;
+        }
+        to {
+            top: -200vh;
+        }
+    }
+    @keyframes showModal {
+        from {
+            top: -200vh;
+
+        }
+        to {
+            top: 20vh;
+            opacity: 1;
+        }
+    }
+
+    .quote {
+        font-family: Simplifica, sans-serif;
+        font-size: 25px;
+        font-weight: 100;
+        padding-bottom: 2vh;
+    }
+
+    .personalMex {
+        font-family: Sukhumvit-Bold;
+        font-weight: 100;
+        color: #959494;
+
+    }
+
+    .closeMe {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        cursor: pointer;
+    }
+    input {
+        width: 30vw;
+        height: 2em;
+        margin-bottom: 1em;
+    }
+
+    input.message {
+        height: 15vw;
+    }
+
+    button.submit {
+        border: 1px black solid;
+        padding: 1vh;
+        font-size: 20px;
+        color: #959494;
+        font-family: Sukhumvit, sans-serif;
+        margin-bottom: 2.5vh;
+
+    }
+    /*slideshow*/
+    div.slideshow {
+        position: relative;
+        z-index: 40;
+        display: block;
+        width: 90vw;
+        background: white;
+        height: 60vh;
+        position: fixed;
+        left: 5vw;
+        border:solid black 1px;
+
+    }
+
+    div.slideshow img.arrowSlide {
+        max-width: 20px;
+        position: absolute;
+        top:160px;
+        padding:5vw;
+    }
+
+    div.slideshow img.slideshowPic {
+        max-width: 60vw;
+
+    }
+
+    div.slideshow img.bckBtn {
+        transform: rotateY(180deg);
+            cursor:pointer;
+    }
+
+    img.frwBtn {
+        right:0;
+        cursor:pointer;
+
+    }
+
+    .openSlideshow {
+        animation:openSlideshow .5s forwards ease;
+    }
+
+    .closeSlideshow {
+        animation: closeSlideshow .5s forwards ease;
+    }
+
+    @keyframes openSlideshow{
+        from {
+            top:-200vh;
+        }
+        to {top:15vh;}
+    }
+    @keyframes closeSlideshow{
+
+        to {top:-200vh;}
+
+    }
+
+
+    /*the artist*/
+    .mobileArtist {
+        display: none;
+    }
+
+
+    img.sculpture.desktop {
+        width: 80%;
+        display: inline;
+        margin: 0 90px; /* temporary solution */
+    }
+
+    .aboutContent {
+        display: inline;
+        padding-top: 40px;
+    }
+
+    .aboutContent span {
+        padding: 0
+    }
+
+    .aboutContent h1 {
+        position: static;
+        font-size: 38px;
+        padding: 0;
+
+    }
+    .aboutContent p {
+        padding: .5em 0 0 0;
+    }
+
+    .aboutContent h2 {
+        padding: 1.2em 0 0 0;
+    }
+
+
+    img.play {
+        width: 8vw;
+        position: absolute;
+        top: -20vh;
+        left: 16vw;
+    }
+
+    .artistImgDesktop {
+        position: absolute;
+        left: 0;
+        display: inline;
+        width: 60%;
+    }
+
+    div.desktop.icon img {
+        max-width: 20px;
+        height: 20px;
+    }
+    div.desktop img,
+    div.desktop.icon p {
+        display: inline;
+    }
+    /*timeline*/
+    div.line {
+        left: 50vw;
+        top: 0vh;
+    }
+
+    .menu div:hover {
+        text-decoration-line: underline;
+    }
+
+    main.timeline {
+        display: block;
+        margin-top: 35vh;
+    }
+
+    article {
+        width: 45vw;
+    }
+
+    article.right {
+        margin-left: 129vw;
+        animation: slideLeft .5s ease forwards;
+    }
+
+    article.left {
+        margin-left: -130vh;
+        text-align: right;
+        animation: slideRight .5s ease forwards;
+    }
+
+    article.left .dot {
+        left: 57.267vw;
+    }
+
+    @keyframes slideLeft {
+        to {
+            margin-left: 45.3vw;
+
+        }
+    }
+
+    @keyframes slideRight {
+        to {
+            margin-left: -13vw;
+
+        }
+    }
+
+
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        position: relative;
+    }
+    main {
+        padding: 0 9%;
+    }
+    /* homepage */
+    .background {
+        background: #ffffff;
+        width: 100%;
+        height: 51vw;  /* temporary solution */
+        position: relative;
+        top: 70px;
+/*        width: 95vw;
+        height: 80vh;
+        top: 10vh; */
+    }
+    img.homepage, img.heart1, img.heart2, img.el-dot {
+        display: inherit;
+    }
+    img.homepage {
+        width: 100%;
+    }
+    .background h1 {
+        font-size: 5vw; /* temporary solution */
+        top: 18vw;
+        left: 21vw;
+        text-align: left;
+    }
+    .background h2 {
+        font-size: 2vw;
+        top: 25vw;
+        left: 21vw;
+    }
+    .captionHome {
+        bottom: .5vw;
+        left: 3%;
+    }
+    div.captionHome h4 {
+        font-size: 15px;
+    }
+    .captionHome p {
+        font-size: 12px;
+        margin-top: -7px;
+    }
+    /* animation on homepage */
+    .el-dot {
+        position: absolute;
+        top: 39vw;
+        right: 17.5vw;
+        width: 6px;
+        height: 6px;
+        background-color: black;
+        border-radius: 3px;
+        animation: el-dot 1.2s -.6s ease-in infinite;
+        opacity: .2;
+    }
+    @keyframes el-dot {
+        15% {
+            transform: translate(4vw, 1vw) scale(.5);
+            opacity: .1;
+        }
+        100% {
+            transform: translate(10.9vw, -11.9vw) scale(.9);
+            opacity: .6;
+        }
+    }
+    .heart1 {
+        position: absolute;
+        right: .85vw;
+        top: 21.3vw;
+        width: 6vw;
+        animation: heart-beat1 1.2s -.6s cubic-bezier(0.79,-0.04, 0.67, 1.52) infinite;
+    }
+    @keyframes heart-beat1 {
+        50% {
+            transform: scale(.85);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    .heart2 {
+        position: absolute;
+        right: 2.3vw;
+        top: 21.2vw;
+        width: 7vw;
+        animation: heart-beat2 1.2s .6s cubic-bezier(0.79,-0.04, 0.67, 1.52) infinite;
+    }
+    @keyframes heart-beat2 {
+        50% {
+            transform: scale(1.17) translate(.1vw, .35vw);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    /*header*/
+    .logo {
+        width: 50px;
+        position: absolute;
+        left: 2%;
+        z-index: 15;
+        top: 18px
+    }
+
+    /* navigation */
+    div.navMenu {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        width: 100%;
+        position:absolute;
+        right: 11%; /* temperory solution */
+        text-align: left;
+        overflow: visible;
+        padding-right: 5%;
+    }
+    .lan {
+        right: 3%;
+        top: 23px;
+    }
+
+    .lan button {
+        font-size: 23px;
+    }
+    .lan {
+        padding-left: .37em
+    }
+
+    .subMenu a {
+        padding-left: 2vw;
+        padding-top: .3em;
+        display: block;
+    }
+
+    /*footer*/
+    footer div.desktopFooter {
+        display: flex;
+        padding-left: 2em;
+    }
+
+    footer {
+        display: flex;
+        align-content: center;
+        text-align: left;
+        max-height: 40px;
+        padding-left: 6%;
+        position: fixed;
+        bottom: 0;
+        background: rgba(255,255,255,.4);
+    }
+
+    .footerIcons {
+        display: flex;
+        align-content: center;
+    }
+
+
+    /*the art*/
+    .desktopOnly {
+        position: relative;
+        height: 33.1vw;
+    }
+
+    section {
+        overflow: auto;
+        min-height: 93vh;
+        position: relative;
+    }
+
+    section h1 {
+        padding-bottom: .25em;
+        font-size: 30px;
+        margin-left: 60%;
+        margin-top: 20px;
+    }
+
+    section h3 {
+        font-size: 23px;
+
+    }
+    section h4 {
+        padding-bottom: .25em;
+        margin-left: 60%;
+        font-size: 13px;
+    }
+
+    section p {
+        padding-bottom: 1.5em;
+    }
+
+    section span {
+        font-size: 23px;
+    }
+    span.width, span.height, span.length {
+        font-size: 15px;
+    }
+    .gallery div.mainImg {
+        height: 63vh;
+        max-height: 470px;
+        position: relative;
+        top: -60px;
+    }
+
+    img.sculpture {
+        max-width: 95%;
+        padding: 0 0 0 0px;
+    }
+
+    .thumbNails img {
+        max-width: 9vw;
+    }
+
+    div.thumbNails {
+        float: left;
+        margin: 0;
+    }
+    .desktopOnly {
+        height: 63vh;
+        position: relative;
+        top: 30px;
+    }
+
+
+    button.inquire {
+        position: absolute;
+        bottom: 0;
+        font-family: Simplifica;
+        width: 30%;
+        margin-bottom: 0;
+    }
+
+    .pi {
+        left: calc(45% + 90px);
+    }
+    .fb {
+        left: calc(45% + 40px);
+    }
+    .SoMeIcon {
+        height: 42px;
+        position: absolute;
+        bottom: 0;
+        opacity: .2;
+    }
+
+
+    .centerMe img {
+        max-width: 10vw;
+    }
+
+    button.inquire {
+        position: absolute;
+        bottom: 0px;
+    }
+
+    .share {
+        position: absolute;
+        bottom: 9px;
+        left: 45%;
+        font-family: Simplifica, sans-serif;
+        color: #888;
+    }
+
+    /* artist */
+    div.caption {
+        top: 100%;
+        left: 90px;
+        padding-left: 0;
+    }
+    img.play {
+        width: 7%;
+        position: absolute;
+        top: 50%;
+        left: 26%;
+    }
+    .aboutContent {
+        padding: 0 0 0 20px;
+    }
+    .aboutContent>* {
+        width: 100%;
+    }
+    /*timeline*/
+    div.line {
+        position: fixed;
+        top: 150px;
+        left: 40%;
+        height: calc(100vh - 190px);
+    }
+    div.menu {
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        justify-content: space-around;
+        left: 0;
+
+        background: white;
+        z-index: 11;
+    }
+
+    article {
+        width: 34vw;
+
+    }
+
+    main.timeline {
+        margin-top: 200px;
+        padding-left: 0;
+    }
+
+    article.left {
+        padding-left: 0;
+        text-align: right;
+        padding-right: 6vw;
+    }
+    article.left .dot {
+        left: 38.17vw;
+    }
+
+    article.right .dot {
+        left: 1.5vw;
+    }
+
+    @keyframes slideLeft {
+        to {
+            margin-left: 38.1vw;
+
+        }
+    }
+
+    @keyframes slideRight {
+        to {
+            margin-left: 1.5vw;
+
+        }
+    }
+
+    /*slideshow*/
+    div.slideshow {
+
+        width: 70vw;
+        height: 80vh;
+        left: 15vw;
+
+    }
+
+    div.slideshow img.arrowSlide {
+        max-width: 25px;
+        top:200px;
+    }
+
+    div.slideshow img.slideshowPic {
+        max-width: 60vw;
+    }
+
+
+}
+

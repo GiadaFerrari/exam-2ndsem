@@ -1,0 +1,158 @@
+#navTimeline, div.active h2 {
+    text-decoration: underline;
+}
+div.line {
+    background: black;
+    width: 1.4px;
+    position: fixed;
+    left: 5.7vw;
+    height: calc(100vh - 150px);
+    top: 150px;
+}
+.menu div, .menu div div, .menu h2 {
+    display: inline;
+}
+.link img {
+    max-width: 14px;
+}
+div.menu {
+    background: white;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4%;
+    position: fixed;
+    top: 70px;
+    padding: 30px 0 0 4%;
+    z-index: 19;
+}
+.menu div {
+    position: relative;
+    margin-bottom: 20px;
+}
+div.menuDot {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    position: absolute;
+    top: 5px;
+}
+.menu div h2 {
+    margin-left: 40px;
+}
+main.timeline {
+    padding-left: 5vw;
+    margin-top: 230px;
+}
+article {
+    padding-left: 7vw;
+    position: relative;
+    margin-bottom: 60px;
+}
+.dot {
+    position: absolute;
+    left: -3.5px;
+    top: -2px; /* to cover the top of the black line */
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    z-index: 10;
+}
+.linkIcon {
+    max-width: 20px;
+}
+.greyDot {
+    background: var(--light-grey);
+}
+.yellowDot {
+    background: var(--yellow);
+}
+.brownDot {
+    background: var(--brown);
+}
+.blackDot {
+    background: black;
+}
+article h4, .year, .description {
+    font-size: 14px;
+    font-family: Sukhumvit-text, sans-serif;
+    color: var(--medium-grey);
+}
+article h3 {
+    font-size: 16px;
+    font-family: Sukhumvit-Bold;
+    color: var(--medium-grey);
+}
+h2.title {
+    font-family: simplifica, sans-serif;
+    font-weight: 100;
+}
+article {
+    width: 90%;
+}
+
+@media screen and (min-width: 768px){
+    main.timeline {
+        height: 300vh;  /* screen flashed with lower setting, strange...*/
+    }
+    div.menu {
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        position: fixed;
+        top: 70px;
+    }
+    div.line {
+        position: fixed;
+        top: 150px;
+        left: 40vw;
+        height: calc(100vh - 150px);
+    }
+    div.menu {
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        justify-content: space-around;
+        left: 0;
+    }
+
+    article {
+        width: 34vw;
+        padding: 0;
+        margin: 0;
+    }
+    article.right {
+        text-align: left;
+        padding-left: 6vw;
+        position: relative;
+        right: -33vw;
+    }
+
+    article.left {
+        text-align: right;
+        padding-right: 6vw;
+    }
+    article.left .dot {
+        left: 34.5vw;
+    }
+
+    article.right .dot {
+        left: 1.4vw;
+    }
+
+    @keyframes slideLeft {
+        to {
+            margin-left: 38.1vw;
+
+        }
+    }
+
+    @keyframes slideRight {
+        to {
+            margin-left: 1.5vw;
+
+        }
+    }
+    #timeline-footer {
+        display: none;
+    }
+
+}
