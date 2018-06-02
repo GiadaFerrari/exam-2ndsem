@@ -106,7 +106,7 @@ function showExhi(exhi) {
 
         }
 
-        clone.querySelector('article').setAttribute('dateString', e.acf.start_date);
+        clone.querySelector('article').setAttribute('date-string', e.acf.start_date);
 
 
 
@@ -168,7 +168,7 @@ function showPress(press) {
             clone.querySelector('article').classList.add('needSort')
         }
 
-        clone.querySelector('article').setAttribute('dateString', e.acf.time_of_publication);
+        clone.querySelector('article').setAttribute('date-string', e.acf.time_of_publication);
         let publicationDate = e.acf.time_of_publication.substring(6, 8) + " / " + e.acf.time_of_publication.substring(4, 6) + " / " + e.acf.time_of_publication.substring(0, 4)
 
 
@@ -199,7 +199,6 @@ function showPress(press) {
 fetchTimeline(expPathEn, showExp)
 fetchTimeline(exhiPathEn, showExhi)
 fetchTimeline(pressPathEn, showPress)
-sortAll();
 /*
 
 let line = document.querySelector('.line')
@@ -320,25 +319,6 @@ $('.itSet').on('click', () => {
     fetchTimeline(exhiPathIt, showExhi)
 
     fetchTimeline(pressPathIt, showPress)
-})
+});
 
 
-
-function sortAll(){
-    let wrapper = document.querySelector('.timeline');
-    let neetSortS = document.querySelectorAll('.needSort');
-    let sortArray = [];
-    neetSortS.forEach(addToArray);
-    function addToArray(s){
-        sortArray.push(s);
-    }
-    sortArray.sort( // sort() gives "in place" result, read more on https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-        function (a,b){
-            return b.getAttribute('date-string') - a.getAttribute('date-string');
-        }
-    )
-    for(i=0; i<sortArray.length; i++){
-        wrapper.appendChild(sortArray[i]);
-    }
-    console.log(sortArray);
-}
