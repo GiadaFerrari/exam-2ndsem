@@ -5,7 +5,38 @@ body#portfolio {
     overflow-x: hidden;
 }
 body#portfolio section {
-    width: 100%;
+    width: 100vw;
+    height: 115vw;
+    overflow: hidden;
+}
+div.img {
+    height: 75vw;
+    overflow: hidden;
+}
+div.text {
+    height: 70px;
+    position: relative;
+    padding: 10px 0 0 10vw;
+}
+div.more {
+    width: 20vw;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    z-index: 200;
+}
+div.more span {
+    position: relative;
+    font-size: 23px;
+    top: -15px;
+    left: -10px;
+}
+img.arrow {
+    width: 30px;
+}
+.title {
+    width: 60vw;
+    margin-bottom: 4em;
 }
 body#portfolio section {
     display: grid;
@@ -49,12 +80,70 @@ span.share {
 .big-image {
     overflow: hidden;
 }
+.only-next {
+    display: none;
+}
+
+@media screen and (min-width: 760px){
+    body#portfolio section {
+        width: 100vw;
+        height: auto;
+        overflow: hidden;
+        margin-bottom: 50px;
+    }
+    div.img {
+        height: 75vw;
+        overflow: hidden;
+    }
+    div.text {
+        width: 66vw;
+        height: auto;
+        position: relative;
+        padding: 5vw 0 0 10vw;
+    }
+    .fetched>* {
+        margin-top: 1em;
+    }
+    .title {
+        margin-bottom: 0;
+    }
+    div.more {
+        display: none;
+    }
+    .only-next {
+        display: inherit;
+        position: absolute;
+        right: -20vw;
+        top: 35px;
+    }
+    .only-next p {
+        font-size: 50px;
+    }
+
+}
 
 @media screen and (min-width: 1200px){
+    .only-next {
+        display: none;
+    }
+    div.img {
+        height: auto;
+        overflow: auto;
+    }
+    .title {
+        width: auto;
+        margin-bottom: 0;
+    }
+    div.text {
+        padding: 0;
+        width: auto;
+    }
     :root {
         --unit: 2vw;
     }
     body#portfolio section {
+        margin-bottom: 0;
+        width: auto;
         height: calc(28 * var(--unit));
         padding: 0 calc(3.5 * var(--unit));
         grid-template-columns: calc(24* var(--unit)) calc(16 * var(--unit));
@@ -211,3 +300,4 @@ span.share {
         width: 100%;
 
     }
+}
