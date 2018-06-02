@@ -1,16 +1,15 @@
 .background {
-    background: url(images/homepage-mobile.jpg) fixed center no-repeat;
+    background: url(images/homepage-mobile.jpg) left center no-repeat;
     background-size: contain;
-    width: 100%;
-    height: calc(180vw - 170px); /* based on screen ratio and height of navi + footer */
-    position: absolute;
-    top: 70px;
-
-
+    width: 100vw;
+    height: calc(140vw + 50px);
+    position: relative;
+    top: 40px;
+    /*height: calc(180vw - 170px);  based on screen ratio and height of navi + footer */
 }
 
 .background h1 {
-    font-size: 63px;
+    font-size: 11vw;
     font-weight: 200;
     width: 100vw;
     position: absolute;
@@ -22,15 +21,76 @@
     position: absolute;
     bottom: 160px;
     left: 5%;
-
+    font-size: 6vw;
 }
 
-img.homepage, img.heart1, img.heart2, img.el-dot {
+img.homepage {
     display: none;
 }
 
+.heart1 {
+    position: absolute;
+    right: 2vw;
+    top: 72vw;
+    width: 16vw;
+    max-width: 90px;
+    animation: heart-beat1 1.2s .05s cubic-bezier(0.79,-0.04, 0.67, 1.52) infinite;
+}
+    @keyframes heart-beat1 {
+        50% {
+            transform: scale(.85);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+.heart2 {
+    position: absolute;
+    right: 4.5vw;
+    top: 70vw;
+    width: 23vw;
+    max-width: 140px;
+    animation: heart-beat2 1.2s .6s cubic-bezier(0.79,-0.04, 0.67, 1.52) infinite;
+}
+    @keyframes heart-beat2 {
+        50% {
+            transform: scale(1.1, .9) translate(.2vw, .25vw);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    /* animation on homepage */
+    .el-dot {
+        position: absolute;
+        top: 127vw;
+        right: 44.5vw;
+        width: 4px;
+        height: 4px;
+        background-color: black;
+        border-radius: 3px;
+        animation: el-dot 1.2s ease-in infinite;
+        opacity: .2;
+    }
+    @keyframes el-dot {
+        15% {
+            transform: translate(4vw, 0vw) scale(.5);
+            opacity: .1;
+        }
+        100% {
+            transform: translate(26.9vw, -41.9vw) scale(.9);
+            opacity: .6;
+        }
+    }
+
 .captionHome {
     position: absolute;
+    bottom: -75px;
+    left: 5%;
+}
+.captionHome p {
+    font-size: 13px;
 }
 @media screen and (min-width: 800px){
 
@@ -83,7 +143,7 @@ img.homepage, img.heart1, img.heart2, img.el-dot {
         height: 6px;
         background-color: black;
         border-radius: 3px;
-        animation: el-dot 1.2s -.6s ease-in infinite;
+        animation: el-dot 1.2s 0s ease-in infinite;
         opacity: .2;
     }
     @keyframes el-dot {
@@ -97,34 +157,26 @@ img.homepage, img.heart1, img.heart2, img.el-dot {
         }
     }
     .heart1 {
-        position: absolute;
-        right: .85vw;
-        top: 21.3vw;
+        right: .8vw;
+        top: 21.8vw;
         width: 6vw;
-        animation: heart-beat1 1.2s -.6s cubic-bezier(0.79,-0.04, 0.67, 1.52) infinite;
-    }
-    @keyframes heart-beat1 {
-        50% {
-            transform: scale(.85);
-        }
-        100% {
-            transform: scale(1);
-        }
+
     }
     .heart2 {
-        position: absolute;
         right: 2.3vw;
-        top: 21.2vw;
+        top: 21.7vw;
         width: 7vw;
-        animation: heart-beat2 1.2s .6s cubic-bezier(0.79,-0.04, 0.67, 1.52) infinite;
+
     }
+    /*
+    animation: heart-beat1 1.2s -.6s cubic-bezier(0.79,-0.04, 0.67, 1.52) infinite;
+    animation: heart-beat1 1.2s -.6s cubic-bezier(0.79,-0.04, 0.67, 1.52) infinite;
     @keyframes heart-beat2 {
         50% {
-            transform: scale(1.17) translate(.1vw, .35vw);
+            transform: scale(1.16) translate(.05vw, .35vw);
         }
         100% {
             transform: scale(1);
         }
-    }
-
+    }*/
 }

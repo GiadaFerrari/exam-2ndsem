@@ -33,12 +33,14 @@ function showExp(exp) {
 
         if (isOdd(counter)) {
             clone.querySelector('article').classList.add('right')
+            clone.querySelector('article').classList.add('needSort')
         } else {
             clone.querySelector('article').classList.add('left')
-
+            clone.querySelector('article').classList.add('needSort')
         }
 
 
+        clone.querySelector('article').setAttribute('date-string', e.acf.start_date);
 
 
 
@@ -96,10 +98,17 @@ function showExhi(exhi) {
 
         if (isOdd(counter)) {
             clone.querySelector('article').classList.add('right')
+            clone.querySelector('article').classList.add('needSort')
+
         } else {
             clone.querySelector('article').classList.add('left')
+            clone.querySelector('article').classList.add('needSort')
 
         }
+
+        clone.querySelector('article').setAttribute('dateString', e.acf.start_date);
+
+
 
         let startDate = e.acf.start_date.substring(6, 8) + " / " + e.acf.start_date.substring(4, 6) + " / " + e.acf.start_date.substring(0, 4)
 
@@ -152,12 +161,16 @@ function showPress(press) {
 
         if (isOdd(counter)) {
             clone.querySelector('article').classList.add('right')
+            clone.querySelector('article').classList.add('needSort')
+
         } else {
             clone.querySelector('article').classList.add('left')
-
+            clone.querySelector('article').classList.add('needSort')
         }
 
+        clone.querySelector('article').setAttribute('dateString', e.acf.time_of_publication);
         let publicationDate = e.acf.time_of_publication.substring(6, 8) + " / " + e.acf.time_of_publication.substring(4, 6) + " / " + e.acf.time_of_publication.substring(0, 4)
+
 
         clone.querySelector('.date').textContent = publicationDate
 
@@ -186,7 +199,7 @@ function showPress(press) {
 fetchTimeline(expPathEn, showExp)
 fetchTimeline(exhiPathEn, showExhi)
 fetchTimeline(pressPathEn, showPress)
-
+sortAll();
 /*
 
 let line = document.querySelector('.line')
@@ -308,3 +321,24 @@ $('.itSet').on('click', () => {
 
     fetchTimeline(pressPathIt, showPress)
 })
+
+
+
+function sortAll(){
+    let wrapper = document.querySelector('.timeline');
+    let neetSortS = document.querySelectorAll('.needSort');
+    let sortArray = [];
+    neetSortS.forEach(addToArray);
+    function addToArray(s){
+        sortArray.push(s);
+    }
+    sortArray.sort( // sort() gives "in place" result, read more on https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+        function (a,b){
+            return b.getAttribute('date-string') - a.getAttribute('date-string');
+        }
+    )
+    for(i=0; i<sortArray.length; i++){
+        wrapper.appendChild(sortArray[i]);
+    }
+    console.log(sortArray);
+}

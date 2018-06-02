@@ -3,8 +3,8 @@ let section = document.querySelector('section');
 let artPathEn = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_en/';
 let artPathIt = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_it/';
 
- let urlParams = new URLSearchParams(window.location.search);
-  let id= urlParams.get("id");
+let urlParams = new URLSearchParams(window.location.search);
+let id= urlParams.get("id");
 
 
 
@@ -24,6 +24,14 @@ function showArt(a) {
 
         /*I define my local variables, in which we have the paths to the different images. by having them in variables it s easier to avoid typos*/
         let mainPicPath = a.acf.image1.sizes.medium;
+
+
+
+
+        // dynamic generate page title using artwork name, plus artist name and type of work, for SEO
+        document.title = a.acf.title_of_artwork + '| Gabriele Nicola | Conceptual Sculpture';
+
+
 
 
 
