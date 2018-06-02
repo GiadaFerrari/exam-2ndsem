@@ -1,0 +1,32 @@
+#subpage input {
+    width: 90%;
+}
+
+#subpage input.message {
+    height: 100px;
+}
+
+#subpage div.closeMe {
+    display: none;
+}
+#subpage button.submit {
+    font-size: 63px;
+    padding: 10px 0 0 0;
+    border-bottom: 1px solid black;
+}
+section.subPageS, #subpage aside {
+    padding: 0 5%;
+    margin-top: 90px;
+}
+#subpage .inquire {
+    font-size: 63px;
+    padding: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+}
+#subpage .title {
+    font-size: 50px;
+}
+#subpage form {
+    margin-bottom: 50px;
+}

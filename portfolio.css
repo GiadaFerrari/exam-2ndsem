@@ -82,6 +82,7 @@ span.share {
 }
 .big-image {
     overflow: hidden;
+    pointer-events: none;
 }
 .only-next {
     display: none;
@@ -168,6 +169,9 @@ span.share {
         display: grid;
         grid-template-columns: repeat(5, calc(4 * var(--unit)));
         grid-column-gap: var(--unit);
+    }
+    .big-image {
+        pointer-events: auto;
     }
     .fetched {
         display: grid;

@@ -150,9 +150,26 @@ function setLanguage(e) {
 
 }
 
-
-
-/*burger menu*/
+// get event type
+let types = document.querySelectorAll('.subMenu>a');
+types[0].addEventListener('click', types[0].setAttribute('type', 'experience'));
+types[1].addEventListener('click', types[1].setAttribute('type', 'exhibition'));
+types[2].addEventListener('click', types[2].setAttribute('type', 'press'));
+types.forEach(chooseType);
+function chooseType(t){
+    t.addEventListener('click', updateURL);
+    function updateURL(){
+        let oldHref = t.getAttribute('href');
+        let newHref;
+        if(languageSet){
+            newHref = oldHref + '&type=' + t.getAttribute('type');
+            t.setAttribute('href', newHref);
+        } else {
+            newHref = oldHref + '&?type=' + t.getAttribute('type');
+        }
+    }
+}
+/*burger menu */
 
 $('.burger').on('click', () => {
     $('.navMenu').toggleClass('openNav');

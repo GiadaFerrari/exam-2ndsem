@@ -12,7 +12,7 @@ function dropDown(){
     document.querySelector('.subMenu').classList.add('drop-down');
     document.querySelector('header').style.overflow = 'visible';
 }
-document.querySelector('.timeline').addEventListener('mouseleave', pullUp);
+//document.querySelector('.subMenu').addEventListener('mouseleave', pullUp);  // use mouseleave as trigger can cause issues, remove this.
 function pullUp(){
     document.querySelector('.subMenu').classList.remove('drop-down');
     document.querySelector('header').style.overflow = 'hidden';

@@ -86,7 +86,9 @@ header {
 footer {
     width: 100%;
 }
-
+.desktopFooter {
+    display: none;
+}
 /*navigation*/
 .burger {
     width: 25px;
@@ -184,6 +186,10 @@ footer>div {
         position: absolute;
         bottom: -100px;
     }
+    .desktopFooter {
+        display: inherit;
+    }
+
     footer>div {
         display: inline-block;
         width: auto;

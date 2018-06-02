@@ -9,16 +9,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriele Nicola | Conceptual Sculptor | Timeline: exhibitions  experiences</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="timeline.css">
 </head>
 
-<body id="timeline">
+<body>
     <header>
         <a id="navHome" href="index.html"><img src="images/logo.svg" alt="logo" class="logo"></a>
+
+        <!-- cannot use this svg we need to make one-->
         <nav class="navMenu">
             <img class="burger" src="images/menu.svg" alt="burger">
-            <a id="navArtist" href="about.html"><span class="eng">who am I</span><span class="ita hide">chi sono</span></a>
+            <a id="navArtist" href="about.html?lang=en"><span class="eng">who am I</span></a><a><span class="ita hide">chi sono</span></a>
             <a  id="navArt" href="portfolio.html"><span class="eng">my art</span><span class="ita hide">la mia arte</span></a>
             <div class="timeline">
                 <a id="navTimeline" class="timelineNav" href="timeline.html"><span class="eng">my timeline</span><span class="ita hide">la mia cronologia</span></a>
@@ -89,10 +91,20 @@
 
 
 
+    <footer id="timeline-footer">
+        <div class="footer copy">Copyright &#9400; 2018 Gabriele Nicola</div>
+        <div class="footerIcons">
+            <span class="footer desktopFooter">Mail:</span>
+            <img src="images/email-footer.svg" alt="e-mail">
+            <span class="footer desktopFooter">Follow me:</span>
+            <img src="images/insta-footer.svg" alt="instagram">
+            <img src="images/linkedin-footer.png" alt="linkedin" class="linkedin">
+        </div>
+    </footer>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script src="script.js"></script>
     <script src="script.js"></script>
     <script src="timeline.js"></script>
 </body>
