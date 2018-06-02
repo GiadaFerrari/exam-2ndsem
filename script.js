@@ -90,7 +90,7 @@ let originalUrl = new URLSearchParams(window.location.search);
 let languageSet = originalUrl.get("lang");
 if(!languageSet || languageSet == "en" || languageChosen == "en"){
     naviHome.setAttribute('href', 'index.html?lang=en');
-    naviArtist.setAttribute('href', 'artist.html?lang=en');
+    naviArtist.setAttribute('href', 'about.html?lang=en');
     naviPortforlio.setAttribute('href', 'portfolio.html?lang=en');
     naviTimeline.setAttribute('href', 'timeline.html?lang=en');
     naviExhibition.setAttribute('href', 'timeline.html?lang=en');
@@ -109,7 +109,7 @@ if(!languageSet || languageSet == "en" || languageChosen == "en"){
     $('.enSet').toggleClass('lanactive');
 
     naviHome.setAttribute('href', 'index.html?lang=it');
-    naviArtist.setAttribute('href', 'artist.html?lang=it');
+    naviArtist.setAttribute('href', 'about.html?lang=it');
     naviPortforlio.setAttribute('href', 'portfolio.html?lang=it');
     naviTimeline.setAttribute('href', 'timeline.html?lang=it');
     naviExhibition.setAttribute('href', 'timeline.html?lang=it');

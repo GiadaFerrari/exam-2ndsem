@@ -12,6 +12,31 @@ function fetchInfo(exp, fnc) {
     fetch(exp).then(e => e.json()).then(fnc)
 }
 
+// play video
+document.querySelector('img.play').addEventListener('click', showIframe);
+function showIframe(){
+    document.querySelector('img.play').classList.add('fade-out');
+    document.querySelector('img.portrait').classList.add('fade-out');
+    document.querySelector('h1.name').classList.add('fade-out');
+    document.querySelector('div.address').classList.add('fade-out');
+    document.querySelector('div.email').classList.add('fade-out');
+    document.querySelector('iframe').classList.add('show');
+    document.querySelector('.stop').classList.add('show');
+}
+// stop video
+document.querySelector('.stop').addEventListener('click', hideIframe);
+function hideIframe(){
+    document.querySelector('img.play').classList.remove('fade-out');
+    document.querySelector('img.portrait').classList.remove('fade-out');
+    document.querySelector('h1.name').classList.remove('fade-out');
+    document.querySelector('div.address').classList.remove('fade-out');
+    document.querySelector('div.email').classList.remove('fade-out');
+    document.querySelector('iframe').classList.remove('show');
+    document.querySelector('.stop').classList.remove('show');
+}
+
+
+
 // used for clicking on language buttons
 let infoPathEn = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/about_yourself_en';
 let infoPathIt = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/about_yourself_it'
