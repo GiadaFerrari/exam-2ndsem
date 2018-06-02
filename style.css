@@ -1503,7 +1503,7 @@ div.menu.fixMe {
     div.line {
         position: fixed;
         top: 150px;
-        left: 40vw;
+        left: 40%;
         height: calc(100vh - 190px);
     }
     div.menu {
