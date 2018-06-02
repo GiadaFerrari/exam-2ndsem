@@ -35,7 +35,6 @@ function languageChosen(l){
     // listen to is the button is clicked, if clicked, change the language
     l.addEventListener('click', changeLang);
     function changeLang(){
-        alert('k');
         // in HTML the languages are shown wish uppercase, need to change to lowercase
         let languageChosen = l.innerHTML.toLowerCase();
         // get original href from each navigation button, for later use
