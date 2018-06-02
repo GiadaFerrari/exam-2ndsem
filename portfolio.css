@@ -16,14 +16,14 @@ div.img {
 div.text {
     height: 70px;
     position: relative;
-    padding: 10px 0 0 10vw;
+    padding: 10px 0 0 8vw;
 }
 div.more {
     width: 20vw;
     position: absolute;
     right: 0;
     top: 10px;
-    z-index: 200;
+    z-index: 10;
 }
 div.more span {
     position: relative;
@@ -36,7 +36,7 @@ img.arrow {
 }
 .title {
     width: 60vw;
-    margin-bottom: 4em;
+    margin-bottom: 5em;
 }
 body#portfolio section {
     display: grid;
