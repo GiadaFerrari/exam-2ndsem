@@ -93,12 +93,72 @@ function showArts(arts){
     function closeForm(){
         document.querySelector('.inquire-form').className = "inquire-form hide";
     }
+    // click on any image/video
+    let allImg = document.querySelectorAll('div.img img');
+    document.querySelectorAll('div.img img').forEach(function(img){
+        img.addEventListener('click', openModal);})
+    function openModal(c){
+        document.querySelector('.slideshow').classList.remove('hide');
+        document.querySelector('.modal').classList.remove('hide');
+        let src = c.target.getAttribute('src');
+        // get the clicked project
+        let projectClicked;
+        let allImagesInThisProject;
+        if(c.target.parentElement.className == "thumbnail"){
+            projectClicked = c.target.parentElement.parentElement.parentElement;
+        } else {
+            projectClicked = c.target.parentElement.parentElement;
+        }
+        allImagesInThisProject = projectClicked.querySelectorAll('img');
+        let srcArray = [];
+        // if there is an img, with a src, then add it to the arrar
+        for(let i=0; i<allImagesInThisProject.length; i++){
+            if(allImagesInThisProject[i].src){
+                srcArray.push(allImagesInThisProject[i].src);
+            }
+        }
+        for(let i=0; i<srcArray.length; i++){
+            if(src == srcArray[i]){
+                document.querySelector('.img-in-slide-show').setAttribute('src', srcArray[i]);
+            }
+            let prev = document.querySelector('.toLeft');
+            let next = document.querySelector('.toRight');
+            prev.addEventListener('click', showPrev);
+            function showPrev(){
+                if(i>=1){
+                    i--;
+                } else {
+                    i = srcArray.length;
+                    i--;
+                }
+                document.querySelector('.img-in-slide-show').setAttribute('src', srcArray[i])
+            }
+            next.addEventListener('click', showNext);
+            function showNext(){
+                if(i<srcArray.length-1){
+                    i++;
+                } else {
+                    i = -1;
+                    i++;
+                }
+                document.querySelector('.img-in-slide-show').setAttribute('src', srcArray[i]);
+            }
+            let closeSlideshow = document.querySelector('.closeModal');
+            closeSlideshow.addEventListener('click', clearModal);
+            function clearModal(){
+                document.querySelector('.img-in-slide-show').setAttribute('src', '');
+                document.querySelector('.modal').classList.add('hide');
+                document.querySelector('.slideshow').classList.add('hide');
+            }
+        }
+    }
 }
 
 
 function loadMore() {
     if (bottomVisible() && lookingForData === false) {
         page++;
+        // update path again, cuz clicking on a languange button can also trigger language change
         defaultPath = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_' + languagePassed + '?_embed&order=asc&per_page=3&page=';
         fetchArt(defaultPath);
     }
