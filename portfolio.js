@@ -3,6 +3,7 @@ let page = 1;
 let wrapper = document.querySelector('body');
 let lookingForData = false;
 let defaultPath;
+
 // get the language setting in the URL. these 2 are already set in main.js, so remove from here
 //let Urlpassed = new URLSearchParams(window.location.search);
 //let languagePassed = Urlpassed.get("lang");

@@ -105,7 +105,7 @@ a#navHome {
 .lan {
     z-index: 20;
     position: fixed;
-    right: calc(5vw + 70px);
+    right: 5vw;
     top: 25px;
 }
 

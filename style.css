@@ -1574,12 +1574,3 @@ div.menu.fixMe {
 
 }
 
-@media screen and (min-width: 1561px) {
-    body {
-        width: 1440px;
-        margin-left: calc(50vw - 720px);
-    }
-    .desktopOnly {
-        height: 430px;
-    }
-}

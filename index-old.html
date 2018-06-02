@@ -8,29 +8,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriele Nicola | Conceptual Sculptor</title>
     <link rel="stylesheet" href="homepage.css">
-    <link rel="stylesheet" href="main.css">
 </head>
 
 <body id="homepage">
-    <header>
-        <a id="navHome" href="index.html"><img src="images/logo.svg" alt="logo" class="logo"></a>
+    <header> <span class="lan"><button class="enSet lanactive">EN</button>/ <button class="itSet">IT</button></span><a id="navHome" href="index.html?lang=en"><img src="images/logo.svg" alt="logo" class="logo"></a>
 
         <!-- cannot use this svg we need to make one-->
-        <nav class="navMenu">
-            <img class="burger" src="images/menu.svg" alt="burger">
-            <a id="navArtist" href="about.html"><span class="eng">who am I</span><span class="ita hide">chi sono</span></a>
-            <a  id="navArt" href="portfolio.html"><span class="eng">my art</span><span class="ita hide">la mia arte</span></a>
-            <div class="timeline">
-                <a id="navTimeline" class="timelineNav" href="timeline.html"><span class="eng">my timeline</span><span class="ita hide">la mia cronologia</span></a>
-                <div class="subMenu">
-                    <a id="navExperience" href="timeline.html"><span class="eng">experiences</span><span class="ita hide">esperienze</span></a>
-                    <a id="navExhibition" href="timeline.html"><span class="eng">exhibitions</span><span class="ita hide">mostre</span></a>
-                    <a id="navPress" href="timeline.html"><span class="eng">press coverage</span><span class="ita hide">stampa</span></a>
-                    <a id="navAll" href="timeline.html"><span class="eng">all</span><span class="ita hide">tutti</span></a>
+        <img class="burger" src="images/menu.svg" alt="burger">
+        <div class="navMenu closeNav">
+
+            <nav>
+                <a id="navArtist" href="about.html"><span class="eng">who am I</span><span class="ita hide">chi sono</span></a>
+                <a id="navArt" href="portfolio.html?lang=en"><span class="eng">my art</span><span class="ita hide">la mia arte</span></a>
+                <div class="timeline">
+                    <a id="navTimeline" class="timelineNav" href="timeline.html?lang=en"><span class="eng">my timeline</span><span class="ita hide">la mia cronologia</span></a>
+                    <div class="subMenu closeMe">
+                        <a id="navExperience" class="navA" href="timeline.html?lang=en"><span class="eng">experiences</span><span class="ita hide">esperienze</span></a>
+                        <a id="navExhibition" class="navA" href="timeline.html?lang=en"><span class="eng">exhibitions</span><span class="ita hide">mostre</span></a>
+                        <a id="navPress" href="timeline.html?lang=en"><span class="eng">press coverage</span><span class="ita hide">stampa</span></a>
+                        <a id="navAll" href="timeline.html?lang=en"><span class="eng">all</span><span class="ita hide">tutti</span></a>
+                    </div>
                 </div>
-            </div>
-            <span class="lan"><button class="enSet lanactive">EN</button> / <button class="itSet">IT</button></span>
-        </nav>
+
+
+
+            </nav>
+        </div>
     </header>
 
     <div class="background">
@@ -49,7 +52,6 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="main.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

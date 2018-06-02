@@ -11,7 +11,7 @@ let engSample = document.querySelector('.eng')
 
 
 
-// get the navigation buttons, need them later to get get original href, so that the language setting can to passed to these
+// get the navigation buttons, need them later to get get original href, so that the language setting can be passed to these
 let naviHome = document.querySelector('#navHome');
 let naviArtist = document.querySelector('#navArtist');
 let naviPortforlio = document.querySelector('#navArt');
@@ -24,6 +24,9 @@ let naviAll = document.querySelector('#navAll');
 $('.itSet').on('click', setLanguage)
 $('.enSet').on('click', setLanguage)
 
+
+// update url with click on language button. This is the most detailed code, no loop, no advance
+
 // get the language buttons
 let langButtons = document.querySelectorAll('.lan button');
 // for each language button, use the same function
@@ -32,6 +35,7 @@ function languageChosen(l){
     // listen to is the button is clicked, if clicked, change the language
     l.addEventListener('click', changeLang);
     function changeLang(){
+        alert('k');
         // in HTML the languages are shown wish uppercase, need to change to lowercase
         let languageChosen = l.innerHTML.toLowerCase();
         // get original href from each navigation button, for later use
