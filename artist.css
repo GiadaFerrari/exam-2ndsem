@@ -1,0 +1,134 @@
+#navArtist span {
+    text-decoration: underline;
+}
+body#about {
+    padding-top: 70px;
+}
+body#about main {
+    position: relative;
+    height: auto;
+}
+.portrait {
+    position: relative;
+}
+img.play {
+    width: 50px;
+    position: absolute;
+    left: 8vw;
+    top: 30vw;
+}
+iframe {
+    width: 100vw;
+    height: 56.25vw;
+    max-width: 560px;
+    max-height: 315px;
+    position: absolute;
+    top: 9vw;
+    border: none;
+}
+.caption, div.address, div.email {
+    padding-left: 8vw;
+}
+p.address, p.email {
+    margin-left: 10px;
+}
+.caption h3 {
+    font-size: 17px;
+}
+.caption p {
+    font-size: 11px;
+    color: var(--medium-grey);
+}
+.bio {
+    padding: 40px 8vw;
+}
+.bio p {
+    margin-bottom: 2em;
+}
+h1.name {
+    font-size: 9vw;
+    position: absolute;
+    top: 18vw;
+    left: 8vw;
+    font-weight: 100;
+}
+.address img {
+    width: 18px;
+    opacity: .8;
+}
+.email img {
+    width: 17px;
+}
+.address p, .email p {
+    display: inline-block;
+}
+.portrait img:not(.play) {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px){
+    iframe {
+        width: 80vw;
+        height: 45vw;
+        margin-left: 0;
+    }
+    .bio {
+        width: 76%;
+    }
+}
+
+/* for the video*/
+@media screen and (min-width: 560px){
+    iframe {
+        width: 560px;
+        height: 315px;
+        position: absolute;
+        top: 9vw;
+        left: calc(50vw - 280px);
+        border: none;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    body#about main {
+        padding: 6vw 6vw 0 6vw;
+    }
+    h1.name {
+        font-size: 53px;
+        left: 10vw;
+        top: 12vw;
+    }
+    .portrait {
+        width: 52vw;
+        height: 39vw;
+        overflow: hidden;
+    }
+    img.play {
+        width: 50px;
+        position: absolute;
+        left: 4vw;
+        top: 13vw;
+    }
+    iframe {
+        position: absolute;
+        top: 0;
+        left: calc(26vw - 280px);
+    }
+    .bio {
+        width: 32vw;
+        position: absolute;
+        top: 0;
+        right: 7vw;
+        padding: 6vw 0 0 0;
+    }
+    div.address, div.email {
+        margin-left: 4vw;
+        padding-left: 0;
+        position: relative;
+        top: -19vw;
+    }
+    body#about footer {
+        position: absolute;
+        bottom: -200px;
+    }
+}

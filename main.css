@@ -151,9 +151,6 @@ nav>* {
 .hide {
     display: none;
 }
-#navArt span {
-    text-decoration: underline;
-}
 .lanactive {
     color: var(--light-grey);
 }

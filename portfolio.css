@@ -1,3 +1,6 @@
+#navArt span {
+    text-decoration: underline;
+}
 body#portfolio {
     position: relative;
     width: 100%;

@@ -1,8 +1,8 @@
 let main = document.querySelector('main');
 
-// get the language setting in the URL
-let Urlpassed = new URLSearchParams(window.location.search);
-let languagePassed = Urlpassed.get("lang");
+// get the language setting in the URL, already passed in main.js, so delete from here
+//let Urlpassed = new URLSearchParams(window.location.search);
+//let languagePassed = Urlpassed.get("lang");
 // fetch data based on language setting in the url
 let defaultPath = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/about_yourself_' + languagePassed;
 fetchInfo(defaultPath, fillInfo);
@@ -27,7 +27,7 @@ function fillInfo(info){
 
     document.querySelector('.city').textContent = i.acf.address_city;
 
-    document.querySelector('.email').textContent = i.acf.email_address;
+    document.querySelector('p.email').textContent = i.acf.email_address;
 
 
     })
