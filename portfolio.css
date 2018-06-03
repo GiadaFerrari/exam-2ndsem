@@ -120,8 +120,16 @@ span.share {
         right: -20vw;
         top: 35px;
     }
-    .only-next p {
-        font-size: 50px;
+    .only-next .slide-dot {
+        display: inline-block;
+        margin-bottom: 20px;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background: var(--dark-grey);
+    }
+    .only-next .slide-dot-new {
+        background: var(--light-grey);
     }
 
 }

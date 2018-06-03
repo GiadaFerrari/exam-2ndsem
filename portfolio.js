@@ -65,18 +65,33 @@ function showArts(arts){
         let thumbnailWrapper = clone.querySelector('.small-images');
         if(eachArt.acf.image2 !== false){
             clone.querySelector('.thumbnail:nth-of-type(1) img').src = eachArt.acf.image2.sizes.large;
+            let newDot = document.createElement('div');
+            newDot.innerHTML = "<div class='slide-dot slide-dot-new'></div>";
+            clone.querySelector('.only-next').append(newDot);
         }
         if(eachArt.acf.image3 !== false){
             clone.querySelector('.thumbnail:nth-of-type(2) img').src = eachArt.acf.image3.sizes.large;
+            let newDot = document.createElement('div');
+            newDot.innerHTML = "<div class='slide-dot slide-dot-new'></div>";
+            clone.querySelector('.only-next').append(newDot);
         }
         if(eachArt.acf.image4 !== false){
             clone.querySelector('.thumbnail:nth-of-type(3) img').src = eachArt.acf.image4.sizes.large;
+            let newDot = document.createElement('div');
+            newDot.innerHTML = "<div class='slide-dot slide-dot-new'></div>";
+            clone.querySelector('.only-next').append(newDot);
         }
         if(eachArt.acf.image5 !== false){
             clone.querySelector('.thumbnail:nth-of-type(4) img').src = eachArt.acf.image5.sizes.large;
+            let newDot = document.createElement('div');
+            newDot.innerHTML = "<div class='slide-dot slide-dot-new'></div>";
+            clone.querySelector('.only-next').append(newDot);
         }
         if(eachArt.acf.image6 !== false){
             clone.querySelector('.thumbnail:nth-of-type(5) img').src = eachArt.acf.image6.sizes.large;
+            let newDot = document.createElement('div');
+            newDot.innerHTML = "<div class='slide-dot slide-dot-new'></div>";
+            clone.querySelector('.only-next').append(newDot);
         }
         clone.querySelector('.description p').textContent = eachArt.acf.technical_description;
         clone.querySelector('.concept p').innerHTML = eachArt.acf.concept;
