@@ -35,7 +35,6 @@ function showArts(arts){
         let thumNail3 = eachArt.acf.image4
         let thumNail4 = eachArt.acf.image5
         let thumNail5 = eachArt.acf.image6
-        let imgArray = [];
         clone.querySelector('.text a').href = "subpage.html?id=" + eachArt.id;
         // set which h3 and Inquire/share to use
         if(languagePassed == "en"){
@@ -137,11 +136,12 @@ function showArts(arts){
         document.querySelector('.inquire-form').className = "inquire-form hide";
     }
     // click on any image/video
-    let srcArray=[];
     let allImg = document.querySelectorAll('div.img img');
     document.querySelectorAll('div.img img').forEach(function(img){
         img.addEventListener('click', openModal);})
     function openModal(c){
+            let srcArray=[];
+
         document.querySelector('.slideshow').classList.remove('hide');
         document.querySelector('.modal').classList.remove('hide');
         let src = c.target.getAttribute('src');
@@ -181,8 +181,7 @@ function showArts(arts){
                 if(i<srcArray.length-1){
                     i++;
                 } else {
-                    i = -1;
-                    i++;
+                    i = 0;
                 }
                 document.querySelector('.img-in-slide-show').setAttribute('src', srcArray[i]);
             }
