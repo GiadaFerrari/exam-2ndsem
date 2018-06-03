@@ -51,6 +51,7 @@ function fillInfo(info){
     document.querySelector('.metaphor').innerHTML = i.acf.personal_metaphor;
 
     document.querySelector('.edu').textContent = i.acf.education;
+    document.querySelector('.support').textContent = i.acf.support;
 
     document.querySelector('.country').textContent = i.acf.address_country;
 
