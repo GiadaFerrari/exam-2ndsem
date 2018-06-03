@@ -139,8 +139,6 @@ function showArts(arts){
             }
             let prev = document.querySelector('.toLeft');
             let next = document.querySelector('.toRight');
-            let onlyNext = document.querySelector('only-next');
-            onlyNext.addEventListener('click', alert('kk'));
             prev.addEventListener('click', showPrev);
             function showPrev(){
                 if(i>=1){
