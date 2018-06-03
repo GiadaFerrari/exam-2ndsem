@@ -45,6 +45,8 @@ function showArts(arts){
             clone.querySelector('.concept .ita').classList.add('hide');
             clone.querySelector('.inquire .eng').classList.remove('hide');
             clone.querySelector('.inquire .ita').classList.add('hide');
+            clone.querySelector('.share.eng').classList.remove('hide');
+            clone.querySelector('.share.ita').classList.add('hide');
         } else if(languagePassed == "it"){
             clone.querySelector('.description .ita').classList.remove('hide');
             clone.querySelector('.description .eng').classList.add('hide');
@@ -52,6 +54,8 @@ function showArts(arts){
             clone.querySelector('.concept .eng').classList.add('hide');
             clone.querySelector('.inquire .ita').classList.remove('hide');
             clone.querySelector('.inquire .eng').classList.add('hide');
+            clone.querySelector('.share.ita').classList.remove('hide');
+            clone.querySelector('.share.eng').classList.add('hide');
         }
         clone.querySelector('h1.title').innerHTML = eachArt.acf.title_of_artwork;
         clone.querySelector('.year-of-creation').textContent = "( " + eachArt.acf.year_of_work + " )"
@@ -125,6 +129,7 @@ function showArts(arts){
     document.querySelectorAll('button.inquire').forEach(function(c){c.addEventListener('click', showForm)})
     function showForm(){
         document.querySelector('.inquire-form').className = "inquire-form show";
+
     }
     // click on X to close box in modal
     document.querySelector('.inquire-form .closeMe').addEventListener('click', closeForm);

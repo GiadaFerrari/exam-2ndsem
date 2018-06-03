@@ -91,7 +91,7 @@ img.homepage {
 .captionHome p {
     font-size: 13px;
 }
-@media screen and (min-width: 800px){
+@media screen and (min-width: 1024px){
 
     /* homepage */
     .background {
