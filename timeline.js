@@ -291,7 +291,7 @@ if(typePassed == "exhibition"){
     showUnderlingExhi();
     setTimeout(filterOnlyExhi, 2000);
 }
-if(typePassed == "experience"){
+if(typePassed == "press"){
     showUnderlingPress();
     setTimeout(filterOnlyPress, 2000);
 }

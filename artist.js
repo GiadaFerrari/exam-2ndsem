@@ -15,6 +15,10 @@ loader.classList.add("hide");}
 // get the language setting in the URL
 let Urlpassed = new URLSearchParams(window.location.search);
 let languagePassed = Urlpassed.get("lang");
+// if there is no language argument in the URL, set it to english version
+if(!languagePassed || languagePassed == 'en'){
+    languagePassed = "en";
+}
 // fetch data based on language setting in the url
 let defaultPath = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/about_yourself_' + languagePassed;
 
