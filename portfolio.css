@@ -133,7 +133,72 @@ span.share {
     .only-next .slide-dot-new {
         background: var(--light-grey);
     }
-
+    /* form */
+    .inquire-form {
+        background: white;
+        z-index: 30;
+        width: 86vw;
+        height: 650px;
+        margin: 0 7vw;
+        position: fixed;
+        opacity: 0;
+    }
+    .inquire-form.show {
+        animation: fadeIn .1s .1s ease-in forwards;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    .closeMe {
+        font-family: simplifica, sans-serif;
+        font-size: 50px;
+        color: var(--dark-grey);
+        position: absolute;
+        right: 50px;
+        top: 50px;
+        cursor: pointer;
+    }
+    .sign {
+        width: 50%;
+        padding: 120px 50px;
+    }
+    .quote {
+        font-size: 23px;
+        margin-bottom: 40px;
+    }
+    .personalMex {
+        font-family: Sukhumvit-thin, sans-serif;
+    }
+    .form {
+        width: 50%;
+        position: absolute;
+        right: 0;
+        top: 120px;
+        padding: 0 50px;
+        font-family: Sukhumvit-bold, sans-serif;
+    }
+    .form input {
+        width: 100%;
+        height: 35px;
+        margin: 5px 0 15px 0;
+    }
+    input.message {
+        height: 170px;
+    }
+    button.submit {
+        height: 50px;
+        width: 130px;
+        font-size: 23px;
+        border: 1px solid var(--medium-grey);
+        border-radius: 2px;
+        margin-top: 30px;
+        cursor: pointer;
+    }
 }
 
 @media screen and (min-width: 1200px){
@@ -207,72 +272,6 @@ span.share {
     }
     .more {
         display: none;
-    }
-    /* form */
-    .inquire-form {
-        background: white;
-        z-index: 30;
-        width: 86vw;
-        height: 650px;
-        margin: 0 7vw;
-        position: fixed;
-        opacity: 0;
-    }
-    .inquire-form.show {
-        animation: fadeIn .1s .1s ease-in forwards;
-    }
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-    .closeMe {
-        font-family: simplifica, sans-serif;
-        font-size: 50px;
-        color: var(--dark-grey);
-        position: absolute;
-        right: 50px;
-        top: 50px;
-        cursor: pointer;
-    }
-    .sign {
-        width: 50%;
-        padding: 120px 50px;
-    }
-    .quote {
-        font-size: 23px;
-        margin-bottom: 40px;
-    }
-    .personalMex {
-        font-family: Sukhumvit-thin, sans-serif;
-    }
-    .form {
-        width: 50%;
-        position: absolute;
-        right: 0;
-        top: 120px;
-        padding: 0 50px;
-        font-family: Sukhumvit-bold, sans-serif;
-    }
-    .form input {
-        width: 100%;
-        height: 35px;
-        margin: 5px 0 15px 0;
-    }
-    input.message {
-        height: 170px;
-    }
-    button.submit {
-        height: 50px;
-        width: 130px;
-        font-size: 23px;
-        border: 1px solid var(--medium-grey);
-        border-radius: 2px;
-        margin-top: 30px;
-        cursor: pointer;
     }
     .modal {
         width: 100vw;
