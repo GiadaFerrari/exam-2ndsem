@@ -18,26 +18,27 @@ function pullUp(){
     document.querySelector('header').style.overflow = 'hidden';
 }
 
-// switch hard-code part between en and it
+// switch hard-code part between en and it with lang buttons
 let enButton = document.querySelector('.enSet');
 let itButton = document.querySelector('.itSet');
-let allIt = document.querySelectorAll('.ita');
-let allEn = document.querySelectorAll('.eng');
+let allIta = document.querySelectorAll('.ita');
+let allEng = document.querySelectorAll('.eng');
 enButton.addEventListener('click', showEn);
 itButton.addEventListener('click', showIt);
 function showEn(){
-    enButton.className = 'enSet lanactive';
-    itButton.className = 'itSet';
-    allIt.forEach(function(it){it.className = 'ita hide'});
-    allEn.forEach(function(it){it.className = 'eng'});
+//    enButton.className = 'enSet lanactive';
+//    itButton.className = 'itSet';
+    allIta.forEach(function(it){it.className = 'ita hide'});
+    allEng.forEach(function(it){it.className = 'eng'});
 }
 function showIt(){
-    itButton.className = 'itSet lanactive';
-    enButton.className = 'enSet';
-    allIt.forEach(function(it){it.className = 'ita'});
-    allEn.forEach(function(it){it.className = 'eng hide'});
+//    itButton.className = 'itSet lanactive';
+//    enButton.className = 'enSet';
+    allIta.forEach(function(it){it.className = 'ita'});
+    allEng.forEach(function(it){it.className = 'eng hide'});
 }
 
+/*
 // get the language setting in the URL
 let Urlpassed = new URLSearchParams(window.location.search);
 let languagePassed = Urlpassed.get("lang");
@@ -45,6 +46,22 @@ let languagePassed = Urlpassed.get("lang");
 if(!languagePassed || languagePassed == 'en'){
     languagePassed = "en";
     showEn();
+    console.log(document.querySelectorAll('.navMenu span'));
 } else if (languagePassed && languagePassed == "it"){
-    showIt();
+    //showIt();
+    let allEng = document.querySelectorAll('.navMenu span.eng');
+    console.log(allEng);
+    allEng.forEach(addHide);
+    function addHide(e){
+        e.className='eng';
+    alert('t');
+    }
+    let allIta = document.querySelectorAll('.navMenu span.ita');
+    console.log(allIta);
+    allIta.forEach(removeHide);
+    function removeHide(e){
+        e.className='ita';
+    alert('t');
+    }
 }
+*/

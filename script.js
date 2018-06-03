@@ -94,6 +94,7 @@ let languageSet = originalUrl.get("lang");
 if(!languageSet || languageSet == "en" || languageChosen == "en"){
     // set en span as active
     document.querySelector('.enSet').className = "enSet lanactive";
+    document.querySelector('.itSet').className = "itSet";
 //    setLanguage();
 
     naviHome.setAttribute('href', 'index.html?lang=en');
@@ -106,7 +107,8 @@ if(!languageSet || languageSet == "en" || languageChosen == "en"){
     naviAll.setAttribute('href', 'timeline.html?lang=en');
 } else if(languageSet == "it" || languageChosen == "it"){
     // set it span as active
-    document.querySelector('button.itSet').classList.add('lanactive');
+    document.querySelector('.enSet').className = "enSet";
+    document.querySelector('.itSet').className = "itSet lanactive";
 //    setLanguage();
 
     itaText.forEach((ita) => {
@@ -116,8 +118,8 @@ if(!languageSet || languageSet == "en" || languageChosen == "en"){
         eng.classList.toggle('hide')
     });
 
-    $('.itSet').toggleClass('lanactive');
-    $('.enSet').toggleClass('lanactive');
+//    $('.itSet').toggleClass('lanactive');
+//    $('.enSet').toggleClass('lanactive');
 
     naviHome.setAttribute('href', 'index.html?lang=it');
     naviArtist.setAttribute('href', 'about.html?lang=it');
@@ -128,7 +130,7 @@ if(!languageSet || languageSet == "en" || languageChosen == "en"){
     naviPress.setAttribute('href', 'timeline.html?lang=it');
     naviAll.setAttribute('href', 'timeline.html?lang=it');
 }
-
+console.log(document.querySelector('.lanactive'));
 
 
 function setLanguage(e) {
@@ -144,8 +146,8 @@ function setLanguage(e) {
             eng.classList.toggle('hide')
         });
 
-        $('.itSet').toggleClass('lanactive');
-        $('.enSet').toggleClass('lanactive');
+//        $('.itSet').toggleClass('lanactive');
+//        $('.enSet').toggleClass('lanactive');
     }
 
 }
