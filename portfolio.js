@@ -63,34 +63,40 @@ function showArts(arts){
             eachArt.acf.dimension_length;
         clone.querySelector('.width').textContent = eachArt.acf.dimension_width;
         clone.querySelector('.big-image img').src = largeImagePath;
+        clone.querySelector('.big-image img').alt = eachArt.acf.title_of_artwork;
         // image 2-6 are not required, so check if each of these exsist, great thumbnail only when exsist
         let thumbnailWrapper = clone.querySelector('.small-images');
         if(eachArt.acf.image2 !== false){
             clone.querySelector('.thumbnail:nth-of-type(1) img').src = eachArt.acf.image2.sizes.large;
+            clone.querySelector('.thumbnail:nth-of-type(1) img').alt = eachArt.acf.title_of_artwork;
             let newDot = document.createElement('div');
             newDot.innerHTML = "<div class='slide-dot slide-dot-new slidedot1'></div>";
             clone.querySelector('.only-next').append(newDot);
         }
         if(eachArt.acf.image3 !== false){
             clone.querySelector('.thumbnail:nth-of-type(2) img').src = eachArt.acf.image3.sizes.large;
+            clone.querySelector('.thumbnail:nth-of-type(2) img').alt = eachArt.acf.title_of_artwork;
             let newDot = document.createElement('div');
             newDot.innerHTML = "<div class='slide-dot slide-dot-new slidedot2'></div>";
             clone.querySelector('.only-next').append(newDot);
         }
         if(eachArt.acf.image4 !== false){
             clone.querySelector('.thumbnail:nth-of-type(3) img').src = eachArt.acf.image4.sizes.large;
+            clone.querySelector('.thumbnail:nth-of-type(3) img').alt = eachArt.acf.title_of_artwork;
             let newDot = document.createElement('div');
             newDot.innerHTML = "<div class='slide-dot slide-dot-new slidedot3'></div>";
             clone.querySelector('.only-next').append(newDot);
         }
         if(eachArt.acf.image5 !== false){
             clone.querySelector('.thumbnail:nth-of-type(4) img').src = eachArt.acf.image5.sizes.large;
+            clone.querySelector('.thumbnail:nth-of-type(4) img').alt = eachArt.acf.title_of_artwork;
             let newDot = document.createElement('div');
             newDot.innerHTML = "<div class='slide-dot slide-dot-new slidedot4'></div>";
             clone.querySelector('.only-next').append(newDot);
         }
         if(eachArt.acf.image6 !== false){
             clone.querySelector('.thumbnail:nth-of-type(5) img').src = eachArt.acf.image6.sizes.large;
+            clone.querySelector('.thumbnail:nth-of-type(5) img').alt = eachArt.acf.title_of_artwork;
             let newDot = document.createElement('div');
             newDot.innerHTML = "<div class='slide-dot slide-dot-new slidedot5'></div>";
             clone.querySelector('.only-next').append(newDot);
