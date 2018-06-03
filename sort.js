@@ -15,6 +15,9 @@ function sortAll(){
         wrapper.appendChild(sortArray[i]);
     }
     let sortedEven = document.querySelectorAll('.needSort:nth-of-type(2n)');
-    //sortedEven.forEach(e => e.classList.add('right'));
+    sortedEven.forEach(e => e.classList.add('right'));
+    let sortedOdd = document.querySelectorAll('.needSort:nth-of-type(2n+1)');
+    sortedOdd.forEach(e => e.classList.add('left'));
+
 }
 setTimeout(sortAll, 2000);

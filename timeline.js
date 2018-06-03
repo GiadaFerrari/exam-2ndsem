@@ -15,7 +15,6 @@ let counter = 0
 function fetchTimeline(exp, fnc) {
     lookingForData = true;
     fetch(exp).then(e => e.json()).then(fnc)
-
 }
 /*experience*/
 
@@ -32,14 +31,14 @@ function showExp(exp) {
         }
 
         if (isOdd(counter)) {
-            clone.querySelector('article').classList.add('right')
+//            clone.querySelector('article').classList.add('right')
             clone.querySelector('article').classList.add('needSort')
         } else {
-            clone.querySelector('article').classList.add('left')
+//            clone.querySelector('article').classList.add('left')
             clone.querySelector('article').classList.add('needSort')
         }
 
-
+        clone.querySelector('article').classList.add('experience');
         clone.querySelector('article').setAttribute('date-string', e.acf.start_date);
 
 
@@ -97,15 +96,15 @@ function showExhi(exhi) {
         }
 
         if (isOdd(counter)) {
-            clone.querySelector('article').classList.add('right')
+//            clone.querySelector('article').classList.add('right')
             clone.querySelector('article').classList.add('needSort')
 
         } else {
-            clone.querySelector('article').classList.add('left')
+//            clone.querySelector('article').classList.add('left')
             clone.querySelector('article').classList.add('needSort')
 
         }
-
+        clone.querySelector('article').classList.add('exhibition');
         clone.querySelector('article').setAttribute('date-string', e.acf.start_date);
 
 
@@ -158,16 +157,15 @@ function showPress(press) {
         function isOdd(num) {
             return num % 2;
         }
-
         if (isOdd(counter)) {
-            clone.querySelector('article').classList.add('right')
+//            clone.querySelector('article').classList.add('right')
             clone.querySelector('article').classList.add('needSort')
 
         } else {
-            clone.querySelector('article').classList.add('left')
+//            clone.querySelector('article').classList.add('left')
             clone.querySelector('article').classList.add('needSort')
         }
-
+        clone.querySelector('article').classList.add('press');
         clone.querySelector('article').setAttribute('date-string', e.acf.time_of_publication);
         let publicationDate = e.acf.time_of_publication.substring(6, 8) + " / " + e.acf.time_of_publication.substring(4, 6) + " / " + e.acf.time_of_publication.substring(0, 4)
 
@@ -199,6 +197,10 @@ function showPress(press) {
 fetchTimeline(expPathEn, showExp)
 fetchTimeline(exhiPathEn, showExhi)
 fetchTimeline(pressPathEn, showPress)
+setTimeout(sortAll, 2000);
+
+
+
 /*
 
 let line = document.querySelector('.line')
@@ -256,13 +258,54 @@ function arrangeOrder() {
 }
 
 
+*/
 
+// event type filters
+document.querySelector('.expFilter').addEventListener('click', showOnlyExp);
+function showOnlyExp(){
+    document.querySelector('.allFilter').classList.remove('active');
+    document.querySelector('.exhiFilter').classList.remove('active');
+    document.querySelector('.pressFilter').classList.remove('active');
+    document.querySelector('.expFilter').classList.add('active');
+    document.querySelectorAll('.experience').forEach(e => e.classList.remove('hide'));
+    document.querySelectorAll('.press').forEach(e => e.classList.add('hide'));
+    document.querySelectorAll('.exhibition').forEach(e => e.classList.add('hide'));
+}
+document.querySelector('.exhiFilter').addEventListener('click', showOnlyExh);
+function showOnlyExh(){
+    document.querySelector('.allFilter').classList.remove('active');
+    document.querySelector('.expFilter').classList.remove('active');
+    document.querySelector('.pressFilter').classList.remove('active');
+    document.querySelector('.exhiFilter').classList.add('active');
+    document.querySelectorAll('.exhibition').forEach(e => e.classList.remove('hide'));
+    document.querySelectorAll('.press').forEach(e => e.classList.add('hide'));
+    document.querySelectorAll('.experience').forEach(e => e.classList.add('hide'));
+}
+document.querySelector('.pressFilter').addEventListener('click', showOnlyPress);
+function showOnlyPress(){
+    document.querySelector('.allFilter').classList.remove('active');
+    document.querySelector('.exhiFilter').classList.remove('active');
+    document.querySelector('.expFilter').classList.remove('active');
+    document.querySelector('.pressFilter').classList.add('active');
+    document.querySelectorAll('.press').forEach(e => e.classList.remove('hide'));
+    document.querySelectorAll('.exhibition').forEach(e => e.classList.add('hide'));
+    document.querySelectorAll('.experience').forEach(e => e.classList.add('hide'));
+}
+document.querySelector('.allFilter').addEventListener('click', showAll);
+function showAll(){
+    document.querySelector('.expFilter').classList.remove('active');
+    document.querySelector('.exhiFilter').classList.remove('active');
+    document.querySelector('.pressFilter').classList.remove('active');
+    document.querySelector('.allFilter').classList.add('active');
+    document.querySelectorAll('.press').forEach(e => e.classList.remove('hide'));
+    document.querySelectorAll('.exhibition').forEach(e => e.classList.remove('hide'));
+    document.querySelectorAll('.experience').forEach(e => e.classList.remove('hide'));
+}
 
-/*filters*/
-
+/*
 $('.expFilter').on('click', () => {
     main.innerHTML = "<div class='line'></div> "
-    fetchTimeline(expPathEn, showExp)
+//    fetchTimeline(expPathEn, showExp)
     $('.expFilter').addClass('active');
     $('.exhiFilter').removeClass('active');
     $('.pressFilter').removeClass('active');
@@ -272,7 +315,7 @@ $('.expFilter').on('click', () => {
 })
 $('.exhiFilter').on('click', () => {
     main.innerHTML = "<div class='line'></div> "
-    fetchTimeline(exhiPathEn, showExhi);
+//    fetchTimeline(exhiPathEn, showExhi);
     $('.expFilter').removeClass('active');
     $('.exhiFilter').addClass('active');
     $('.pressFilter').removeClass('active');
@@ -281,7 +324,7 @@ $('.exhiFilter').on('click', () => {
 })
 $('.pressFilter').on('click', () => {
     main.innerHTML = "<div class='line'></div> "
-    fetchTimeline(pressPathEn, showPress)
+//    fetchTimeline(pressPathEn, showPress)
     $('.expFilter').removeClass('active');
     $('.exhiFilter').removeClass('active');
     $('.pressFilter').addClass('active');
@@ -300,6 +343,37 @@ $('.allFilter').on('click', () => {
 
 })
 
+*/
+
+
+function sortAll(){
+    let wrapper = document.querySelector('main.timeline');
+    let neetSortS = document.querySelectorAll('.needSort');
+    let sortArray = [];
+    neetSortS.forEach(addToArray);
+    function addToArray(s){
+        sortArray.push(s);
+    }
+    sortArray.sort(// sort() gives "in place" result, read more on https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+        function (a,b){
+            return b.getAttribute('date-string') - a.getAttribute('date-string');
+        }
+    )
+    for(let i=0; i<sortArray.length; i++){
+        wrapper.appendChild(sortArray[i]);
+    }
+    let sortedEven = document.querySelectorAll('.needSort:nth-of-type(2n)');
+    sortedEven.forEach(e => e.classList.add('right'));
+    let sortedOdd = document.querySelectorAll('.needSort:nth-of-type(2n+1)');
+    sortedOdd.forEach(e => e.classList.add('left'));
+
+}
+setTimeout(sortAll, 2000);
+
+
+
+
+
 
 
 
@@ -311,14 +385,16 @@ $('.enSet').on('click', () => {
     fetchTimeline(expPathEn, showExp)
     fetchTimeline(exhiPathEn, showExhi)
     fetchTimeline(pressPathEn, showPress)
+setTimeout(sortAll, 2000);
+
 })
 
 $('.itSet').on('click', () => {
     main.innerHTML = " <div class='line'></div>"
     fetchTimeline(expPathIt, showExp)
     fetchTimeline(exhiPathIt, showExhi)
-
     fetchTimeline(pressPathIt, showPress)
+setTimeout(sortAll, 2000);
 });
 
 

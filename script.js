@@ -176,8 +176,8 @@ $('.burger').on('click', () => {
     $('.navMenu').toggleClass('closeNav');
 })
 
-$('.timelineNav').on('mouseenter', openSubMenu);
-$('.subMenu').on('mouseleave', closeSubMenu);
+//$('.timelineNav').on('mouseenter', openSubMenu);
+//$('.subMenu').on('mouseleave', closeSubMenu);
 
 
 

@@ -175,7 +175,8 @@ span.share {
     }
     .fetched {
         display: grid;
-        grid-template-rows: repeat(11, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(11, 1fr);;
     }
     .title {
         grid-row: 1/3;

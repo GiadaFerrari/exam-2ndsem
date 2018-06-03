@@ -36,7 +36,7 @@ function showArt(a) {
 
 
 
-        section.querySelector('.title').textContent = a.acf.title_of_artwork;
+        section.querySelector('.title').innerHTML = a.acf.title_of_artwork;
         section.querySelector('.year').textContent = "(" + a.acf.year_of_work + ")"
         section.querySelector('.height').textContent = a.acf.dimension_height;
         section.querySelector('.length').textContent =
