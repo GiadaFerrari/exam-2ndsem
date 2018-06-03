@@ -15,6 +15,7 @@ body#portfolio section {
 div.img {
     height: 75vw;
     overflow: hidden;
+    cursor: pointer;
 }
 div.text {
     height: 70px;
