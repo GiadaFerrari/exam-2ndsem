@@ -1,7 +1,5 @@
 /*this javascript controls what s universal between pages like the burger menu , switching between languages etc.*/
 
-
-
 /* text in different languages */
 
 let itaText = document.querySelectorAll('.ita')

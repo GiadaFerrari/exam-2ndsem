@@ -1,3 +1,5 @@
+
+
 let main = document.querySelector('main');
 let section = document.querySelector('section');
 let artPathEn = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_en/';
@@ -6,11 +8,21 @@ let artPathIt = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_it/';
 let urlParams = new URLSearchParams(window.location.search);
 let id= urlParams.get("id");
 
-
+// loader
+let fetching;
+function notFetching(){
+    fetching=false
+    //loader
+let loader = document.querySelector(".loader");
+if (fetching ==false){
+    console.log("smth")
+loader.classList.add("hide");}
+}
 
 
 
 function fetchArt(lan) {
+    fetching = true;
     lookingForData = true;
     console.log('i am fetching from' + lan)
 
@@ -119,7 +131,7 @@ function showArt(a) {
 
         section.querySelector('.des').nextElementSibling.textContent = a.acf.technical_description;
         section.querySelector('.con').nextElementSibling.innerHTML = a.acf.concept;
-
+        notFetching()
     }
 
 
