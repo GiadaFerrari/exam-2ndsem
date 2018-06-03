@@ -35,9 +35,8 @@ function showArts(arts){
         let thumNail3 = eachArt.acf.image4
         let thumNail4 = eachArt.acf.image5
         let thumNail5 = eachArt.acf.image6
-
+        let imgArray = [];
         clone.querySelector('.text a').href = "subpage.html?id=" + eachArt.id;
-
         // set which h3 and Inquire/share to use
         if(languagePassed == "en"){
             clone.querySelector('.description .eng').classList.remove('hide');
@@ -66,38 +65,61 @@ function showArts(arts){
         if(eachArt.acf.image2 !== false){
             clone.querySelector('.thumbnail:nth-of-type(1) img').src = eachArt.acf.image2.sizes.large;
             let newDot = document.createElement('div');
-            newDot.innerHTML = "<div class='slide-dot slide-dot-new'></div>";
+            newDot.innerHTML = "<div class='slide-dot slide-dot-new slidedot1'></div>";
             clone.querySelector('.only-next').append(newDot);
         }
         if(eachArt.acf.image3 !== false){
             clone.querySelector('.thumbnail:nth-of-type(2) img').src = eachArt.acf.image3.sizes.large;
             let newDot = document.createElement('div');
-            newDot.innerHTML = "<div class='slide-dot slide-dot-new'></div>";
+            newDot.innerHTML = "<div class='slide-dot slide-dot-new slidedot2'></div>";
             clone.querySelector('.only-next').append(newDot);
         }
         if(eachArt.acf.image4 !== false){
             clone.querySelector('.thumbnail:nth-of-type(3) img').src = eachArt.acf.image4.sizes.large;
             let newDot = document.createElement('div');
-            newDot.innerHTML = "<div class='slide-dot slide-dot-new'></div>";
+            newDot.innerHTML = "<div class='slide-dot slide-dot-new slidedot3'></div>";
             clone.querySelector('.only-next').append(newDot);
         }
         if(eachArt.acf.image5 !== false){
             clone.querySelector('.thumbnail:nth-of-type(4) img').src = eachArt.acf.image5.sizes.large;
             let newDot = document.createElement('div');
-            newDot.innerHTML = "<div class='slide-dot slide-dot-new'></div>";
+            newDot.innerHTML = "<div class='slide-dot slide-dot-new slidedot4'></div>";
             clone.querySelector('.only-next').append(newDot);
         }
         if(eachArt.acf.image6 !== false){
             clone.querySelector('.thumbnail:nth-of-type(5) img').src = eachArt.acf.image6.sizes.large;
             let newDot = document.createElement('div');
-            newDot.innerHTML = "<div class='slide-dot slide-dot-new'></div>";
+            newDot.innerHTML = "<div class='slide-dot slide-dot-new slidedot5'></div>";
             clone.querySelector('.only-next').append(newDot);
         }
         clone.querySelector('.description p').textContent = eachArt.acf.technical_description;
         clone.querySelector('.concept p').innerHTML = eachArt.acf.concept;
 
         wrapper.appendChild(clone);
-    })
+
+
+    // update image src when click "new dot"
+    let allDots = document.querySelectorAll('.slide-dot');
+    let srcArray2 = [];
+    allDots.forEach(clickDot);
+    function clickDot(d){
+        d.addEventListener('click',updateSrc);
+        function updateSrc(){
+            let indexOfDot = d.className.slice(-1); // get the last digit, class was dynamicly added to each dot, so the last digit is controled as needed
+            let allImgs = d.parentElement.parentElement.parentElement.previousElementSibling.querySelectorAll('img');
+
+            if(allImgs[indexOfDot].getAttribute('src')){
+                srcArray2 = [];
+                allImgs.forEach(pushSrc);
+                function pushSrc(img){
+                    srcArray2.push(img.getAttribute('src'));
+                }
+            }
+            let newSrc = srcArray2[indexOfDot];
+            console.log(newSrc);
+            d.parentElement.parentElement.parentElement.previousElementSibling.querySelector('.big-image img').setAttribute('src', newSrc)
+        }
+    }})
 
     // click on inquire button
     document.querySelectorAll('button.inquire').forEach(function(c){c.addEventListener('click', showForm)})
@@ -110,6 +132,7 @@ function showArts(arts){
         document.querySelector('.inquire-form').className = "inquire-form hide";
     }
     // click on any image/video
+    let srcArray=[];
     let allImg = document.querySelectorAll('div.img img');
     document.querySelectorAll('div.img img').forEach(function(img){
         img.addEventListener('click', openModal);})
@@ -126,7 +149,6 @@ function showArts(arts){
             projectClicked = c.target.parentElement.parentElement;
         }
         allImagesInThisProject = projectClicked.querySelectorAll('img');
-        let srcArray = [];
         // if there is an img, with a src, then add it to the arrar
         for(let i=0; i<allImagesInThisProject.length; i++){
             if(allImagesInThisProject[i].src){
@@ -169,6 +191,9 @@ function showArts(arts){
         }
     }
 }
+
+
+
 
 
 function loadMore() {
