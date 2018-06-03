@@ -40,11 +40,6 @@ function showExp(exp) {
 
         clone.querySelector('article').classList.add('experience');
         clone.querySelector('article').setAttribute('date-string', e.acf.start_date);
-
-
-
-
-
         let startDate = e.acf.start_date.substring(6, 8) + " / " + e.acf.start_date.substring(4, 6) + " / " + e.acf.start_date.substring(0, 4)
         /*this function I took and slightly modified from stackoverflow https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript. It's functionality is to link to a JS built in object and return the current date*/
         /*define today*/
@@ -52,10 +47,7 @@ function showExp(exp) {
         var dd = today.getDate();
         var mm = today.getMonth() + 1; //January is 0!
         var yyyy = today.getFullYear();
-
-
         today = yyyy + mm + dd
-
         let endDate = e.acf.end_date.substring(6, 8) + " / " + e.acf.end_date.substring(4, 6) + " / " + e.acf.end_date.substring(0, 4)
 
         clone.querySelector('.startDate').textContent = startDate
@@ -66,18 +58,10 @@ function showExp(exp) {
             clone.querySelector('.startDate').style.cssText = "display:none;"
             clone.querySelector('.endDate').style.cssText = "display:none;"
         }
-
         clone.querySelector('.job').innerHTML = e.acf.your_role_at_activity
         clone.querySelector('.collaborators').innerHTML = e.acf.what_did_you_do;
         clone.querySelector('.description').innerHTML = e.acf.place
-
-
-
-
-
-
         main.appendChild(clone)
-
     })
 }
 
@@ -200,96 +184,21 @@ fetchTimeline(pressPathEn, showPress)
 setTimeout(sortAll, 2000);
 
 
-
-/*
-
-let line = document.querySelector('.line')
-
-setTimeout(() => {
-    line.style.cssText = "height:" + $("main").height() + "px";
-}, 500)
-
-
-
-
-window.addEventListener('scroll', checkScroll)
-
-
-function checkScroll() {
-    let scrolled = window.scrollY;
-    if (scrolled > 55 && $('.menu').hasClass('fixMe') == false) {
-        $('.menu').addClass('fixMe')
-    } else if (scrolled < 55 && $('.menu').hasClass('fixMe')) {
-        $('.menu').removeClass('fixMe');
-    }
-
-}
-
-*/
-
-/*I took this basic function from stackoverflow https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly. It's fucntionality is to reorder numbers in an descendent way, and I will implement it in my code in order to order articles by date.
-
-
-
-var numArray = [140000, 104, 99];
-numArray.sort(sortNumber);
-
-setTimeout(arrangeOrder, 1000)
-
-let myArray = [];
-
-function arrangeOrder() {
-    let articles = document.querySelectorAll('article')
-
-    articles.forEach((a) => {
-
-        let sortDate = a.querySelector('.startDate').innerHTML
-
-        let dates = sortDate.substring(10, 14) + sortDate.substring(5, 7) + sortDate.substring(0, 2)
-        myArray.push(dates);
-
-
-    })
-      function compareNumbers(a, b) {
-            return a - b;
-        }
-        console.log(myArray.sort(compareNumbers));
-
-}
-
-
-*/
-
 // event type filters
 document.querySelector('.expFilter').addEventListener('click', showOnlyExp);
 function showOnlyExp(){
-    document.querySelector('.allFilter').classList.remove('active');
-    document.querySelector('.exhiFilter').classList.remove('active');
-    document.querySelector('.pressFilter').classList.remove('active');
-    document.querySelector('.expFilter').classList.add('active');
-    document.querySelectorAll('.experience').forEach(e => e.classList.remove('hide'));
-    document.querySelectorAll('.press').forEach(e => e.classList.add('hide'));
-    document.querySelectorAll('.exhibition').forEach(e => e.classList.add('hide'));
+    showUnderlingExp();
+    filterOnlyExp();
 }
 document.querySelector('.exhiFilter').addEventListener('click', showOnlyExh);
 function showOnlyExh(){
-    document.querySelector('.allFilter').classList.remove('active');
-    document.querySelector('.expFilter').classList.remove('active');
-    document.querySelector('.pressFilter').classList.remove('active');
-    document.querySelector('.exhiFilter').classList.add('active');
-    document.querySelectorAll('.exhibition').forEach(e => e.classList.remove('hide'));
-    document.querySelectorAll('.press').forEach(e => e.classList.add('hide'));
-    document.querySelectorAll('.experience').forEach(e => e.classList.add('hide'));
+    showUnderlingExhi();
+    filterOnlyExhi();
 }
 document.querySelector('.pressFilter').addEventListener('click', showOnlyPress);
 function showOnlyPress(){
-    document.querySelector('.allFilter').classList.remove('active');
-    document.querySelector('.exhiFilter').classList.remove('active');
-    document.querySelector('.expFilter').classList.remove('active');
-    document.querySelector('.pressFilter').classList.add('active');
-    document.querySelectorAll('.press').forEach(e => e.classList.remove('hide'));
-    document.querySelectorAll('.exhibition').forEach(e => e.classList.add('hide'));
-    document.querySelectorAll('.experience').forEach(e => e.classList.add('hide'));
+    showUnderlingPress();
+    filterOnlyPress();
 }
 document.querySelector('.allFilter').addEventListener('click', showAll);
 function showAll(){
@@ -302,48 +211,6 @@ function showAll(){
     document.querySelectorAll('.experience').forEach(e => e.classList.remove('hide'));
 }
 
-/*
-$('.expFilter').on('click', () => {
-    main.innerHTML = "<div class='line'></div> "
-//    fetchTimeline(expPathEn, showExp)
-    $('.expFilter').addClass('active');
-    $('.exhiFilter').removeClass('active');
-    $('.pressFilter').removeClass('active');
-    $('.allFilter').removeClass('active');
-
-
-})
-$('.exhiFilter').on('click', () => {
-    main.innerHTML = "<div class='line'></div> "
-//    fetchTimeline(exhiPathEn, showExhi);
-    $('.expFilter').removeClass('active');
-    $('.exhiFilter').addClass('active');
-    $('.pressFilter').removeClass('active');
-    $('.allFilter').removeClass('active');
-
-})
-$('.pressFilter').on('click', () => {
-    main.innerHTML = "<div class='line'></div> "
-//    fetchTimeline(pressPathEn, showPress)
-    $('.expFilter').removeClass('active');
-    $('.exhiFilter').removeClass('active');
-    $('.pressFilter').addClass('active');
-    $('.allFilter').removeClass('active');
-
-})
-$('.allFilter').on('click', () => {
-    main.innerHTML = "<div class='line'></div> "
-    fetchTimeline(expPathEn, showExp)
-    fetchTimeline(exhiPathEn, showExhi)
-    fetchTimeline(pressPathEn, showPress)
-    $('.expFilter').removeClass('active');
-    $('.exhiFilter').removeClass('active');
-    $('.pressFilter').removeClass('active');
-    $('.allFilter').addClass('active');
-
-})
-
-*/
 
 
 function sortAll(){
@@ -390,3 +257,56 @@ setTimeout(sortAll, 2000);
 });
 
 
+
+// get the language setting in the URL. these 2 are already set in main.js, so remove from here
+let Urlpassed = new URLSearchParams(window.location.search);
+let languagePassed = Urlpassed.get("lang");
+let typePassed = Urlpassed.get("type");
+if(typePassed == "experience"){
+    showUnderlingExp();
+    setTimeout(filterOnlyExp, 2000);
+}
+if(typePassed == "exhibition"){
+    showUnderlingExhi();
+    setTimeout(filterOnlyExhi, 2000);
+}
+if(typePassed == "experience"){
+    showUnderlingPress();
+    setTimeout(filterOnlyPress, 2000);
+}
+
+function showUnderlingExp(){
+    document.querySelector('.allFilter').classList.remove('active');
+    document.querySelector('.exhiFilter').classList.remove('active');
+    document.querySelector('.pressFilter').classList.remove('active');
+    document.querySelector('.expFilter').classList.add('active');
+}
+function filterOnlyExp(){
+    document.querySelectorAll('.experience').forEach(e => e.classList.remove('hide'));
+    document.querySelectorAll('.press').forEach(e => e.classList.add('hide'));
+    document.querySelectorAll('.exhibition').forEach(e => e.classList.add('hide'));
+}
+
+function showUnderlingExhi(){
+    document.querySelector('.allFilter').classList.remove('active');
+    document.querySelector('.expFilter').classList.remove('active');
+    document.querySelector('.pressFilter').classList.remove('active');
+    document.querySelector('.exhiFilter').classList.add('active');
+}
+function filterOnlyExhi(){
+    document.querySelectorAll('.exhibition').forEach(e => e.classList.remove('hide'));
+    document.querySelectorAll('.press').forEach(e => e.classList.add('hide'));
+    document.querySelectorAll('.experience').forEach(e => e.classList.add('hide'));
+}
+
+function showUnderlingPress(){
+    document.querySelector('.allFilter').classList.remove('active');
+    document.querySelector('.exhiFilter').classList.remove('active');
+    document.querySelector('.expFilter').classList.remove('active');
+    document.querySelector('.pressFilter').classList.add('active');
+}
+function filterOnlyPress(){
+    document.querySelectorAll('.press').forEach(e => e.classList.remove('hide'));
+    document.querySelectorAll('.exhibition').forEach(e => e.classList.add('hide'));
+    document.querySelectorAll('.experience').forEach(e => e.classList.add('hide'));
+}

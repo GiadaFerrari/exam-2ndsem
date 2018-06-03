@@ -163,12 +163,8 @@ function chooseType(t){
     function updateURL(){
         let oldHref = t.getAttribute('href');
         let newHref;
-        if(languageSet){
-            newHref = oldHref + '&type=' + t.getAttribute('type');
-            t.setAttribute('href', newHref);
-        } else {
-            newHref = oldHref + '&?type=' + t.getAttribute('type');
-        }
+        newHref = oldHref + '&type=' + t.getAttribute('type');
+        t.setAttribute('href', newHref);
     }
 }
 /*burger menu */
