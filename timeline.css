@@ -127,7 +127,7 @@ article {
     article {
         width: 34vw;
         padding: 0;
-        margin: 0;
+        margin: 0 0 2em 0;
         opacity: 0;
     }
     article.right {

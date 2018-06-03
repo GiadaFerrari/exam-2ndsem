@@ -11,6 +11,10 @@
     --brown: #a8977c;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 @font-face {
     font-family: Simplifica;
     src: url(fonts/simplifica-typeface.ttf);
@@ -46,6 +50,7 @@ a,
 button {
     font-family: Simplifica;
     color: black;
+    font-weight: 100;
 }
 a:not(.no-styling):hover{
     text-decoration: underline;
@@ -98,11 +103,12 @@ header>* {
 }
 a#navHome {
     right: 5vw;
-    top: 11px;
+    top: 23px;
 }
 .logo {
-    width: 67px;
+    width: 37px;
     left: calc(100vw - 70px);
+
 }
 .lan {
     z-index: 20;

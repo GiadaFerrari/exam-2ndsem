@@ -17,15 +17,17 @@ img.play {
     left: 8vw;
     top: 30vw;
     z-index: 3;
+    cursor: pointer;
 }
 .stop {
     font-size: 30px;
     font-family: simplifica, sans-serif;
     position: absolute;
-    bottom: 30px;
+    top: 5px;
     z-index: 2;
     right: 8vw;
     opacity: 0;
+    cursor: pointer;
 }
 .fade-out {
     animation: fade-out 1s .3s ease-out forwards;
@@ -52,6 +54,7 @@ iframe {
     top: 9vw;
     border: none;
     opacity: 0;
+    pointer-events: none;
 }
 .show {
     animation: show .3s 1s ease-in forwards;
@@ -112,8 +115,7 @@ h1.name {
         border: none;
     }
     .stop {
-        bottom: auto;
-        top: 365px;
+        top: 25px;
     }
 }
 
@@ -150,6 +152,7 @@ h1.name {
     }
     .stop {
         right: calc(26vw - 260px);
+        top: 335px;
     }
     iframe {
         position: absolute;

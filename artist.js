@@ -21,6 +21,7 @@ function showIframe(){
     document.querySelector('div.address').classList.add('fade-out');
     document.querySelector('div.email').classList.add('fade-out');
     document.querySelector('iframe').classList.add('show');
+    document.querySelector('iframe').style.pointerEvents = "auto";
     document.querySelector('.stop').classList.add('show');
 }
 // stop video
@@ -32,6 +33,7 @@ function hideIframe(){
     document.querySelector('div.address').classList.remove('fade-out');
     document.querySelector('div.email').classList.remove('fade-out');
     document.querySelector('iframe').classList.remove('show');
+    document.querySelector('iframe').style.pointerEvents = "none";
     document.querySelector('.stop').classList.remove('show');
 }
 

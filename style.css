@@ -308,7 +308,7 @@ nav a {
 div.mainImg img {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -2vw;
     right: 0;
     bottom: 0;
     margin: auto;
@@ -321,7 +321,7 @@ img.sculpture {
 
 div.centerMe {
     padding-top: 5vh;
-    padding-left: 28vw;
+    padding-left: 26vw;
     display: block;
 }
 
