@@ -47,6 +47,9 @@ div.menuDot {
 .menu div h2 {
     margin-left: 40px;
 }
+.menu div h2 span:hover {
+    text-decoration: underline;
+}
 main.timeline {
     padding-left: 5vw;
     margin-top: 230px;
