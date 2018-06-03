@@ -71,6 +71,7 @@ section.subPageS, #subpage aside {
 }
 #subpage .title {
     font-size: 50px;
+    font-weight: 100;
 }
 #subpage form {
     margin-bottom: 50px;
