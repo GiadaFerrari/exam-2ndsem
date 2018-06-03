@@ -152,11 +152,11 @@ h1.name {
     }
     .stop {
         right: calc(26vw - 260px);
-        top: 335px;
+        top: 0;
     }
     iframe {
         position: absolute;
-        top: 0;
+        top: 36px;
         left: calc(26vw - 280px);
     }
     .bio {
