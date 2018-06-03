@@ -26,14 +26,14 @@ let allEng = document.querySelectorAll('.eng');
 enButton.addEventListener('click', showEn);
 itButton.addEventListener('click', showIt);
 function showEn(){
-//    enButton.className = 'enSet lanactive';
-//    itButton.className = 'itSet';
+    enButton.className = 'enSet lanactive';
+    itButton.className = 'itSet';
     allIta.forEach(function(it){it.className = 'ita hide'});
     allEng.forEach(function(it){it.className = 'eng'});
 }
 function showIt(){
-//    itButton.className = 'itSet lanactive';
-//    enButton.className = 'enSet';
+    itButton.className = 'itSet lanactive';
+    enButton.className = 'enSet';
     allIta.forEach(function(it){it.className = 'ita'});
     allEng.forEach(function(it){it.className = 'eng hide'});
 }

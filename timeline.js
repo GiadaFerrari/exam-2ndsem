@@ -370,14 +370,6 @@ function sortAll(){
 }
 setTimeout(sortAll, 2000);
 
-
-
-
-
-
-
-
-
 /*set language*/
 
 $('.enSet').on('click', () => {
