@@ -1,13 +1,27 @@
+
+
 let main = document.querySelector('main');
+let fetching;
+
+function notFetching(){
+    fetching=false
+    //loader
+let loader = document.querySelector(".loader");
+if (fetching ==false){
+    console.log("smth")
+loader.classList.add("hide");}
+}
 
 // get the language setting in the URL, already passed in main.js, so delete from here
 //let Urlpassed = new URLSearchParams(window.location.search);
 //let languagePassed = Urlpassed.get("lang");
 // fetch data based on language setting in the url
 let defaultPath = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/about_yourself_' + languagePassed;
+
 fetchInfo(defaultPath, fillInfo);
 
 function fetchInfo(exp, fnc) {
+    fetching = true;
     lookingForData = true;
     fetch(exp).then(e => e.json()).then(fnc)
 }
@@ -61,7 +75,7 @@ function fillInfo(info){
 
     })
 
-
+notFetching()
 }
 
 

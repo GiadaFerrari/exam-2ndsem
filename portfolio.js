@@ -3,7 +3,16 @@ let page = 1;
 let wrapper = document.querySelector('body');
 let lookingForData = false;
 let defaultPath;
+let fetching;
 
+function notFetching(){
+    fetching=false
+    //loader
+let loader = document.querySelector(".loader");
+if (fetching ==false){
+    console.log("smth")
+loader.classList.add("hide");}
+}
 // get the language setting in the URL. these 2 are already set in main.js, so remove from here
 //let Urlpassed = new URLSearchParams(window.location.search);
 //let languagePassed = Urlpassed.get("lang");
@@ -17,6 +26,7 @@ defaultPath = 'http://designki.dk/CMS/wordpress/wp-json/wp/v2/artwork_' + langua
 fetchArt(defaultPath);
 
 function fetchArt(path) {
+    fetching = true;
     lookingForData = true;
     fetch(path + page).then(e => e.json()).then(showArts); // concatinate path and page to form the actual path
 }
@@ -26,7 +36,7 @@ function showArts(arts){
     if(!arts.length){
         clearInterval(checkInterval);
     }
-    lookingForData = false;
+
     arts.forEach((eachArt) => {
         let clone = template.cloneNode(true);
         let largeImagePath = eachArt.acf.image1.sizes.large;
@@ -200,6 +210,8 @@ function showArts(arts){
             }
         }
     }
+    lookingForData = false;
+    notFetching()
 }
 
 
