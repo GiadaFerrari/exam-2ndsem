@@ -3,11 +3,17 @@
 }
 div.line {
     background: black;
-    width: 1.4px;
+    width: 1px;
     position: fixed;
     left: 5.7vw;
-    height: calc(100vh - 150px);
+    height: 0;
     top: 150px;
+    animation: goDown 2s ease-in forwards;
+}
+@keyframes goDown {
+    to {
+        height: calc(100vh - 150px);
+    }
 }
 .menu div, .menu div div, .menu h2 {
     display: inline;
@@ -49,11 +55,15 @@ article {
     padding-left: 7vw;
     position: relative;
     margin-bottom: 60px;
+    opacity: 0;
+}
+article.left, article.right {
+    opacity: 1;
 }
 .dot {
     position: absolute;
     left: -3.5px;
-    top: -2px; /* to cover the top of the black line */
+    top: -3px; /* to cover the top of the black line */
     width: 14px;
     height: 14px;
     border-radius: 100%;
@@ -106,7 +116,6 @@ article {
         position: fixed;
         top: 150px;
         left: 40vw;
-        height: calc(100vh - 150px);
     }
     div.menu {
         grid-template-columns: repeat(4, 1fr);
