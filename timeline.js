@@ -252,20 +252,29 @@ setTimeout(sortAll, 2000);
 /*set language*/
 
 $('.enSet').on('click', () => {
+    // when click on language button, show underling under the "all" since it's a new fetch
+    document.querySelector('.allFilter').classList.add('active');
+    document.querySelector('.exhiFilter').classList.remove('active');
+    document.querySelector('.expFilter').classList.remove('active');
+    document.querySelector('.pressFilter').classList.remove('active');
     main.innerHTML = "     <div class='line'></div>"
     fetchTimeline(expPathEn, showExp)
     fetchTimeline(exhiPathEn, showExhi)
     fetchTimeline(pressPathEn, showPress)
-setTimeout(sortAll, 2000);
-
+    setTimeout(sortAll, 2000);
 })
 
 $('.itSet').on('click', () => {
+    // when click on language button, show underling under the "all" since it's a new fetch
+    document.querySelector('.allFilter').classList.add('active');
+    document.querySelector('.exhiFilter').classList.remove('active');
+    document.querySelector('.expFilter').classList.remove('active');
+    document.querySelector('.pressFilter').classList.remove('active');
     main.innerHTML = " <div class='line'></div>"
     fetchTimeline(expPathIt, showExp)
     fetchTimeline(exhiPathIt, showExhi)
     fetchTimeline(pressPathIt, showPress)
-setTimeout(sortAll, 2000);
+    setTimeout(sortAll, 2000);
 });
 
 
