@@ -1,3 +1,41 @@
+/* loader */
+.loader{
+            z-index: 5;
+            position: relative;
+            background-color: #eeeeee;
+            width: 100vw;
+            height: 100vh;
+        }
+svg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    margin: auto;
+  width: 10em;
+}
+rect, polyline, path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 1.5s forwards ease-in-out infinite;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  50%{
+     stroke-dashoffset: 0;
+  }
+  99.9%{
+    stroke-dashoffset: 1000;
+  }
+  100%{
+   stroke-dashoffset: 0;
+  }
+}
+
 body#subpage {
     margin: 0;
 }

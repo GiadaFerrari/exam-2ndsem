@@ -1,3 +1,13 @@
+let fetching;
+
+function notFetching(){
+    fetching=false
+    //loader
+let loader = document.querySelector(".loader");
+if (fetching ==false){
+    console.log("smth")
+loader.classList.add("hide");}
+}
 let templateExp = document.querySelector('template.experiences').content;
 let templateExhi = document.querySelector('template.exhibition').content;
 let templatePress = document.querySelector('template.press').content;
@@ -13,6 +23,7 @@ let counter = 0
 
 /*REST API*/
 function fetchTimeline(exp, fnc) {
+    fetching = true;
     lookingForData = true;
     fetch(exp).then(e => e.json()).then(fnc)
 }
@@ -79,6 +90,7 @@ function showExp(exp) {
         main.appendChild(clone)
 
     })
+    notFetching()
 }
 
 /*exhibition*/

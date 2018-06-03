@@ -1,7 +1,11 @@
+
+
 let template = document.querySelector('template').content;
 let page = 1;
 let main = document.querySelector('main');
 let lookingForData = false;
+
+
 
 // get the language setting in the URL
 let Urlpassed = new URLSearchParams(window.location.search);
