@@ -29,15 +29,14 @@ img.homepage {
 
 .heart1 {
     position: absolute;
-    right: 2vw;
-    top: 72vw;
-    width: 16vw;
-    max-width: 90px;
-    animation: heart-beat1 1.2s .05s cubic-bezier(0.79,-0.04, 0.67, 1.52) infinite;
+    right: 2.5vw;
+    top: 70.5vw;
+    width: 15.5vw;
+    animation: heart-beat1 1.2s .04s cubic-bezier(0.79,-0.04, 0.67, 1.52) infinite;
 }
     @keyframes heart-beat1 {
         50% {
-            transform: scale(.85);
+            transform: scale(.85) translate(-.1vw, .2vw);
         }
         100% {
             transform: scale(1);
@@ -46,14 +45,14 @@ img.homepage {
 .heart2 {
     position: absolute;
     right: 4.5vw;
-    top: 70vw;
+    top: 69.7vw;
     width: 23vw;
-    max-width: 140px;
+    max-width: 150px;
     animation: heart-beat2 1.2s .6s cubic-bezier(0.79,-0.04, 0.67, 1.52) infinite;
 }
     @keyframes heart-beat2 {
         50% {
-            transform: scale(1.1, .9) translate(.2vw, .25vw);
+            transform: scale(1.13, .9) translate(.2vw, .19vw) rotate(6deg);
         }
         100% {
             transform: scale(1);
@@ -156,10 +155,10 @@ img.homepage {
         }
     }
     .heart1 {
-        right: .8vw;
-        top: 21.8vw;
-        width: 6vw;
-
+        right: .86vw;
+        top: 21.35vw;
+        width: 5.5vw;
+        max-width: inherit;
     }
     .heart2 {
         right: 2.3vw;
